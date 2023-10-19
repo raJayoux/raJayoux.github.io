@@ -1,5 +1,5 @@
 #home {
-    background-image: url("../img/background-no-text.png");
+    background-image: url("../img/background-no-text.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,16 +9,17 @@
 
 #home-title-container-margin {
     position:relative;
-    height:30%;
+    height:15%;
 }
 
 #home-title-container {
-    height:40%;
+    height:70%;
     width: 100%;
     max-width:1000px;
     position:relative;
     left:50%;
     transform: translateX(-50%);
+    /* border: 1px solid black; */
 }
 
 #hello-box {
@@ -42,7 +43,7 @@
 #hello {
     font-size: 7vw;
     text-align: center;
-    color: #C98C19;
+    color: #DBC19F;
     line-height:0.5;
 }
 
@@ -52,15 +53,16 @@
     }
 }
 
-#naomi-box {
+#rajayoux-box {
     position:relative;
     width: 60%;
     max-width:800px;
-    left: 50%;
-    transform: translateX(-57%);
+    left: 60%;
+    transform: translateX(-56%);
 }
 
-#naomi {
+#rajayoux {
+    margin-bottom: 0.5cm;
     max-height:100%;
     max-width:100%;
     object-fit:contain;
@@ -87,7 +89,8 @@
     left: 50%;
     transform: translateX(-50%);
     display:inline-block;
-    max-width:300px;  
+    max-width:300px;
+    height: 4%;  
     /* width:30%;  */
 }
 
@@ -137,7 +140,7 @@
 }
 
 #scroll-margin {
-    height:4%;
+    height:2%;
 }
 
 #scroll-to-learn {
