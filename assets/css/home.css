@@ -5,15 +5,17 @@
     background-size: cover;
     min-height: 570px;
     height:100vh;
+    /* border: 1px solid cyan; */
 }
 
 #home-title-container-margin {
     position:relative;
     height:15%;
+    /* border: 1px solid cyan; */
 }
 
 #home-title-container {
-    height:70%;
+    height:65%;
     width: 100%;
     max-width:1000px;
     position:relative;
@@ -89,9 +91,10 @@
     left: 50%;
     transform: translateX(-50%);
     display:inline-block;
-    max-width:300px;
-    height: 4%;  
-    /* width:30%;  */
+    max-width:400px;
+    height: 5%;  
+    width: 30%; 
+    /* border: 1px solid cyan; */
 }
 
 
@@ -104,7 +107,8 @@
     max-height:100%;
     max-width:17.7%;
     padding-left: 0.5%;
-    padding-right:0.5%;
+    padding-right:1%;
+    /* border: 1px solid cyan; */
 }
 
 #links .link:hover{
