@@ -172,13 +172,13 @@ $(document).ready(function() {
     // CONTACT
     $("#emailer").on("submit", function(){
         $.ajax({
-            url: "https://formspree.io/naomi.jung16@gmail.com", 
+            url: "https://formspree.io/f/xbjvwrwo", 
             method: "POST",
             data: {
                     name: $('#emailer').find('input[name="name"]').val(),
                     email: $('#emailer').find('input[name="email"]').val(),
                     message: $('#emailer').find($('#message')).val(),
-                    _subject: "Message from naomijung.github.io",
+                    _subject: "Message from rajayoux.github.io",
                 },
             dataType: "json"
         });
