@@ -133,26 +133,26 @@ $(document).ready(function() {
     }
     )
 
-    $("#painting-greys").click(function() {
-        $("#painting-greys-vid").css("display", "block");
+    $("#motorRide").click(function() {
+        $("#motorRide-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
 
-    $("#lose-it").click(function() {
-        $("#lose-it-vid").css("display", "block");
+    $("#aWinter").click(function() {
+        $("#aWinter-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
 
-    $("#heal").click(function() {
-        $("#heal-vid").css("display", "block");
+    $("#aGala").click(function() {
+        $("#aGala-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
 
-    $("#dead-water").click(function() {
-        $("#dead-water-vid").css("display", "block");
+    $("#Swimming").click(function() {
+        $("#Swimming-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
@@ -163,8 +163,8 @@ $(document).ready(function() {
         $("#grayed-out-box").addClass("video-open")
     })
 
-    $("#ss").click(function() {
-        $("#ss-vid").css("display", "block");
+    $("#aBaby").click(function() {
+        $("#aBaby-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
