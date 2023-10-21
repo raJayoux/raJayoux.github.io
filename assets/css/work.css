@@ -21,15 +21,15 @@
     margin-bottom: 25px;
     text-align: center;
     color: white;
-    background-color: #4E93A8;
+    background-color: #5291AE;
 }
 
 #resume-button a {
     text-align: center;
-    border: 1px solid #4E93A8;
+    border: 1px solid #5291AE;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
-    color: #4E93A8;
+    color: #5291AE;
 }
 
 #work-content-container {
@@ -121,7 +121,7 @@
     top: -8px;
     width: 10px;
     height: 10px;
-    background-color: #016E83;
+    background-color: #96ADFA;
     /* left: 50%; */
     margin-left: -5.5px;
     -webkit-transform: rotate(45deg);
@@ -137,7 +137,7 @@
     bottom: -8px;
     width: 10px;
     height: 10px;
-    background-color: #016E83;
+    background-color: #96ADFA;
     /* left: 50%; */
     margin-left: -5.5px;
     -webkit-transform: rotate(45deg);
@@ -148,5 +148,5 @@
 }
 
 .resume {
-    border-left: 1px solid #016E83;
+    border-left: 1px solid #96ADFA;
 }

@@ -163,8 +163,8 @@ $(document).ready(function() {
         $("#grayed-out-box").addClass("video-open")
     })
 
-    $("#aBaby").click(function() {
-        $("#aBaby-vid").css("display", "block");
+    $("#aLife").click(function() {
+        $("#aLife-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
