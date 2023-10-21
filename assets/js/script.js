@@ -157,8 +157,8 @@ $(document).ready(function() {
         $("#grayed-out-box").addClass("video-open")
     })
 
-    $("#donq").click(function() {
-        $("#donq-vid").css("display", "block");
+    $("#bikeRide").click(function() {
+        $("#bikeRide-vid").css("display", "block");
         $("#grayed-out-box").css("display", "block")
         $("#grayed-out-box").addClass("video-open")
     })
