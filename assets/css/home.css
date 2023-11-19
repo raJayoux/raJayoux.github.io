@@ -88,11 +88,11 @@
 
 #links {
     position:relative;
-    left: 60%;
+    left: 65%;
     transform: translateX(-50%);
     display:inline-block;
     max-width: 900px;
-    height: 5%;  
+    height: 7%;  
     width: 50%; 
     /* border: 1px solid cyan; */
 }
