@@ -195,8 +195,21 @@ window.addEventListener('load', function() {
     fadeInElement.forEach(element => {
         element.classList.add('fade-in')
     })
+    getBingwallpaper();
+    setInterval(getBingwallpaper, 86400000);
   })
 
+//Get BingWallpaper
+function getBingwallpaper(){
+    // Get request to the API endPoint
+    fetch("https://bing.biturl.top/?resolution=1920&format=json&index=0&mkt=en-US")
+    .then(response => response.json())
+    .then(data => {
+        var BingWallpaper = document.getElementById("home");
+        BingWallpaper.style.backgroundImage = "url(" + data.url + ")";
+    })
+    .catch(error => console.error(error));
+}
 
 
 
