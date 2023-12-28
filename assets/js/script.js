@@ -188,6 +188,15 @@ $(document).ready(function() {
     })
 });
 
+//Fade in
+window.addEventListener('load', function() {
+    // select the element with the fade-in class
+    const fadeInElement = document.querySelectorAll("#home-title-container");
+    fadeInElement.forEach(element => {
+        element.classList.add('fade-in')
+    })
+  })
+
 
 
 

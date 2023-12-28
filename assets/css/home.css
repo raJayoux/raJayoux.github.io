@@ -21,8 +21,16 @@
     position:relative;
     left:50%;
     transform: translateX(-50%);
+
+    animation: fadeIn 1s ease-in-out;
     /* border: 1px solid black; */
 }
+
+@keyframes fadeIn{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
 
 #hello-box {
     width:100%;
