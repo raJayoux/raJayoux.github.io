@@ -8,6 +8,29 @@
     /* border: 1px solid cyan; */
 }
 
+#language-switcher{
+    font-family: Warsaw Gothi; 
+    right: 0;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 10px;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Arrange items vertically */
+}
+
+#language-switcher span{
+    column-span: all;
+    font-size: large;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-bottom: 5px;
+}
+
+#language-switcher span:hover{
+    color: #F6D96C;
+}
+
 #home-title-container-margin {
     position:relative;
     height:12%;
