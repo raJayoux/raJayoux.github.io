@@ -201,7 +201,7 @@ window.addEventListener('load', function() {
 //Get BingWallpaper
 function getBingwallpaper(){
     // Get request to the API endPoint
-    fetch("https://bing.biturl.top/?resolution=1920&format=json&index=0&mkt=en-US")
+    fetch("https://bing.biturl.top/?resolution=1920&format=json&index=0")
     .then(response => response.json())
     .then(data => {
         var BingWallpaper = document.getElementById("home");
