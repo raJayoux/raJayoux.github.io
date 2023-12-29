@@ -195,8 +195,7 @@ window.addEventListener('load', function() {
     fadeInElement.forEach(element => {
         element.classList.add('fade-in')
     })
-    getBingwallpaper();
-    setInterval(getBingwallpaper, 86400000);
+    // getBingwallpaper();
   })
 
 //Get BingWallpaper
