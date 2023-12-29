@@ -195,7 +195,7 @@ window.addEventListener('load', function() {
     fadeInElement.forEach(element => {
         element.classList.add('fade-in')
     })
-    // getBingwallpaper();
+    getBingwallpaper();
   })
 
 //Get BingWallpaper
