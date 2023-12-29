@@ -1,0 +1,27 @@
+name: Fetch-and-Commit-Bing-Wallpaper
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Python script
+        run: python severGetwallpaper.py
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Fetched new Bing wallpaper"
+          add: "assets/img/background-no-text.png"
+          branch: main  # Replace with your desired branch
+          github-token: ${{ secrets.GITHUB_TOKEN }}
