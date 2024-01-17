@@ -36,7 +36,7 @@ $(document).ready(function() {
             $(this).removeClass('active');
         })
         $(this).addClass('active');
-      
+    
         var target = this.hash,
             menu = target;
         $target = $(target);
@@ -196,7 +196,7 @@ window.addEventListener('load', function() {
         element.classList.add('fade-in')
     })
     getBingwallpaper();
-  })
+})
 
 //Get BingWallpaper
 function getBingwallpaper(){
@@ -260,7 +260,8 @@ document.addEventListener("DOMContentLoaded", () => {
         mes: "message",
         submit: "submit!",
         thanks: " Sent! Thanks for your message! ",
-        certifi: " © 2023 raJayoux. All Rights Reserved. "
+        certifi: " © 2023 raJayoux. All Rights Reserved. ",
+        scroll: " scroll to learn more "
     },
     zh: {
         // Chinese translations here
@@ -305,7 +306,8 @@ document.addEventListener("DOMContentLoaded", () => {
         mes: "写下您想对我说的话",
         submit: "提交!",
         thanks: " 发送成功！谢谢您的消息！ ",
-        certifi: " © 2023 揭鹏宇. 版权所有. "
+        certifi: " © 2023 揭鹏宇. 版权所有. ",
+        scroll: " 滑动以了解更多 "
     },
     fr: {
         // French translations here
@@ -347,7 +349,8 @@ document.addEventListener("DOMContentLoaded", () => {
         contactmesfix: "ou laissez-moi un message ci-dessous, et je vous répondrai dès que possible !",
         submit: "soumission!",
         thanks: " Envoyé ! Merci pour votre message ! ",
-        certifi: " © 2023 raJayoux. Tous droits réservés. "
+        certifi: " © 2023 raJayoux. Tous droits réservés. ",
+        scroll: " faites défiler pour en savoir plus "
     },
     };
 
