@@ -49,10 +49,10 @@
         <div id = "nav-item-container">
             <div id = "nav-home"> <a class = "active" href = "#home"> ra<b>Jay</b>oux </a> </div>
             <div id = "nav-items">
-                <div id = "nav-about" class = "nav-item"> <a href = "#about"> about </a></div>
-                <div id = "nav-work" class = "nav-item"> <a href = "#work"> work </a> </div>
-                <div id = "nav-lounge" class = "nav-item"> <a href = "#lounge"> lounge </a> </div>
-                <div id = "nav-contact" class = "nav-item"> <a href = "#contact"> contact </a> </div>
+                <div id = "nav-about" class = "nav-item"> <a href = "#about" data-translatable="about"> about </a></div>
+                <div id = "nav-work" class = "nav-item"> <a href = "#work" data-translatable="work"> work </a> </div>
+                <div id = "nav-lounge" class = "nav-item"> <a href = "#lounge" data-translatable="lounge"> lounge </a> </div>
+                <div id = "nav-contact" class = "nav-item"> <a href = "#contact" data-translatable="contact"> contact </a> </div>
                 <!-- <div id = "nav-cs61a" class = "nav-item">  <a href = "cs61a.html"> cs61a </a>  </div> -->
             </div>
             <div id = "nav-underline"> </div>
@@ -68,6 +68,7 @@
         </div>
 
         <div id = "language-switcher">
+            <span id="en">En</span>
             <span id="zh">中文</span>
             <span id="fr">Fr</span>
         </div>
@@ -77,25 +78,25 @@
             <div id = "hello-box">
                 <!-- <img id = "hello-fade" src = "assets/img/fade.png"> -->
                 <div id = "hello-textbox">
-                     <div id = "hello"> hello, i am </div> 
+                    <div id = "hello" data-translatable = "hello"> hello, i am </div> 
                 </div>
             </div>
             <div id = "rajayoux-box">
                 <img id = "rajayoux" src = "assets/img/Jay_dropshadow.png">
             </div>
             <div id = "tagline-box">
-                <div id = "tagline"> Virtual Reality // Innovator // Metal Rock </div>
+                <div id = "tagline" data-translatable="tagline"> Virtual Reality // Innovator // Metal Rock </div>
             </div> 
         </div>
         <!-- <div id = "links">
             <a href = "https://www.facebook.com/JayVaptain" target = "_blank"><img class = "link" src = "assets/img/links/facebook.png"></a>
             <a href = "https://www.instagram.com/jayworkmanmangecrapaud/" target = "_blank"> <img class = "link" src = "assets/img/links/insta.png"> </a>
-             <a href = "https://www.linkedin.com/in/%E9%B9%8F%E5%AE%87-%E6%8F%AD-bb2b89212/" target = "_blank"> <img class = "link" src = "assets/img/links/linkedin.png"> </a> 
-             <a href = "mailto:mamba579jpy@outlook.com"><img class = "link" src = "assets/img/links/email.png"></a> 
-             <a href = "assets/docs/rajayoux_Resume.pdf" target = "_blank"><img class = "link" src = "assets/img/links/resume.png"></a>   
+            <a href = "https://www.linkedin.com/in/%E9%B9%8F%E5%AE%87-%E6%8F%AD-bb2b89212/" target = "_blank"> <img class = "link" src = "assets/img/links/linkedin.png"> </a> 
+            <a href = "mailto:mamba579jpy@outlook.com"><img class = "link" src = "assets/img/links/email.png"></a> 
+            <a href = "assets/docs/rajayoux_Resume.pdf" target = "_blank"><img class = "link" src = "assets/img/links/resume.png"></a>   
         </div> -->
-         <div id = "scroll-margin"> </div> 
-         <div id = "scroll-to-learn"> scroll to learn more </div> 
+        <div id = "scroll-margin"> </div> 
+        <div id = "scroll-to-learn"> scroll to learn more </div> 
         <a href = "#about"> <img id = "scroll-arrow" src = "assets/img/down-arrow2.png"> </a>
     </section>
 
@@ -104,11 +105,11 @@
             <div id = "nav-item-container-about">
                 <div id = "nav-home-about"> <a href = "#home"> ra<b>Jay</b>oux </a> </div>
                 <div id = "nav-items-about">
-                    <a href = "#about"> about </a>
-                    <a href = "#work"> work </a>
+                    <a href = "#about" data-translatable="about"> about </a>
+                    <a href = "#work" data-translatable="work"> work </a>
                     <!-- <a href = "#projects"> projects </a> -->
-                    <a href = "#lounge"> lounge </a> 
-                    <a href = "#contact"> contact </a> 
+                    <a href = "#lounge" data-translatable="lounge"> lounge </a> 
+                    <a href = "#contact" data-translatable="contact"> contact </a> 
                     <!-- <a href = "cs61a.html"> cs61a </a> -->
                 </div>
                 <div id = "nav-underline-about"> </div>
@@ -130,18 +131,15 @@
                 </div>
                 <div id = "bio-box">
                     <div id = "bio-text">
-                        Hello! My name is raJayoux(Jie Pengyu)
-                        and I am a fourth year undergraduate student 
-                        studying Computer Science(Software Engineering)
-                        at the Hainan Vocational University of Science and Technology. 
-                        <br> <br>
-                        I am an aspiring engineer and designer, who is passionate about creating innovative and impactful products and solutions that combine VR/AR and artificial intelligence. I have completed several projects and won several awards in these fields as well. I have also published my works on Github and participated in online communities such as Reddit, where I created an auto reply bot used my customized AI, and received positive feedbacks from the users.
-                        <br> <br>
-In my free time, I enjoy exploring new places, riding bikes, workout, and metal rock music. I like to try new things and challenge myself, like learning new sports or skills. I also like to share my hobbies and interests with others through social media and online platforms.
-                        <br> <br>
-                        Keep scrolling to learn more about my work experience and involvement in activities
-                        and take a look at my life moments. 
-                        Interested in working with me? Contact me <a href = "#contact" class = "line-link"> here</a>!
+                        <div data-translatable="biotextPr1">Hello! My name is raJayoux(Jie Pengyu) and I am a fourth year undergraduate student studying Computer Science(Software Engineering) at the Hainan Vocational University of Science and Technology.</div> 
+                        <br>
+                        <div data-translatable="biotextPr2">I am an aspiring engineer and designer, who is passionate about creating innovative and impactful products and solutions that combine VR/AR and artificial intelligence. I have completed several projects and won several awards in these fields as well. I have also published my works on Github and participated in online communities such as Reddit, where I created an auto reply bot used my customized AI, and received positive feedbacks from the users.</div>
+                        <br>
+                        <div data-translatable="biotextPr3">In my free time, I enjoy exploring new places, riding bikes, workout, and metal rock music. I like to try new things and challenge myself, like learning new sports or skills. I also like to share my hobbies and interests with others through social media and online platforms.</div>
+                        <br>
+                        <div data-translatable="biotextPr4">Keep scrolling to learn more about my work experience and involvement in activities and take a look at my life moments. Interested in working/making friends with me? </div>
+                        <br>
+                        <a href = "#contact" class = "line-link" data-translatable="bioContact">Contact me here</a>!
                     </div>
                 </div>   
                 <div style="height:30px"></div>
