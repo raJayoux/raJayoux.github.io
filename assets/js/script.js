@@ -399,6 +399,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Optional: Store the selected language in local storage for persistence
     localStorage.setItem("currentLanguage", language);
     }
-
+    changeLanguage(currentLanguage);
 });
 
