@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     en: {
         // English translations here
         hello: "hello, i am",
-        tagline: "Virtual Reality // Innovator // Metal Rock",
+        tagline: "Young // Dumb // Metal Rock",
         about: "about",
         work: "work",
         lounge: "integration",
@@ -312,15 +312,15 @@ document.addEventListener("DOMContentLoaded", () => {
     fr: {
         // French translations here
         hello: "bonjour, je suis",
-        tagline: "Créateur de réalité virtuelle // petit inventeur // fan de rock métal",
+        tagline: "Jeune // Con // Rock Métal",
         about: "à propos",
         work: "expérience",
         lounge: "silhouette de vie",
         contact: "Contactez-moi",
-        biotextPr1: "Bonjour ! Je m'appelle raJayoux(Jie Pengyu) et je suis un étudiant de quatrième année en informatique(ingénierie logicielle) à l'Université des sciences et technologies professionnelles du Hainan Chine.",
-        biotextPr2: "Je suis un ingénieur et un designer émérite, qui est passionné par la conception de produits et de solutions révolutionnaires et percutantes qui fusionnent la réalité virtuelle/augmentée et l'intelligence artificielle. J'ai accompli plusieurs projets et décroché plusieurs distinctions dans ces domaines également. J'ai également diffusé mes œuvres sur Github et intégré des communautés en ligne comme Reddit, où j'ai élaboré un bot de réplique automatique exploitant mon IA sur mesure, et recueilli des éloges des utilisateurs.",
-        biotextPr3: "Durant mes moments libres, j'aime visiter des endroits inédits, pratiquer le cyclisme, le culturisme et écouter de la musique hard rock. J'aime expérimenter de nouvelles choses et me mettre au défi, comme acquérir de nouveaux sports ou compétences. J'aime aussi échanger sur mes hobbies et mes affinités avec les autres sur les réseaux sociaux et les plateformes en ligne.",
-        biotextPr4: "Découvrez mon parcours et mon engagement dans des activités et profitez d'un aperçu de mes moments de vie. Intéressé(e) à collaborer/sympathiser avec moi ?",
+        biotextPr1: "Salut ! Je m'appelle Jay (JIE PENGYU) et je suis étudiant en Master d'Ingénierie Logicielle à Rouen.",
+        biotextPr2: "J'adore concevoir et développer des scripts et des astuces informatiques, comme intégrer CHATGPT et d'autres petites choses amusantes dans une plateforme. J'ai aussi un peu d'expérience dans le développement de jeux VR/AR, ce qui m'a valu quelques récompenses (rien d'extraordinaire)... Bon, parfois je suis un peu paresseux et j'ai besoin d'un petit coup de pouce pour me motiver. Ah, et j'ai aussi travaillé quelques mois chez MangoTV en Chine. Si mes projets (passionnants ou barbants, à vous de voir !) vous intéressent, n'hésitez pas à me contacter ! Je réponds toujours à la vitesse de l'éclair, ça c'est un domaine où je ne suis pas du tout paresseux.",
+        biotextPr3: "Pendant mon temps libre, j'aime explorer de nouveaux endroits, m'évader dans des jeux bac à sable où je peux collectionner un maximum d'objets (le collectionneur fou que je suis !). Du coup, je fais pas mal de vélo en ville et un peu de musculation (enfin, avant, parce que j'ai besoin d'un partenaire pour me motiver, la solitude me rend paresseux...). Ah, et j'adore le métal, surtout Megadeth et leur titre 'Paranoid'.  Parfois, j'aime bien faire le fou et sortir des sentiers battus, même si je sais que ça peut être maladroit... J'adore aussi tester de nouveaux sports et apprendre de nouvelles choses. Et surtout, j'ai vraiment envie de rencontrer de nouvelles personnes !",
+        biotextPr4: "Continuez à scroller pour en savoir plus sur moi !  Et jetez un œil aux moments (pas si) ennuyeux de ma vie. On devient amis ?",
         bioContact: "Contactez-moi ici",
         resume: "Voir le CV (anglais)",
         wechatbot : "Interlocuteur automatisé sur WeChat",
@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Use let for variables that need to change: Use let for variables whose values might need to be updated during the program's execution.
     // Use const for variables that remain fixed: Use const for variables that you intend to keep constant throughout the program to prevent accidental reassignments.
-    let currentLanguage = "en"; // Set initial language
+    let currentLanguage = "fr"; // Set initial language
 
     languageOptions.forEach((option) => {
     option.addEventListener("click", () => {
