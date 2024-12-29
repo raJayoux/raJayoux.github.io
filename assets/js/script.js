@@ -212,6 +212,9 @@ function getBingwallpaper(){
 
 document.addEventListener("DOMContentLoaded", () => {
     //language Switcher
+    // Use let for variables that need to change: Use let for variables whose values might need to be updated during the program's execution.
+    // Use const for variables that remain fixed: Use const for variables that you intend to keep constant throughout the program to prevent accidental reassignments.
+    let currentLanguage = "en"; // Set initial language
     const languageSwitcher = document.getElementById("language-switcher");
     const languageOptions = languageSwitcher.querySelectorAll("span");
     const translatableElements = document.querySelectorAll("[data-translatable]");
@@ -261,7 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
         submit: "submit!",
         thanks: " Sent! Thanks for your message! ",
         certifi: " © 2023 raJayoux. All Rights Reserved. ",
-        scroll: " scroll to learn more "
+        scroll: " scroll to learn more ",
+        bikes: "bikes"
     },
     zh: {
         // Chinese translations here
@@ -307,7 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
         submit: "提交!",
         thanks: " 发送成功！谢谢您的消息！ ",
         certifi: " © 2023 揭鹏宇. 版权所有. ",
-        scroll: " 滑动以了解更多 "
+        scroll: " 滑动以了解更多 ",
+        bikes: "自行车"
     },
     fr: {
         // French translations here
@@ -353,15 +358,10 @@ document.addEventListener("DOMContentLoaded", () => {
         submit: "soumission!",
         thanks: " Envoyé ! Merci pour votre message ! ",
         certifi: " © 2023 raJayoux. Tous droits réservés. ",
-        scroll: " faites défiler pour en savoir plus "
+        scroll: " faites défiler pour en savoir plus ",
+        bikes: "vélos"
     },
     };
-
-
-
-    // Use let for variables that need to change: Use let for variables whose values might need to be updated during the program's execution.
-    // Use const for variables that remain fixed: Use const for variables that you intend to keep constant throughout the program to prevent accidental reassignments.
-    let currentLanguage = "fr"; // Set initial language
 
     languageOptions.forEach((option) => {
     option.addEventListener("click", () => {
