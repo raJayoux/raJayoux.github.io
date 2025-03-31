@@ -1,0 +1,135 @@
+/* --- General Styles --- */
+
+#bikes-carousel-container {
+    overflow: hidden;
+    /* Hide overflowing slides */
+    width: 100%;
+    /* Occupy container's width */
+    margin-top: 20px;
+    /* Add spacing */
+    position: relative;
+    /* Required for absolute positioning */
+    display: flex;
+    justify-content: center;
+}
+
+#bikes-carousel-wrapper {
+    display: flex;
+    /* To put the bike slides horizontally */
+    transition: transform 0.5s ease;
+    /* Add smooth transition for sliding */
+}
+
+.bike-slide {
+    width: 100%;
+    /* Each slide occupies container's width */
+    flex-shrink: 0;
+    /* Prevents slides from shrinking */
+    display: flex;
+    /* To horizontally position photo and content*/
+    padding: 20px;
+    /* Add space around the content */
+    box-sizing: border-box;
+}
+
+.bike-photo-carousel-container {
+    flex: 0 0 40%;
+    /* Photo carousel takes up 40% of slide width */
+    margin-right: 20px;
+    /* Add spacing */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.bike-photo-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.bike-photo {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.bike-photo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bike-content {
+    flex: 0 0 60%;
+    /* Bike content takes up remaining space */
+}
+
+.bike-stories {
+    margin-top: 10px;
+}
+
+
+/* --- Nav Buttons for the Bike Carousel --- */
+#bikes-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    /* Add padding to have some space from border */
+    box-sizing: border-box;
+}
+
+#bikes-nav button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #808080;
+    cursor: pointer;
+    padding: 10px;
+    /* Add some padding for bigger hitbox */
+    opacity: 0.8;
+    /* slightly opaque */
+}
+
+#bikes-nav button:hover {
+    color: #555;
+    opacity: 1;
+}
+
+/* --- Nav Buttons for the Photos --- */
+.bike-photo-nav button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #808080;
+    cursor: pointer;
+    padding: 10px;
+    /* Add some padding for bigger hitbox */
+    opacity: 0.8;
+    /* slightly opaque */
+}
+
+.bike-photo-nav button:hover {
+    color: #555;
+    opacity: 1;
+}
+
+/* --- Responsive adjustment (example) --- */
+@media (max-width: 768px) {
+    .bike-slide {
+        flex-direction: column;
+        /* Stack content in smaller screens */
+    }
+
+    .bike-photo-carousel-container {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+
+    .bike-content {
+        flex: 0 0 100%;
+    }
+}

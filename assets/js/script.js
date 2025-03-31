@@ -402,3 +402,53 @@ document.addEventListener("DOMContentLoaded", () => {
     changeLanguage(currentLanguage);
 });
 
+$(document).ready(function () {
+    // -- Bike Carousel Logic -- //
+    const bikesCarouselWrapper = $('#bikes-carousel-wrapper');
+    const bikeSlides = $('.bike-slide');
+    const bikesNavPrevBtn = $('#bikes-prev-btn');
+    const bikesNavNextBtn = $('#bikes-next-btn');
+
+    let currentBikeIndex = 0;
+    const bikeCount = bikeSlides.length;
+
+    function updateBikeCarousel() {
+        const translateValue = -currentBikeIndex * 100 + '%'; // Calculate percentage from position
+        bikesCarouselWrapper.css('transform', 'translateX(' + translateValue + ')');
+    }
+
+    bikesNavPrevBtn.on('click', function () {
+        currentBikeIndex = (currentBikeIndex - 1 + bikeCount) % bikeCount; // Calculate for looping
+        updateBikeCarousel();
+    });
+
+    bikesNavNextBtn.on('click', function () {
+        currentBikeIndex = (currentBikeIndex + 1) % bikeCount; // Calculate for looping
+        updateBikeCarousel();
+    });
+
+    // -- Image Carousel Logic -- //
+        $('.bike-slide').each(function() {
+        const currentSlide = $(this);
+        const photoCarousel = currentSlide.find('.bike-photo-carousel');
+        const photoPrevBtn = currentSlide.find('.photo-prev-btn');
+        const photoNextBtn = currentSlide.find('.photo-next-btn');
+        const photoCount = currentSlide.find('.bike-photo').length;
+        let currentPhotoIndex = 0;
+
+         function updatePhotoCarousel() {
+           const translateValue = -currentPhotoIndex * 100 + '%';
+          photoCarousel.css('transform', 'translateX(' + translateValue + ')');
+        }
+
+        photoPrevBtn.on('click', function () {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photoCount) % photoCount;
+            updatePhotoCarousel();
+        });
+
+        photoNextBtn.on('click', function () {
+          currentPhotoIndex = (currentPhotoIndex + 1) % photoCount;
+            updatePhotoCarousel();
+      });
+    });
+});
