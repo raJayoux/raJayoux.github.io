@@ -188,27 +188,27 @@ $(document).ready(function() {
     })
 });
 
-//Fade in
-window.addEventListener('load', function() {
-    // select the element with the fade-in class
-    const fadeInElement = document.querySelectorAll("#home-title-container");
-    fadeInElement.forEach(element => {
-        element.classList.add('fade-in')
-    })
-    getBingwallpaper();
-})
+// //Fade in
+// window.addEventListener('load', function() {
+//     // select the element with the fade-in class
+//     const fadeInElement = document.querySelectorAll("#home-title-container");
+//     fadeInElement.forEach(element => {
+//         element.classList.add('fade-in')
+//     })
+//     getBingwallpaper();
+// })
 
-//Get BingWallpaper
-function getBingwallpaper(){
-    // Get request to the API endPoint
-    fetch("https://bing.biturl.top/?resolution=1920&format=json&index=0")
-    .then(response => response.json())
-    .then(data => {
-        var BingWallpaper = document.getElementById("home");
-        BingWallpaper.style.backgroundImage = "url(" + data.url + ")";
-    })
-    .catch(error => console.error(error));
-}
+// //Get BingWallpaper
+// function getBingwallpaper(){
+//     // Get request to the API endPoint
+//     fetch("https://bing.biturl.top/?resolution=1920&format=json&index=0")
+//     .then(response => response.json())
+//     .then(data => {
+//         var BingWallpaper = document.getElementById("home");
+//         BingWallpaper.style.backgroundImage = "url(" + data.url + ")";
+//     })
+//     .catch(error => console.error(error));
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
     //language Switcher
@@ -405,53 +405,170 @@ biotextPr4: "Continue de scroller pour en savoir plus sur moi ! Et jette un œil
     changeLanguage(currentLanguage);
 });
 
-$(document).ready(function () {
-    // -- Bike Carousel Logic -- //
-    const bikesCarouselWrapper = $('#bikes-carousel-wrapper');
-    const bikeSlides = $('.bike-slide');
-    const bikesNavPrevBtn = $('#bikes-prev-btn');
-    const bikesNavNextBtn = $('#bikes-next-btn');
 
-    let currentBikeIndex = 0;
-    const bikeCount = bikeSlides.length;
+document.addEventListener("DOMContentLoaded", () => {
+    const bikeCards = document.querySelectorAll(".bike-card");
+    const galleryModal = document.createElement("div");
+    galleryModal.id = "gallery-modal";
+    galleryModal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="photo-and-details">
+                    <div id="gallery-photo-full">
+                        <img id="full-image" src="" alt="Full Image">
+                    </div>
+                    <div id="photo-details">
+                        <h3 id="photo-title"></h3>
+                        <p id="photo-description"></p>
+                    </div>
+                </div>
+                <div id="gallery-photos-container"></div> <!-- Gallery below -->
+            </div>
+        </div>
+    `;
+    document.body.appendChild(galleryModal);
 
-    function updateBikeCarousel() {
-        const translateValue = -currentBikeIndex * 100 + '%'; // Calculate percentage from position
-        bikesCarouselWrapper.css('transform', 'translateX(' + translateValue + ')');
-    }
+    const closeBtn = galleryModal.querySelector(".close-btn");
+    const galleryPhotosContainer = galleryModal.querySelector("#gallery-photos-container");
+    const photoTitle = galleryModal.querySelector("#photo-title");
+    const photoDescription = galleryModal.querySelector("#photo-description");
 
-    bikesNavPrevBtn.on('click', function () {
-        currentBikeIndex = (currentBikeIndex - 1 + bikeCount) % bikeCount; // Calculate for looping
-        updateBikeCarousel();
-    });
+    // Data for bike galleries
+    const bikeGalleries = {
+        "bike-1": [
+            { src: "assets/img/bikes/Firstbtwin500/20240914_211413.jpg", title: "My Indian friend", description: "My friend he looks very happy on my bike, that moment was memorable.\n That was the first day we went out, he invited me to eat lunch at his home, he cooked the Indian rice with Kishan and shared it with me, then we went out to Explore the city, at that moment I was very very new, and it was the first time I went to the Big Cathedrale, I even asked him, do you want a girlfriend here, he replied sure, I invited him to find passengers on the street to hook up and have conversation, he was more brave than me, even we have the same bad level in French, he just asked everyone on the street for the directions, I was impressive by him that day." },
+            { src: "assets/img/bikes/Firstbtwin500/20240915_161245.jpg", title: "City discovery", description: "The day I took this photo was Sept 15, first time I visited Panorama Cote Sainte Catherine, I fell in love the panorama since that day, impressive, me as a new comer in this city, it's the first time I feel the city so beautiful, then I descend from the top and put my bike in front of the church under the mountain, everything goes smoothly and the moment sunshine was really warm." },
+            { src: "assets/img/bikes/Firstbtwin500/20240916_185038.jpg", title: "Ride back home", description: "The first day I rode bike to school and I just joined La Semain d'integration, along the road from school to Home, that was sweet, at the time I was even using google map for navigation and especially I was passtionate for the future. (Also the first night in the school pool party, I rode my bike going there also haha, that was too much to arrive there because it was on Mont Saint aingn, so I put the bike on the half way and I run to the swimming pool, although on the mountain I took another bus, it was a wrong direction! Finally I arrived the party, the party also was impressive, I met Jessica she is the first person I talked in the party, then Dylan helped me and found my bike, So lucky.)" }
+        ],
+        "bike-2": [
+            { src: "assets/img/bikes/VTTbtwin500/20240921_184647.jpg", title: "Bike 2 - Photo 1", description: "This is the first photo of Bike 2." },
+            { src: "assets/img/bikes/VTTbtwin500/20240926_185133.jpg", title: "Bike 2 - Photo 2", description: "This is the second photo of Bike 2." },
+            { src: "assets/img/bikes/VTTbtwin500/20240928_172709.jpg", title: "Bike 2 - Photo 2", description: "This is the second photo of Bike 2." },
+            { src: "assets/img/bikes/VTTbtwin500/20240928_185501.jpg", title: "Bike 2 - Photo 2", description: "This is the second photo of Bike 2." },
+            { src: "assets/img/bikes/VTTbtwin500/IMG-20240929-WA0010.jpeg", title: "Bike 2 - Photo 2", description: "This is the second photo of Bike 2." },
+            { src: "assets/img/bikes/VTTbtwin500/20241002_202553.jpg", title: "Bike 2 - Photo 2", description: "This is the second photo of Bike 2." }
+        ],
+        "bike-3": [
+            { src: "assets/img/bikes/VTTScott/20241004_183108.jpg", title: "Bike 3 - Photo 1", description: "This is the first photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/20241008_183934.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/20241109_104946.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/20241110_145920.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/20241110_152955.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/20241117_151700.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/20241121_140433.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+        ],
+        "bike-4": [
+            { src: "assets/img/bikes/VeloDeRoute/bike1.jpg", title: "Bike 3 - Photo 1", description: "This is the first photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/bike0.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20241210_154702.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20241215_152022.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20241215_152443.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20241215_153100.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250115_145419.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250115_161435.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250301_111242.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250130_180735.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250201_140624.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250201_152904.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250208_151343.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250312_205818.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250313_185742.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250313_192938.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250314_210538.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/20250315_141926.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." }
+            
+        ],
+        "bike-5": [
+            { src: "assets/img/bikes/VTTRockRider/Screenshot_20241210_191140_Leboncoin.jpg", title: "Bike 3 - Photo 1", description: "This is the first photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20241213_201656.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20241222_110230.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250103_133207.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250103_154246.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250103_163135.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250103_173753.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250105_195955.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250110_200929.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250110_201145.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/20250119_194435.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+        ],
+        "bike-6": [
+            { src: "assets/img/bikes/VTTNakamura/20250111_193558.jpg", title: "Bike 3 - Photo 1", description: "This is the first photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/20250123_220228.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/20250223_154419.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/20250223_154510.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/20250223_154534.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/IMG-20250116-WA0040.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/20250115_131021.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+        ],
+    };
 
-    bikesNavNextBtn.on('click', function () {
-        currentBikeIndex = (currentBikeIndex + 1) % bikeCount; // Calculate for looping
-        updateBikeCarousel();
-    });
+    // Open gallery modal when a bike preview is clicked
+    bikeCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            const bikeId = card.id;
+            const gallery = bikeGalleries[bikeId];
 
-    // -- Image Carousel Logic -- //
-        $('.bike-slide').each(function() {
-        const currentSlide = $(this);
-        const photoCarousel = currentSlide.find('.bike-photo-carousel');
-        const photoPrevBtn = currentSlide.find('.photo-prev-btn');
-        const photoNextBtn = currentSlide.find('.photo-next-btn');
-        const photoCount = currentSlide.find('.bike-photo').length;
-        let currentPhotoIndex = 0;
+            if (gallery) {
+                // Populate the gallery with photos
+                galleryPhotosContainer.innerHTML = ""; // Ensure this container is used
+                gallery.forEach((photo, index) => {
+                    const img = document.createElement("img");
+                    img.src = photo.src;
+                    img.alt = photo.title;
+                    img.classList.add("gallery-photo");
+                    img.dataset.index = index;
+                    img.dataset.bikeId = bikeId; // Store bike ID for later use
+                    galleryPhotosContainer.appendChild(img);
+                });
 
-         function updatePhotoCarousel() {
-           const translateValue = -currentPhotoIndex * 100 + '%';
-          photoCarousel.css('transform', 'translateX(' + translateValue + ')');
-        }
+                // Show the first photo's details
+                showPhotoDetails(gallery[0]);
 
-        photoPrevBtn.on('click', function () {
-            currentPhotoIndex = (currentPhotoIndex - 1 + photoCount) % photoCount;
-            updatePhotoCarousel();
+                // Show the modal
+                galleryModal.style.display = "flex";
+
+                 // Disable scrolling on the main page
+                document.body.style.overflow = "hidden";
+            }
         });
-
-        photoNextBtn.on('click', function () {
-          currentPhotoIndex = (currentPhotoIndex + 1) % photoCount;
-            updatePhotoCarousel();
-      });
     });
+
+    // Close the modal when clicking outside the modal content
+    galleryModal.addEventListener("click", (event) => {
+        if (event.target === galleryModal) {
+            galleryModal.style.display = "none";
+
+            // Re-enable scrolling on the main page
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    
+    // Close the modal
+    closeBtn.addEventListener("click", () => {
+        galleryModal.style.display = "none";
+
+        // Re-enable scrolling on the main page
+        document.body.style.overflow = "auto";
+    });
+
+    // Show photo details when a photo is clicked
+    galleryPhotosContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("gallery-photo")) {
+            const index = event.target.dataset.index;
+            const bikeId = event.target.dataset.bikeId;
+            const gallery = bikeGalleries[bikeId];
+            showPhotoDetails(gallery[index]);
+        }
+    });
+
+    // Function to show photo details
+    function showPhotoDetails(photo) {
+        const fullImage = document.getElementById("full-image");
+        fullImage.src = photo.src;
+        fullImage.alt = photo.title;
+        photoTitle.textContent = photo.title;
+        photoDescription.textContent = photo.description;
+    }
 });
