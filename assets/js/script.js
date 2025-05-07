@@ -451,6 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
         "bike-3": [
             { src: "assets/img/bikes/VTTScott/20241004_183108.jpg", title: "Bike 3 - Photo 1", description: "This is the first photo of Bike 3." },
+            { src: "assets/img/bikes/VTTScott/6_oct_2024.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTScott/20241008_183934.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTScott/20241109_104946.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTScott/20241110_145920.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
@@ -465,6 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { src: "assets/img/bikes/VeloDeRoute/20241215_152022.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VeloDeRoute/20241215_152443.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VeloDeRoute/20241215_153100.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VeloDeRoute/15_Dec_2024_1646.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VeloDeRoute/20250115_145419.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VeloDeRoute/20250115_161435.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VeloDeRoute/20250301_111242.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
@@ -491,15 +493,17 @@ document.addEventListener("DOMContentLoaded", () => {
             { src: "assets/img/bikes/VTTRockRider/20250110_200929.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTRockRider/20250110_201145.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTRockRider/20250119_194435.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTRockRider/10_mars_2025.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
         ],
         "bike-6": [
             { src: "assets/img/bikes/VTTNakamura/20250111_193558.jpg", title: "Bike 3 - Photo 1", description: "This is the first photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/20250115_131021.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/IMG-20250116-WA0040.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTNakamura/20250123_220228.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTNakamura/20250223_154419.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTNakamura/20250223_154510.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
             { src: "assets/img/bikes/VTTNakamura/20250223_154534.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
-            { src: "assets/img/bikes/VTTNakamura/IMG-20250116-WA0040.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
-            { src: "assets/img/bikes/VTTNakamura/20250115_131021.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
+            { src: "assets/img/bikes/VTTNakamura/8_Mars_1714.jpg", title: "Bike 3 - Photo 2", description: "This is the second photo of Bike 3." },
         ],
     };
 
