@@ -522,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     img.classList.add("gallery-photo");
                     img.dataset.index = index;
                     img.dataset.bikeId = bikeId; // Store bike ID for later use
-                    // img.loading = "lazy"; // Enable lazy loading
+                    img.loading = "lazy"; // Enable lazy loading
                     galleryPhotosContainer.appendChild(img);
                 });
 
