@@ -13,7 +13,7 @@ def getbingwallpaper():
     filename = wallpaper_url.split("/")[-1]
     # Download the image and save it to a folder
     image = requests.get(wallpaper_url)
-    with open("assets\img\bikes\YAMAHA_MT03-Cover", "wb") as f:
+    with open("assets/img/bikes/YAMAHA_grp.jpg", "wb") as f:
         f.write(image.content)
     print("Wallpaper downloaded: " + filename)
 
