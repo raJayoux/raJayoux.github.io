@@ -572,7 +572,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const fullImage = document.getElementById("full-image");
         fullImage.src = photo.src; // Load the full-size image
         fullImage.alt = photo.title;
-        photoTitle.textContent = photo.title;
-        photoDescription.textContent = photo.description;
+
+        const photoTitle = document.getElementById("photo-title");
+        const photoDescription = document.getElementById("photo-description");
+
+        photoTitle.textContent = photo.title; // Set the title
+        photoDescription.textContent = photo.description; // Set the description
     }
 });

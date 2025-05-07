@@ -113,40 +113,48 @@
 
 .photo-and-details {
     display: flex;
-    flex-direction: row; /* Row layout for image and details */
+    flex-direction: column; /* Stack photo and details vertically */
     gap: 20px;
-    align-items: top;
+    align-items: center;
     justify-content: center;
     width: 100%;
 }
 
 #gallery-photo-full {
-    flex: 1;
     display: flex;
-    justify-content: left;
+    justify-content: center; /* Center the photo horizontally */
     align-items: center;
+    width: 100%; /* Full width */
 }
 
 #gallery-photo-full img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 60vh; /* Adjust height to leave space for details */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #photo-details {
-    flex: 1;
-    text-align: left;
+    text-align: center; /* Align text to the left */
+    width: 100%; /* Full width */
+    max-width: 60vh; /* Match the max height of the image */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow-wrap: break-word; /* Ensure long words break to fit within the container */
+    margin: 0 auto; /* Center the text container */
 }
 
 #photo-title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Adjust font size */
     margin-bottom: 10px;
+    text-align: center; /* Center-align the title */
 }
 
 #photo-description {
     font-size: 1.2rem;
     color: #666;
+    line-height: 1.5; /* Improve readability */
+    text-align: justify; /* Justify the description text */
 }
 
 /* Close Button */
