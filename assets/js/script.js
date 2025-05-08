@@ -610,16 +610,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Function to show photo details
+    // Function to show photo details with preloading
     function showPhotoDetails(photo) {
         const fullImage = document.getElementById("full-image");
-        fullImage.src = photo.src; // Load the full-size image
-        fullImage.alt = photo.title;
-
         const photoTitle = document.getElementById("photo-title");
         const photoDescription = document.getElementById("photo-description");
 
-        photoTitle.textContent = photo.title; // Set the title
-        photoDescription.textContent = photo.description; // Set the description
+        // Add a loading animation
+        fullImage.style.opacity = "0"; // Hide the current image
+        fullImage.src = ""; // Clear the current image source
+        const loadingSpinner = document.createElement("div");
+        loadingSpinner.classList.add("loading-spinner");
+        fullImage.parentElement.appendChild(loadingSpinner); // Add spinner to the image container
+
+        // Preload the new image
+        const tempImage = new Image();
+        tempImage.src = `${photo.src}?cache-control=max-age=31536000`; // Add cache-control query parameter
+        tempImage.onload = () => {
+            // Once the image is loaded, update the full image
+            fullImage.src = tempImage.src;
+            fullImage.alt = photo.title;
+
+            // Remove the loading spinner
+            loadingSpinner.remove();
+
+            // Fade in the new image
+            fullImage.style.opacity = "1";
+        };
+
+        // Update the text details immediately
+        photoTitle.textContent = photo.title;
+        photoDescription.textContent = photo.description;
     }
 });
