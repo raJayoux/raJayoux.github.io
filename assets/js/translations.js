@@ -1,4 +1,4 @@
-    const translations = {
+const translations = {
     en: {
         // English translations here
         hello: "hello, i am",
@@ -60,7 +60,10 @@
         thanks: " Sent! Thanks for your message! ",
         certifi: " © 2023 raJayoux. All Rights Reserved. ",
         scroll: " scroll to learn more ",
-        bikes: "bikes"
+        bikes: "bikes",
+        EchoChamber: "EchoChamber",
+        EchoChamberpos: "Project Manager, Game Designer, Cooperator between different timezones work",
+        EchoChamberdate: "April 2025 - May 2025",
     },
     zh: {
         // Chinese translations here
@@ -122,7 +125,10 @@
         thanks: "发送成功！感谢您的留言！",
         certifi: "© 2023 raJayoux. 版权所有。",
         scroll: "向下滚动了解更多",
-        bikes: "自行车"
+        bikes: "自行车",
+        EchoChamber: "回音室",
+        EchoChamberpos: "项目经理，游戏设计师，跨时区合作",
+        EchoChamberdate: "2025年4月 - 2025年5月",
     },
     fr: {
         // French translations here
@@ -184,6 +190,9 @@
         thanks: "Envoyé ! Merci pour votre message !",
         certifi: "© 2023 raJayoux. Tous droits réservés.",
         scroll: "Faites défiler pour en savoir plus",
-        bikes: "vélos"
+        bikes: "vélos",
+        EchoChamber: "EchoChamber",
+        EchoChamberpos: "Chef de projet, Game Designer, coordination entre différents fuseaux horaires",
+        EchoChamberdate: "Avril 2025 - Mai 2025",
     },
     };
