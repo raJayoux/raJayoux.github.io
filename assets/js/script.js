@@ -231,6 +231,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        // update CV download link(s) to language-specific file (fallback to EN)
+        try {
+            const cvMap = {
+                en: "assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf",
+                fr: "assets/docs/JiePengyu_CV_UnityXR_2025-09_FR.pdf",
+                zh: "assets/docs/JiePengyu_CV_UnityXR_2025-09_ZH.pdf"
+            };
+            const cvAnchors = document.querySelectorAll('a[data-translatable="heroDownloadCV"]');
+            cvAnchors.forEach(a => {
+                a.href = cvMap[language] || cvMap.en;
+            });
+        } catch (e) {
+            // non-blocking: if anything goes wrong, leave links as-is
+            console.warn('CV language switcher error', e);
+        }
+
         // Optional: Store the selected language in local storage for persistence
         localStorage.setItem("currentLanguage", language);
     }
