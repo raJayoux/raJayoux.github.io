@@ -64,6 +64,13 @@ const translations = {
         EchoChamber: "EchoChamber",
         EchoChamberpos: "Project Manager, Game Designer, Cooperator between different timezones work",
         EchoChamberdate: "April 2025 - May 2025",
+    // hero internship (internship-2025)
+    heroTitle: "VR/Unity Developer — Available for internship from December 2025",
+    heroSubtitle: "Bringing prototypes to life across Unity + XR (MRTK/OpenXR), with a builder’s mindset and shipping focus.",
+    heroViewWork: "View Work",
+    heroContact: "Contact",
+    heroDownloadCV: "Download CV",
+    heroAvailability: "Available for internship from Dec 2025 — Europe (EN/FR environments)",
     },
     zh: {
         // Chinese translations here
@@ -129,6 +136,13 @@ const translations = {
         EchoChamber: "回音室",
         EchoChamberpos: "项目经理，游戏设计师，跨时区合作",
         EchoChamberdate: "2025年4月 - 2025年5月",
+    // hero internship (internship-2025)
+    heroTitle: "VR/Unity 开发 — 2025年12月起可开始实习",
+    heroSubtitle: "在 Unity + XR (MRTK/OpenXR) 中将原型带入现实，专注于快速交付。",
+    heroViewWork: "查看作品",
+    heroContact: "联系",
+    heroDownloadCV: "下载简历",
+    heroAvailability: "自 2025 年 12 月起可实习 — 欧洲 (EN/FR 环境)",
     },
     fr: {
         // French translations here
@@ -194,5 +208,12 @@ const translations = {
         EchoChamber: "EchoChamber",
         EchoChamberpos: "Chef de projet, Game Designer, coordination entre différents fuseaux horaires",
         EchoChamberdate: "Avril 2025 - Mai 2025",
+    // hero internship (internship-2025)
+    heroTitle: "Développeur VR/Unity — Disponible pour un stage à partir de décembre 2025",
+    heroSubtitle: "Je concrétise des prototypes sous Unity + XR (MRTK/OpenXR), avec un esprit de constructeur et un focus livraison.",
+    heroViewWork: "Voir le travail",
+    heroContact: "Contact",
+    heroDownloadCV: "Télécharger le CV",
+    heroAvailability: "Disponible pour un stage à partir de déc. 2025 — Europe (EN/FR environnements)",
     },
     };
