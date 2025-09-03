@@ -145,6 +145,63 @@ body {
 
 
 
+/* === TOKENS MOVED TO site.css === */
+/* See assets/css/site.css for tokens, stack styles, work-cards, and utilities. */
+
+
+/* === GLOBAL LAYOUT & A11Y START === */
+html,body{background:var(--bg);color:var(--fg);}
+.main-container{max-width:var(--container);margin:0 auto;padding:0 var(--space-4);}
+a{color:inherit;text-decoration-thickness:.06em;text-underline-offset:.2em;}
+a:hover{text-decoration:underline;}
+a,button,[href],[tabindex]:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:8px;
+}
+/* === GLOBAL LAYOUT & A11Y END === */
+
+
+/* === AVAILABILITY BADGE START === */
+.availability{
+    display:inline-block;
+    margin:var(--space-4) 0;
+    padding:.35rem .7rem;
+    border-radius:999px;
+    background:color-mix(in srgb, var(--accent) 14%, transparent);
+    color:var(--fg);
+    font-weight:600;
+    font-size:var(--small-size);
+    border:1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+.availability strong{
+    color:var(--fg);
+}
+/* === AVAILABILITY BADGE END === */
+
+
+/* === STACK STYLES MOVED TO site.css === */
+
+
+/* === WORK CARDS MOVED TO site.css === */
+
+
+/* === UTILS (OPTIONAL) START === */
+.section{margin-block:var(--space-8);}
+.mt-0{margin-top:0!important;}
+.mb-0{margin-bottom:0!important;}
+/* === UTILS (OPTIONAL) END === */
+
+
+
+
+
+
+
+
+
+
+
 
 
 

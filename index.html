@@ -5,6 +5,7 @@
     <title> raJayoux </title>
 
     <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/site.css">
     <link rel = "stylesheet" type = "text/css" href = "assets/css/home.css">
     <link rel = "stylesheet" type = "text/css" href = "assets/css/nav-bar.css">
     <link rel = "stylesheet" type = "text/css" href = "assets/css/about.css">
@@ -179,10 +180,28 @@
                 </div>    -->
             </div>
             <!-- <div class = "swirl-container"><img class = "swirl" src = "assets/img/swirl.png"></div> -->
-        </div>
-    </section>
+                        </div>
+                </section>
 
-    <section id = "work" class = "section-card">
+        <!-- TECH-STACK START -->
+        <section id="stack" aria-labelledby="stack-title">
+            <h2 id="stack-title">Tech Stack</h2>
+            <ul>
+                <li><strong>Engines &amp; XR</strong>: Unity (2020/2022), XR Interaction Toolkit (XRI), MRTK, Meta XR; tested on Quest 2/3; Pico/NOLOVR experience.</li>
+                <li><strong>Languages</strong>: C#, Python, C, SQL, JavaScript, Java</li>
+                <li><strong>Frontend</strong>: HTML/CSS/JS — lightweight pages for project microsites and docs.</li>
+                <li><strong>3D &amp; Pipeline</strong>: Addressables &amp; streaming, light baking, LODs, batching/culling, asset import hygiene</li>
+                <li><strong>Backend (basic)</strong>: lightweight REST endpoints & webhooks for demos/tooling (for forms, bot integrations) — implemented in Python/Node as
+                needed</li>
+                <li><strong>Tools</strong>: Unity Profiler, Git &amp; GitHub, GitHub Actions (used for CI)</li>
+                <li><strong>Devices / Platforms</strong>: Pico (source), NOLOVR (target), Quest 2/3 (tested), Windows/Android (publication)</li>
+                <li><strong>DevOps</strong>: GitHub Pages (static deploy)
+                </li>
+            </ul>
+        </section>
+        <!-- TECH-STACK END -->
+
+        <section id = "work" class = "section-card">
         <div class = "outer-container"> 
             <div class = "slide-border"> </div> 
             <div class = "card-header-container">
@@ -196,8 +215,87 @@
             </div>
             </div>
             
-            <div id = "work-content-container" class="resume">
-                <div class="item" id="slack">
+                        <div id = "work-content-container" class="resume projects-grid">
+                                <!-- WORK-CARDS ADDITIONS START -->
+                                <article class="project-card" id="proj-echochamber">
+                                    <div class="card-meta">
+                                        <div class="logo-box">
+                                            <img class="logo" src="assets/img/work/logo/Echochamber.png" alt="EchoChamber logo">
+                                        </div>
+                                        <div class="datePeriod">April 2025 - May 2025</div>
+                                    </div>
+                                    <h3>EchoChamber</h3>
+                                    <p><strong>Role:</strong> Project Manager, Game Designer</p>
+                                    <p><strong>Tech:</strong> Unity (C#)</p>
+                                    <ul>
+                                        <li>Designed the core loop and built level interactions.</li>
+                                        <li>Managed tasks and delivery rhythm across time zones.</li>
+                                        <li>Assembled demo and capture pipeline for showcase.</li>
+                                    </ul>
+                                    <p><strong>Outcome:</strong> Playable demo and video walkthrough.</p>
+                                    <p><a href="https://youtu.be/QUuI5qNWHpA" target="_blank" rel="noopener">Watch demo</a></p>
+                                </article>
+
+                                <article class="project-card" id="proj-mrpuzzle">
+                                    <div class="card-meta">
+                                        <div class="logo-box">
+                                            <img class="logo" src="assets/img/work/logo/MRPuzzle.png" alt="MRPuzzle logo">
+                                        </div>
+                                        <div class="datePeriod">Jan 2024 - May 2024</div>
+                                    </div>
+                                    <h3>MRPuzzle</h3>
+                                    <p><strong>Role:</strong> Project Manager, Game Designer</p>
+                                    <p><strong>Tech:</strong> Unity (C#), MRTK, OpenXR</p>
+                                    <ul>
+                                        <li>Scoped and prioritized features for a mixed reality puzzle prototype.</li>
+                                        <li>Implemented interaction flows and scene logic in Unity.</li>
+                                        <li>Coordinated contributors across tasks and timelines.</li>
+                                    </ul>
+                                    <p><strong>Outcome:</strong> Delivered a working demo video and internal playtest build.</p>
+                                    <p><a href="https://youtu.be/6DCP5fHOxCY" target="_blank" rel="noopener">Watch demo</a></p>
+                                </article>
+
+
+                                <article class="project-card" id="proj-mangotv">
+                                    <div class="card-meta">
+                                        <div class="logo-box">
+                                            <img class="logo" src="assets/img/work/logo/mangovr.png" alt="MangoTV logo">
+                                        </div>
+                                        <div class="datePeriod">December 2023 - April 2024</div>
+                                    </div>
+                                    <h3>MangoTV — Rendering &amp; Porting (Unity)</h3>
+                                    <p><strong>Role:</strong> Unity Developer (Porting &amp; Performance)</p>
+                                    <p><strong>Tech:</strong> Unity (C#), Addressables/Streaming, Light baking, URP, NOLO VR / input remapping</p>
+                                    <ul>
+                                        <li>Remapped input actions and adapted camera rigs (Pico → NOLOVR) when porting between platforms.</li>
+                                        <li>Reduced scene load time from ~120s to ~60s via addressables/streaming and light-baking refinements (one plugin involved).</li>
+                                        <li>Prototyped MR table-top occlusion demo; documented device limits (no built-in scene-understanding; multi-camera instability); proposed Meta XR alternatives.</li>
+                                    </ul>
+                                    <p><strong>Outcome:</strong> Faster load times and stable interaction mapping; delivered iterative test builds aligned to production constraints.</p>
+                                    <p><a href="[TBD: repo or write-up]" target="_blank" rel="noopener">Technical notes / demo</a></p>
+                                </article>
+
+                                <article class="project-card" id="proj-journey-ctm">
+                                    <div class="card-meta">
+                                        <div class="logo-box">
+                                            <img class="logo" src="assets/img/work/logo/slack.png" alt="Journey of CTM logo">
+                                        </div>
+                                        <div class="datePeriod">April 2023 - Oct 2023</div>
+                                    </div>
+                                    <h3>Journey of CTM</h3>
+                                    <p><strong>Role:</strong> VR Developer, Designer</p>
+                                    <p><strong>Tech:</strong> Unity (C#), MRTK V2.73</p>
+                                    <ul>
+                                        <li>Built interactive VR scenes for cultural/educational exploration.</li>
+                                        <li>Implemented core interactions and level flow in Unity.</li>
+                                        <li>Prepared a showcase demo for competition judging.</li>
+                                    </ul>
+                                    <p><strong>Outcome:</strong> Award-winning VR project recognized in Malaysia; validated learning experience via public demo.</p>
+                                    <p><a href="https://journeyofctm.carrd.co/" target="_blank" rel="noopener">Project page</a> · <a href="https://youtu.be/ZnU2p4B-6eE" target="_blank" rel="noopener">Demo</a></p>
+                                </article>
+                                <!-- WORK-CARDS ADDITIONS END -->
+                                 
+                <!-- <div class="item" id="slack">
                     <div class="logo-box">
                         <img class="logo" src="assets/img/work/logo/Echochamber.png">
                     </div>
@@ -208,7 +306,7 @@
                                         data-translatable="EchoChamber">EchoChamber</a>
                                     <div data-translatable="EchoChamberpos">Project Manager, Game Designer, Cooperator between different timezones work</div>
                                 </div>
-                                <div class="position" data-translatable="EchoChamberdate"> April 2025 - May 2025 </div>
+                                <div class="datePeriod" data-translatable="EchoChamberdate"> April 2025 - May 2025 </div>
                             </div>
                         </div>
                     </div>
@@ -224,7 +322,7 @@
                                         data-translatable="MRPuzzle">MRPuzzle</a>
                                     <div data-translatable="MRPuzzlepos">Project Manager, Game Designer </div>
                                 </div>
-                                <div class="position" data-translatable="MRPuzzledate"> Jan 2024 - May 2024 </div>
+                                <div class="datePeriod" data-translatable="MRPuzzledate"> Jan 2024 - May 2024 </div>
                             </div>
                         </div>
                     </div>
@@ -237,16 +335,16 @@
                         <div class="heading">
                             <div class="resume-entry">
                                 <div class="org"> <a href = "assets/docs/mangoTV_intern.jpg" target = "_blank" data-translatable="intern1"> Mango TV // Rendering Engineer, Game Porting </a>
-                                <div class="position" data-translatable="intern1date"> November 2023 - April 2024 </div></div>
+                                <div class="datePeriod" data-translatable="intern1date"> November 2023 - April 2024 </div></div>
                             </div>
                         </div>
-                        <!-- <div class = "description">
+                        <div class = "description">
                                                 <div class = "work-summary">
                                                     <p> RealtyShares is a real estate crowdfunding platform through which individual investors can purchase shares in vetted residential and commercial real estate properties for as little as $5,000. The company is backed by several investors including Union Square Ventures, 500 Startups, and General Catalyst.</p>
                                                     </div>
-                                            </div> -->
+                                            </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class = "item" id = "rh" style="padding-top:5px">
                     <div class = "logo-box">
@@ -257,7 +355,7 @@
                             <div class = "resume-entry">
                                 <div class = "org"> <a href = "https://github.com/JayGarland/chatgpt-on-wechat" target = "_blank" data-translatable="wechatbot">Reply Bot on Wechat</a>
                                 <div data-translatable="wechatposition">Project Collaborator, Manager </div> </div>
-                                <div class = "position" data-translatable="wechatdate"> August 2023 - September 2024 </div>
+                                <div class = "datePeriod" data-translatable="wechatdate"> August 2023 - September 2024 </div>
                             </div>
                         </div>
                     </div>
@@ -272,13 +370,13 @@
                             <div class = "resume-entry">
                                 <div class = "org"> <a href = "https://github.com/JayGarland/Autoreply_Sydneybot_Reddit" target = "_blank" data-translatable="redditbot">Auto Reply Bot on Reddit</a>
                                     <div data-translatable="redditpos">Project Collabrator, Manager, Designer </div></div>
-                                <div class = "position" data-translatable="redditdate"> July 2023 - Sept 2023 </div>
+                                <div class = "datePeriod" data-translatable="redditdate"> July 2023 - Sept 2023 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class = "item" id = "slack">
+                <!-- <div class = "item" id = "slack">
                     <div class = "logo-box">
                         <img class = "logo" src = "assets/img/work/logo/slack.png">
                     </div>
@@ -287,17 +385,17 @@
                             <div class = "resume-entry">
                                 <div class = "org"> <a href = "https://journeyofctm.carrd.co/" target = "_blank" data-translatable="CTM">Journey of CTM</a>
                                 <div data-translatable="CTMpos">Project Manager, Game Designer </div></div>
-                                <div class = "position" data-translatable="CTMdate"> April 2023 - Oct 2023 </div>
+                                <div class = "datePeriod" data-translatable="CTMdate"> April 2023 - Oct 2023 </div>
                             </div>
                         </div>
-                        <!-- <div class = "description">
+                        <div class = "description">
                             <div class = "work-summary">
                                 <p> At Slack, I modernized the <i> customize emoji </i> page to decrease its load time and improve its usability.
                                 This included building API endpoints to return searchable and paginated emoji data and to add and automatically resize </p>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class = "item" id = "eecs">
                     <div class = "logo-box">
@@ -307,7 +405,7 @@
                         <div class = "heading">
                             <div class = "resume-entry">
                                 <div class = "org"> <a href="assets/docs/huapuzhilian_intern.jpg" target="_blank" data-translatable="intern2"> Huapu Zhilian (Beijing) Technology // Software Engineering Intern </a>
-                                <div class = "position" data-translatable="intern2date"> July 2022 - August 2022 </div></div>
+                                <div class = "datePeriod" data-translatable="intern2date"> July 2022 - August 2022 </div></div>
                             </div>
                         </div>
                         <!-- <div class = "description">
@@ -327,7 +425,7 @@
                             <div class = "resume-entry">
                                 <div class = "org"> <a href = "https://github.com/JayGarland/CS61A_SUMMER20" target = "_blank" data-translatable="cs61a">UC Berkeley cs61a</a>
                                 <div data-translatable="cs61apos"> Self-taught Learning </div></div>
-                                <div class = "position" data-translatable="cs61adate"> June 2022 - Dec 2022 </div>
+                                <div class = "datePeriod" data-translatable="cs61adate"> June 2022 - Dec 2022 </div>
                             </div>
                         </div>
                         <!-- <div class = "description">
@@ -347,7 +445,7 @@
                             <div class = "resume-entry">
                                 <div class = "org"> <a href = "assets/docs/CyberRenaissance.pdf" target = "_blank" data-translatable="cyberRenai">Cyber Renaissance (VR Game)</a>
                                 <div data-translatable="cyberRenaipos"> Project Manager, Game Designer </div></div>
-                                <div class = "position" data-translatable="cyberRenaidate"> May 2022 - July 2022 </div>
+                                <div class = "datePeriod" data-translatable="cyberRenaidate"> May 2022 - July 2022 </div>
                             </div>
                         </div>
                         <!-- <div class = "description">
@@ -367,7 +465,7 @@
                             <div class = "resume-entry">
                                 <div class = "org"> <a href = "assets/docs/ChineseCharacterQuest.pdf" target = "_blank" data-translatable="Chinesehanzi">Chinese Characters Quest (VR Game)</a>
                                 <div data-translatable="Chinesehanzipos"> Project Manager, Game Designer </div></div>
-                                <div class = "position" data-translatable="Chinesehanzidate"> Spring 2022 - Fall 2022 </div>
+                                <div class = "datePeriod" data-translatable="Chinesehanzidate"> Spring 2022 - Fall 2022 </div>
                             </div>
                         </div>
                         <!-- <div class = "description">
