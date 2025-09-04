@@ -213,12 +213,25 @@ $(document).ready(function() {
 document.addEventListener("DOMContentLoaded", () => {
     let currentLanguage = "en"; // Set initial language
     const languageSwitcher = document.getElementById("language-switcher");
-    const languageOptions = languageSwitcher.querySelectorAll("span");
+    const navLanguageSwitcher = document.getElementById("nav-language-switcher");
+    const languageOptions = document.querySelectorAll("[id='en'], [id='zh'], [id='fr']"); // Get all language options from both switchers
     const translatableElements = document.querySelectorAll("[data-translatable]");
+
+    // Function to update active language styling
+    function updateActiveLanguage(language) {
+        languageOptions.forEach((option) => {
+            option.classList.remove("active");
+            if (option.id === language) {
+                option.classList.add("active");
+            }
+        });
+    }
 
     // Function to change language
     function changeLanguage(language) {
         currentLanguage = language;
+        updateActiveLanguage(language);
+        
         translatableElements.forEach((element) => {
             const key = element.dataset.translatable;
 
