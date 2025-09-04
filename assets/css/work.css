@@ -6,6 +6,29 @@
     padding-bottom: 80px;
 }
 
+@media (prefers-color-scheme: dark) {
+    #work {
+        position: relative;
+    }
+    
+    #work::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+        z-index: 1;
+    }
+    
+    #work > * {
+        position: relative;
+        z-index: 2;
+        color: #e9eef5; /* Ensure text is light */
+    }
+}
+
 #button-container {
     width: 100%;
 }
@@ -82,6 +105,30 @@
 .position {
     color: #EEA04A;
     font-size: 21px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .org {
+        color: #e9eef5; /* Light text for organization names */
+    }
+    
+    .position {
+        color: #ffa726; /* Brighter orange for better contrast on dark */
+    }
+    
+    .description {
+        color: #e9eef5; /* Light text for descriptions */
+    }
+    
+    #resume-button a {
+        color: #6aa1ff; /* Blue for button text */
+        border-color: #6aa1ff;
+    }
+    
+    #resume-button a:hover {
+        background-color: #6aa1ff;
+        color: white;
+    }
 }
 
 .description {

@@ -199,6 +199,12 @@
     line-height:2;
 }
 
+@media (prefers-color-scheme: dark) {
+    #scroll-to-learn {
+        color: #f5f5f5;
+    }
+}
+
 @media screen and (max-width: 500px) {
     #scroll-to-learn {
         font-size:13px;
