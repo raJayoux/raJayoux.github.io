@@ -13,7 +13,6 @@
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
-
 }
 
 #nav-items .active {
@@ -32,14 +31,56 @@
     display: inline;
     position: absolute;
     /* left: 700px; */
-    right:0px;
+    right: 0px;
+}
+
+/* Language switcher in navigation bar */
+#nav-language-switcher {
+    display: inline;
+    position: relative;
+    padding-left: 30px;
+}
+
+#nav-language-switcher .lang-option {
+    display: inline;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: inherit;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+#nav-language-switcher .lang-option:hover {
+    color: #3A93B1;
+}
+
+#nav-language-switcher .lang-option.active {
+    color: #3A93B1;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 600px) {
      #nav-topbar #nav-items {
          display:none;
      }
- } 
+
+     #nav-language-switcher {
+         display: inline-block;
+         margin-right: 0px;
+     }
+
+     #nav-language-switcher .lang-option {
+         font-size: 13px;
+         margin-left: 3px;
+     }
+ }
+
+@media screen and (max-width: 900px) and (min-width: 601px) {
+     #nav-language-switcher .lang-option {
+         font-size: 13px;
+     }
+} 
 
  #nav-topbar .nav-item {
     display: inline;
