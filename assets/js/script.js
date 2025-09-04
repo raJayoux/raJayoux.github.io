@@ -214,14 +214,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentLanguage = "en"; // Set initial language
     const languageSwitcher = document.getElementById("language-switcher");
     const navLanguageSwitcher = document.getElementById("nav-language-switcher");
-    const languageOptions = document.querySelectorAll("[id='en'], [id='zh'], [id='fr']"); // Get all language options from both switchers
+    const languageOptions = document.querySelectorAll("[data-lang]"); // Get all language options using data-lang attribute
     const translatableElements = document.querySelectorAll("[data-translatable]");
 
     // Function to update active language styling
     function updateActiveLanguage(language) {
         languageOptions.forEach((option) => {
             option.classList.remove("active");
-            if (option.id === language) {
+            if (option.dataset.lang === language) {
                 option.classList.add("active");
             }
         });
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add event listeners to language options
     languageOptions.forEach((option) => {
         option.addEventListener("click", () => {
-            const newLanguage = option.id;
+            const newLanguage = option.dataset.lang;
             changeLanguage(newLanguage);
         });
     });
