@@ -7,6 +7,13 @@
     display:none;
 }
 
+@media (prefers-color-scheme: dark) {
+    #nav-topbar {
+        background: rgba(13,15,18,0.9);
+        color: #e9eef5;
+    }
+}
+
 #nav-item-container {
     position:fixed;
     top: 20px;
@@ -58,6 +65,17 @@
 #nav-language-switcher .lang-option.active {
     color: #3A93B1;
     font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+    #nav-language-switcher .lang-option:hover {
+        color: #6aa1ff;
+    }
+    
+    #nav-language-switcher .lang-option.active {
+        color: #6aa1ff;
+        font-weight: 600;
+    }
 }
 
 @media screen and (max-width: 600px) {
