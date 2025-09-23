@@ -134,6 +134,14 @@ const translations = {
     nationalSecondTitle: "China Collegiate Computing Contest — National Second Prize (First Author)",
     nationalSecondImpact: "Selected among national finalists.",
     certificatePDF: "Certificate(PDF)",
+    chineseCharactersTitle: "Chinese Characters Quest (趣味汉字) - VR Language Learning Game",
+    chineseCharactersRole: "Role: Project Manager & Game Designer — VR educational game development",
+    chineseCharactersTech: "Tech: Unity (C#), Oculus Integration, PDollar Gesture Recognition, Blender, Visual Studio 2019, Robot Kyle character model",
+    chineseCharactersDesc1: "Educational Innovation: '学汉语用汉字，弘扬汉语言文化' - Developed comprehensive VR Chinese learning experience without additional controllers. Created inclusive classroom environment supporting students with disabilities through rock climbing, poetry completion, aerial pinyin drawing, and interactive writing/chess gameplay.",
+    chineseCharactersDesc2: "Advanced Gesture Recognition: Integrated PDollar geometric recognition system for Chinese character hand-writing. Implemented XML-based character repository with gesture-to-character matching, trigger-based position tracking, and real-time trajectory analysis using WorldToScreenPoint coordinate conversion.",
+    chineseCharactersDesc3: "Immersive Cultural Scenarios: Built multi-level experiences including poetry completion on ancient city walls, '江雪' scene chain with hat-finding → video playback → character writing with scoring system. Added easter egg mini-games with '二'/'棒' gesture recognition and interactive chess with constrained X/Y/Z movement.",
+    chineseCharactersOutcome: "Outcome: National Second Prize in China Collegiate Computing Contest. Created accessible VR language learning platform with hand tracking, physics collision, gesture recognition, and cultural immersion. Successfully demonstrated innovative approach to Chinese language education through VR technology.",
+    technicalReport: "Technical Report",
     },
     zh: {
         // Chinese translations here
@@ -270,6 +278,14 @@ const translations = {
     nationalSecondTitle: "中国大学生计算机设计大赛 — 国家级二等奖 (第一作者)",
     nationalSecondImpact: "入选国家级决赛选手。",
     certificatePDF: "证书(PDF)",
+    chineseCharactersTitle: "趣味汉字 - VR中文学习游戏",
+    chineseCharactersRole: "角色：项目经理与游戏设计师 — VR教育游戏开发",
+    chineseCharactersTech: "技术：Unity (C#), Oculus Integration, PDollar手势识别, Blender, Visual Studio 2019, Robot Kyle角色模型",
+    chineseCharactersDesc1: "教育创新：'学汉语用汉字，弘扬汉语言文化' - 开发无需额外控制器的综合VR中文学习体验。通过攀岩、诗词填空、空中拼音绘制和交互式书写/下棋游戏，为残障学生创造包容性课堂环境。",
+    chineseCharactersDesc2: "先进手势识别：集成PDollar几何识别系统进行中文汉字手写。实现XML字符库与手势匹配，触发式位置追踪，使用WorldToScreenPoint坐标转换进行实时轨迹分析。",
+    chineseCharactersDesc3: "沉浸式文化场景：构建多层次体验，包括古城墙诗词填空，'江雪'场景链（寻找蓑笠翁草帽 → 视频播放 → 汉字书写与评分系统）。添加'二'/'棒'手势识别彩蛋小游戏和约束X/Y/Z移动的交互式象棋。",
+    chineseCharactersOutcome: "成果：中国大学生计算机设计大赛国家二等奖。创建具有手部追踪、物理碰撞、手势识别和文化沉浸的无障碍VR语言学习平台。成功展示通过VR技术进行中文教育的创新方法。",
+    technicalReport: "技术报告",
     },
     fr: {
         // French translations here
@@ -405,5 +421,13 @@ const translations = {
     nationalSecondTitle: "Concours Informatique Universitaire Chinois — Deuxième Prix National (Premier Auteur)",
     nationalSecondImpact: "Sélectionné parmi les finalistes nationaux.",
     certificatePDF: "Certificat(PDF)",
+    chineseCharactersTitle: "Quête des Caractères Chinois (趣味汉字) - Jeu VR d'Apprentissage des Langues",
+    chineseCharactersRole: "Rôle : Chef de Projet & Concepteur de Jeu — développement de jeu VR éducatif",
+    chineseCharactersTech: "Tech : Unity (C#), Oculus Integration, Reconnaissance de Gestes PDollar, Blender, Visual Studio 2019, modèle de personnage Robot Kyle",
+    chineseCharactersDesc1: "Innovation Éducative : '学汉语用汉字，弘扬汉语言文化' - Développé expérience d'apprentissage VR chinois complète sans contrôleurs supplémentaires. Créé environnement de classe inclusif supportant étudiants handicapés via escalade, complétion de poésie, dessin pinyin aérien, et jeux interactifs d'écriture/échecs.",
+    chineseCharactersDesc2: "Reconnaissance de Gestes Avancée : Intégré système de reconnaissance géométrique PDollar pour écriture manuelle de caractères chinois. Implémenté répertoire de caractères XML avec correspondance geste-caractère, suivi de position basé déclencheur, et analyse de trajectoire en temps réel utilisant conversion de coordonnées WorldToScreenPoint.",
+    chineseCharactersDesc3: "Scénarios Culturels Immersifs : Construit expériences multi-niveaux incluant complétion de poésie sur murs de cité ancienne, chaîne de scènes '江雪' avec recherche de chapeau → lecture vidéo → écriture de caractères avec système de notation. Ajouté mini-jeux cachés reconnaissance gestes '二'/'棒' et échecs interactifs avec mouvement contraint X/Y/Z.",
+    chineseCharactersOutcome: "Résultat : Deuxième Prix National au Concours Informatique Universitaire Chinois. Créé plateforme d'apprentissage VR linguistique accessible avec suivi manuel, collision physique, reconnaissance gestuelle, et immersion culturelle. Démontré avec succès approche innovante pour éducation chinoise via technologie VR.",
+    technicalReport: "Rapport Technique",
     },
     };
