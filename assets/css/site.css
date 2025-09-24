@@ -118,8 +118,9 @@ a,button,[href],[tabindex]:focus-visible{
 /* === WORK CARDS START === */
 .projects-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(440px,1fr));
     gap:var(--space-6);
+    padding-left: 5px;
 }
 
 /* Card meta: logo + date/position */
@@ -167,7 +168,7 @@ a,button,[href],[tabindex]:focus-visible{
     padding:var(--space-5);
     display:flex;
     flex-direction:column;
-    gap:var(--space-3);
+    gap:var(--space-4);
     transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 .project-card:hover{
@@ -178,13 +179,23 @@ a,button,[href],[tabindex]:focus-visible{
 .project-card h3{
     font-size:var(--h3-size);
     margin:0 0 var(--space-2) 0;
+    line-height:1.3;
 }
-.project-card p{margin:0;}
+.project-card p{
+    margin:0 0 var(--space-3) 0;
+    line-height:1.5;
+}
+.project-card p:last-of-type{
+    margin-bottom:0;
+}
 .project-card ul{
-    margin:0;
-    padding-left:1.1rem;
+    margin:var(--space-2) 0;
+    padding-left:1.2rem;
 }
-.project-card li{margin:.15rem 0;}
+.project-card li{
+    margin:var(--space-2) 0;
+    line-height:1.4;
+}
 .project-card a{
     align-self:flex-start;
     font-weight:600;
