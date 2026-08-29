@@ -45,10 +45,10 @@ const I18N = {
     dashLink: "Source on GitHub",
     resoTitle: "Resonova",
     resoBody: "Personal AI radio companion: playlist or track list becomes a hosted cast — Gemini multi-speaker scripts, streamed TTS, and a browser player that crossfades commentary with live Spotify playback (OAuth/PKCE + Web Playback SDK).",
-    xrStrip: "XR background — MTE 2023 Gold + Special Award; China Collegiate Computing Contest Provincial First Prize and National Second Prize. Journey of Chinese Traditional Medicine, Chinese Characters Quest, EchoChamber, MRPuzzle, MangoTV.",
-    certMte: "MTE certificate",
-    certProv: "Provincial certificate",
-    certNat: "National certificate",
+    xrStrip: "XR · MTE 2023 Gold + Special Award · CCC 1st provincial / 2nd national",
+    certMte: "MTE",
+    certProv: "Provincial",
+    certNat: "National",
     contactKicker: "Contact",
     contactTitle: "Let’s work",
     contactLead: "Email me, write on LinkedIn, or leave a short note. I reply quickly.",
@@ -67,7 +67,7 @@ const I18N = {
     navWork: "Travail",
     navContact: "Contact",
     kicker: "Pengyu Jie · Rouen",
-    h1: "Ingénieur logiciel",
+    h1: "Software Engineer",
     lede: "Fullstack, produit et plateformes, EN/FR.",
     available: "Disponible maintenant",
     downloadCv: "Télécharger le CV",
@@ -107,10 +107,10 @@ const I18N = {
     dashLink: "Code sur GitHub",
     resoTitle: "Resonova",
     resoBody: "Compagnon radio IA personnel : une playlist devient une session — scripts Gemini multi-voix, TTS en flux, et un lecteur navigateur qui enchaîne commentaire et lecture Spotify (OAuth/PKCE + Web Playback SDK).",
-    xrStrip: "Arrière-plan XR — MTE 2023 Or + Prix spécial ; concours informatique universitaire chinois, 1er prix provincial et 2e prix national. Voyage de la médecine traditionnelle chinoise, Chinese Characters Quest, EchoChamber, MRPuzzle, MangoTV.",
-    certMte: "Certificat MTE",
-    certProv: "Certificat provincial",
-    certNat: "Certificat national",
+    xrStrip: "XR · MTE 2023 Or + Prix spécial · 1er provincial / 2e national",
+    certMte: "MTE",
+    certProv: "Provincial",
+    certNat: "National",
     contactKicker: "Contact",
     contactTitle: "Travaillons ensemble",
     contactLead: "Écrivez-moi par e-mail, sur LinkedIn, ou laissez un court message. Je réponds vite.",
@@ -169,10 +169,10 @@ const I18N = {
     dashLink: "GitHub 源码",
     resoTitle: "Resonova",
     resoBody: "个人 AI 电台：歌单或曲目列表生成节目——Gemini 双人主持脚本、流式 TTS，以及在浏览器中把解说与 Spotify 播放交叉淡入（OAuth/PKCE + Web Playback SDK）。",
-    xrStrip: "XR 背景 — 2023 马来西亚科技展金奖+特别奖；中国大学生计算机设计大赛省级一等奖、国家级二等奖。中医药之旅、趣味汉字、回音殿、MRPuzzle、芒果TV。",
-    certMte: "MTE 证书",
-    certProv: "省级证书",
-    certNat: "国家级证书",
+    xrStrip: "XR · MTE 2023 金奖+特别奖 · 省级一等 / 国家二等",
+    certMte: "MTE",
+    certProv: "省级",
+    certNat: "国家级",
     contactKicker: "联系",
     contactTitle: "开始合作",
     contactLead: "发邮件、LinkedIn，或在下面留一句。我会尽快回复。",
@@ -220,6 +220,21 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".lang button").forEach((btn) => {
     btn.addEventListener("click", () => applyLang(btn.dataset.lang));
   });
+
+  const header = document.querySelector(".nav");
+  const toggle = document.querySelector(".nav-toggle");
+  if (header && toggle) {
+    toggle.addEventListener("click", () => {
+      const open = header.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    header.querySelectorAll(".nav-links a").forEach((a) => {
+      a.addEventListener("click", () => {
+        header.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
   const form = document.getElementById("contact-form");
   const thanks = document.getElementById("form-ok");

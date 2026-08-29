@@ -77,6 +77,16 @@ a:hover { color: var(--ink); }
 .lang button[aria-pressed="true"] {
   background: var(--ink); color: var(--paper);
 }
+.nav-toggle {
+  display: none;
+  width: 40px; height: 40px; padding: 0;
+  border: 1px solid var(--line); border-radius: 6px;
+  background: transparent; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.nav-toggle span {
+  display: block; width: 16px; height: 1.5px; background: var(--ink);
+}
 
 /* Hero */
 .hero { padding: 80px 0 72px; }
@@ -119,7 +129,8 @@ h2 { margin: 0 0 var(--s24); font-size: 28px; letter-spacing: -0.025em; font-wei
 }
 .about-copy p { margin: 0 0 var(--s16); color: var(--ink); max-width: 40rem; }
 .portrait {
-  width: 180px; height: 180px; object-fit: cover; border-radius: 4px;
+  width: 180px; height: 180px; object-fit: cover; object-position: center 28%;
+  border-radius: 4px;
   border: 1px solid var(--line); filter: grayscale(0.15);
 }
 
@@ -176,12 +187,18 @@ h2 { margin: 0 0 var(--s24); font-size: 28px; letter-spacing: -0.025em; font-wei
 
 .xr-strip {
   margin-top: var(--s24);
-  padding: var(--s16) 0 0;
+  padding: 10px 0 0;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
 }
-.xr-strip a { color: var(--ink); }
+.xr-certs { display: inline-flex; flex-wrap: wrap; gap: 6px 12px; }
+.xr-strip a { color: var(--ink); font-size: 12px; }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s48); }
@@ -213,7 +230,22 @@ footer a { color: var(--muted); }
   .hero { padding: 48px 0 40px; }
   .about-grid, .case, .contact-grid { grid-template-columns: 1fr; }
   .portrait { width: 120px; height: 120px; }
-  .nav-links a[href="#about"] { display: none; }
+}
+
+@media (max-width: 560px) {
+  .nav-inner { min-height: 56px; flex-wrap: wrap; }
+  .nav-toggle { display: flex; margin-left: auto; }
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 4px 0 16px;
+  }
+  .nav.is-open .nav-links { display: flex; }
+  .lang { align-self: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

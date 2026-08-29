@@ -10,12 +10,21 @@
   <link rel="alternate" href="https://rajayoux.github.io/" hreflang="fr">
   <link rel="alternate" href="https://rajayoux.github.io/" hreflang="zh-Hans">
   <link rel="alternate" href="https://rajayoux.github.io/" hreflang="x-default">
-  <link rel="icon" href="assets/img/jw.png">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rajayoux.github.io/">
   <meta property="og:title" content="Pengyu Jie — Software Engineer">
   <meta property="og:description" content="Fullstack, product and platforms. Available now.">
-  <meta property="og:image" content="https://rajayoux.github.io/assets/img/looking.JPG">
+  <meta property="og:image" content="https://rajayoux.github.io/assets/img/og-pengyu-jie.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pengyu Jie — Software Engineer">
+  <meta name="twitter:description" content="Fullstack, product and platforms. Available now.">
+  <meta name="twitter:image" content="https://rajayoux.github.io/assets/img/og-pengyu-jie.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,7 +41,10 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="wordmark" href="#top">ra<b>Jay</b>oux</a>
-      <nav class="nav-links" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="#work" data-i18n="navWork">Work</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
         <div class="lang" role="group" aria-label="Language">
@@ -64,12 +76,11 @@
     <section id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
         <div class="about-copy">
-          <p class="section-kicker" data-i18n="aboutKicker">About</p>
           <h2 id="about-title" data-i18n="aboutTitle">About</h2>
           <p data-i18n="about1">I’m Pengyu Jie — raJayoux to collaborators. I study Software Engineering at ESIGELEC in Rouen, and I just finished six months shipping production Angular and C#/.NET at Presage Care in Paris.</p>
           <p data-i18n="about2">I like building the parts people actually use: portals, APIs, auth, and the quiet platform work that keeps a product honest. XR and Unity are how I learned to ship. They are background, not the headline.</p>
         </div>
-        <img class="portrait" src="assets/img/about-me/good/openspace2.png" alt="Pengyu Jie" width="180" height="180">
+        <img class="portrait" src="assets/img/about-me/good/portrait.jpg" alt="Pengyu Jie" width="180" height="180">
       </div>
     </section>
 
@@ -120,11 +131,8 @@
                 <li data-i18n="presage3">Designed and shipped a Weekly Brief dashboard: rendered a backend-generated HTML report in Angular, and embedded Google Maps in a readonly report mode without breaking the live dashboard.</li>
               </ul>
             </div>
-            <div class="still" aria-hidden="true">
-              <div class="still-fallback">
-                <strong>Presage Care</strong>
-                <span class="mono">Angular · ASP.NET Core · EF Core</span>
-              </div>
+            <div class="still">
+              <img src="assets/img/stills/presage-care.png" alt="Presage Care · patient portal" width="960" height="600">
             </div>
           </article>
 
@@ -141,7 +149,7 @@
               <p class="case-links"><a href="https://github.com/JayGarland/moto_micro_tours" rel="noopener" target="_blank" data-i18n="motoLink">Source on GitHub</a></p>
             </div>
             <div class="still">
-              <img src="assets/img/bikes/YAMAHA_MT03-Cover.jpg" alt="Motorcycle still for Moto Micro Tours" width="640" height="400">
+              <img src="assets/img/stills/moto-micro-tours.png" alt="Moto Micro Tours — Discover Tours" width="960" height="600">
             </div>
           </article>
 
@@ -157,11 +165,8 @@
               </ul>
               <p class="case-links"><a href="https://github.com/JayGarland/dashcam-cloudservice-web" rel="noopener" target="_blank" data-i18n="dashLink">Source on GitHub</a></p>
             </div>
-            <div class="still" aria-hidden="true">
-              <div class="still-fallback">
-                <strong>Dashcam Cloud</strong>
-                <span class="mono">dHash64 · Supabase · ffmpeg</span>
-              </div>
+            <div class="still">
+              <img src="assets/img/stills/dashcam-cloud.png" alt="Dashcam Cloud Service validator portal" width="960" height="600">
             </div>
           </article>
         </div>
@@ -171,13 +176,14 @@
           <p data-i18n="resoBody">Personal AI radio companion: playlist or track list becomes a hosted cast — Gemini multi-speaker scripts, streamed TTS, and a browser player that crossfades commentary with live Spotify playback (OAuth/PKCE + Web Playback SDK).</p>
         </aside>
 
-        <p class="xr-strip">
-          <span data-i18n="xrStrip">XR background — MTE 2023 Gold + Special Award; China Collegiate Computing Contest Provincial First Prize and National Second Prize. Journey of Chinese Traditional Medicine, Chinese Characters Quest, EchoChamber, MRPuzzle, MangoTV.</span>
-          <br>
-          <a href="assets/docs/MTE2023.png" target="_blank" rel="noopener" data-i18n="certMte">MTE certificate</a>
-          · <a href="assets/docs/journeyofCTM_prize1.jpg" target="_blank" rel="noopener" data-i18n="certProv">Provincial certificate</a>
-          · <a href="assets/docs/quweihanziCertificate.pdf" target="_blank" rel="noopener" data-i18n="certNat">National certificate</a>
-        </p>
+        <div class="xr-strip">
+          <span data-i18n="xrStrip">XR · MTE 2023 Gold + Special Award · CCC 1st provincial / 2nd national</span>
+          <span class="xr-certs">
+            <a href="assets/docs/MTE2023.png" target="_blank" rel="noopener" data-i18n="certMte">MTE</a>
+            <a href="assets/docs/journeyofCTM_prize1.jpg" target="_blank" rel="noopener" data-i18n="certProv">Provincial</a>
+            <a href="assets/docs/quweihanziCertificate.pdf" target="_blank" rel="noopener" data-i18n="certNat">National</a>
+          </span>
+        </div>
       </div>
     </section>
 
