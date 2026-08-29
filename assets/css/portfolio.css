@@ -159,7 +159,7 @@ h2 { margin: 0 0 var(--s24); font-size: 28px; letter-spacing: -0.025em; font-wei
   min-height: 220px; border: 1px solid var(--line); border-radius: 6px;
   background: #eceae4; overflow: hidden; display: flex; align-items: stretch;
 }
-.still img { width: 100%; height: 100%; object-fit: cover; }
+.still img { width: 100%; height: 100%; object-fit: contain; object-position: left center; background: #eceae4; }
 .still-fallback {
   width: 100%; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end;
   background:
