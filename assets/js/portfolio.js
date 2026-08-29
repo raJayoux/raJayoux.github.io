@@ -62,7 +62,7 @@ const I18N = {
     github: "GitHub"
   },
   fr: {
-    docTitle: "Pengyu Jie — Ingénieur logiciel",
+    docTitle: "Pengyu Jie — Software Engineer",
     docDesc: "Ingénieur logiciel en Europe. Fullstack, produit et plateformes. Disponible maintenant.",
     navWork: "Travail",
     navContact: "Contact",
