@@ -1,745 +1,220 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Pengyu Jie — VR/Unity Developer | Available from February 2026 </title>
-    <meta name="description" content="Unity/XR developer focused on modular delivery: manager-style code, editor/tooling hygiene, device-ready rigs, and Addressables + HybridCLR packaging. Available for internship from February 2026.">
-    <link rel="canonical" href="https://rajayoux.github.io/">
-
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/site.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/home.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/nav-bar.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/about.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/work.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/bikes.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/lounge.css">
-    <link rel = "stylesheet" type = "text/css" href = "assets/css/contact.css">
-    
-
-     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
-    <script src = "assets/js/scroll.js"></script>
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/bikeGalleries.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
-    
-    <!-- <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'G-TCTK49658F', 'auto');
-    ga('send', 'pageview');
-
-    </script> -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCTK49658F"></script>
-    <script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengyu Jie — Software Engineer</title>
+  <meta name="description" content="Software Engineer in Europe. Fullstack, product and platforms. Available now.">
+  <link rel="canonical" href="https://rajayoux.github.io/">
+  <link rel="alternate" href="https://rajayoux.github.io/" hreflang="en">
+  <link rel="alternate" href="https://rajayoux.github.io/" hreflang="fr">
+  <link rel="alternate" href="https://rajayoux.github.io/" hreflang="zh-Hans">
+  <link rel="alternate" href="https://rajayoux.github.io/" hreflang="x-default">
+  <link rel="icon" href="assets/img/jw.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rajayoux.github.io/">
+  <meta property="og:title" content="Pengyu Jie — Software Engineer">
+  <meta property="og:description" content="Fullstack, product and platforms. Available now.">
+  <meta property="og:image" content="https://rajayoux.github.io/assets/img/looking.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCTK49658F"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-TCTK49658F');
-    </script>
-
-    <link rel="icon" href="assets/img/jw.png">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rajayoux.github.io/">
-    <meta property="og:title" content="Pengyu Jie — VR/Unity Developer">
-    <meta property="og:description" content="Available for internship from Feb 2026 · Unity + XR · Projects & Contact">
-    <meta property="og:image" content="https://rajayoux.github.io/assets/img/og-cover.jpg">
-
-    <link rel="alternate" href="https://rajayoux.github.io/" hreflang="en" />
-    <link rel="alternate" href="https://rajayoux.github.io/" hreflang="x-default" />
-
-    <!-- Optional (only if actual localized routes exist now):
-    <link rel="alternate" href="https://rajayoux.github.io/zh" hreflang="zh-Hans" />
-    <link rel="alternate" href="https://rajayoux.github.io/fr" hreflang="fr" />
-    -->
+  </script>
 </head>
-
 <body>
-    
-    <div id = "nav-topbar">
-        <div id = "nav-item-container">
-            <div id = "nav-home"> <a class = "active" href = "#home"> ra<b>Jay</b>oux </a> </div>
-            <div id = "nav-items">
-                <div id = "nav-language-switcher">
-                    <span id="nav-en" class="lang-option" data-lang="en">EN</span>
-                    <span id="nav-zh" class="lang-option" data-lang="zh">中</span>
-                    <span id="nav-fr" class="lang-option" data-lang="fr">FR</span>
-                </div>
-                <div id = "nav-about" class = "nav-item"> <a href = "#about" data-translatable="about"> about </a></div>
-                <div id = "nav-work" class = "nav-item"> <a href = "#work" data-translatable="work"> work </a> </div>
-                <div id="nav-achievements" class="nav-item"> <a href="#achievements" data-translatable="achievementsTitle">Achievements / Awards</a></div>
-                <div id = "nav-contact" class = "nav-item"> <a href = "#contact" data-translatable="contact"> contact </a> </div>
-            </div>
-            <div id = "nav-underline"> </div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="#top">ra<b>Jay</b>oux</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中</button>
         </div>
+      </nav>
     </div>
-    
-    <div id = "grayed-out-box"></div>
+  </header>
 
-
-    <section id = "home" class = "section-card">
-
-        <div id = "language-switcher">
-            <span id="home-en" data-lang="en">English</span>
-            <span id="home-zh" data-lang="zh">简体中文</span>
-            <span id="home-fr" data-lang="fr">Français</span>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="kicker mono" data-i18n="kicker">Pengyu Jie · Rouen</p>
+        <h1 id="hero-title" data-i18n="h1">Software Engineer</h1>
+        <p class="lede" data-i18n="lede">Fullstack, product and platforms, EN/FR.</p>
+        <p class="pill" data-i18n="available">Available now</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_20260814.pdf" data-i18n="downloadCv">Download CV</a>
+          <div class="link-row">
+            <a href="#work" data-i18n="seeWork">See work</a>
+            <a href="assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf" data-i18n="xrResume">XR resume</a>
+          </div>
         </div>
-
-                <div id = "home-title-container-margin"> </div>
-
-                <!-- HOME-HERO A EN (internship-2025) START -->
-                <section id="hero-internship" aria-labelledby="hero-title" class="hero">
-                    <h1 id="hero-title" data-translatable="heroTitle">VR/Unity Developer — Available for internship from February 2026</h1>
-                    <p data-translatable="heroSubtitle">Bringing prototypes to life across Unity + XR (MRTK/MetaXR), with a builder’s mindset and shipping focus.</p>
-                    <nav class="hero-ctas">
-                        <a href="#work" class="btn" data-translatable="heroViewWork">See Projects</a>
-                        <a href="#contact" class="btn" data-translatable="heroContact">Contact</a>
-                        <a href="assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf" class="btn" data-translatable="heroDownloadCV">Download CV</a>
-                    </nav>
-                    <p class="availability" role="note" data-translatable="heroAvailability">Available for internship from <strong>Feb 2026</strong> — Europe (EN/FR environments)</p>
-                    
-                    <!-- HOME-HERO LINKS (internship-2025) START -->
-                    <div id="links-hero" class="links-hero">
-                        <a href="https://www.facebook.com/JayVaptain" target="_blank"><img class="link" src="assets/img/links/blue/facebook.png" alt="Facebook profile"></a>
-                        <a href="https://www.instagram.com/JoyeuxJie/" target="_blank"><img class="link" src="assets/img/links/blue/insta.png" alt="Instagram profile"></a>
-                        <a href="https://i.imgur.com/D4xzNSv.jpg" target="_blank"><img class="link" src="assets/img/links/blue/wechat.png" alt="WeChat contact QR code"></a>
-                        <a href="https://www.linkedin.com/in/pengyu-j-bb2b89212/" target="_blank"><img class="link" src="assets/img/links/blue/linkedin.png" alt="LinkedIn profile"></a>
-                        <a href="mailto:mamba579jpy@gmail.com"><img class="link" src="assets/img/links/blue/email.png" alt="Email contact"></a>
-                        <a href="assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf" target="_blank"><img class="link" src="assets/img/links/blue/resume.png" alt="Download CV (PDF)"></a>
-                    </div>
-                    <!-- HOME-HERO LINKS (internship-2025) END -->
-                    <div id="scroll-margin"> </div>
-                    <div id="scroll-to-learn" data-translatable="scroll"> scroll to learn more </div>
-                    <a href="#about"> <img id="scroll-arrow" src="assets/img/down-arrow2.png" alt="Scroll down to learn more"> </a>
-
-                </section>
-                <!-- HOME-HERO A EN (internship-2025) END -->
-
-                
+      </div>
     </section>
 
-    <section id = "about" class = "section-card">
-        <div id = "nav-topbar-about">
-            <div id = "nav-item-container-about">
-                <div id = "nav-home-about"> <a href = "#home"> ra<b>Jay</b>oux </a> </div>
-                <div id = "nav-items-about">
-                    <div id = "nav-language-switcher-about">
-                        <span id="about-en" class="lang-option" data-lang="en">EN</span>
-                        <span id="about-zh" class="lang-option" data-lang="zh">中</span>
-                        <span id="about-fr" class="lang-option" data-lang="fr">FR</span>
-                    </div>
-                    <a href = "#about" data-translatable="about"> about </a>
-                    <a href = "#work" data-translatable="work"> work </a>
-                    <a href="#achievements" data-translatable="achievementsTitle">Achievements / Awards</a>
-                    <a href = "#contact" data-translatable="contact"> contact </a> 
-                </div>
-                <div id = "nav-underline-about"> </div>
-            </div>
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <p class="section-kicker" data-i18n="aboutKicker">About</p>
+          <h2 id="about-title" data-i18n="aboutTitle">About</h2>
+          <p data-i18n="about1">I’m Pengyu Jie — raJayoux to collaborators. I study Software Engineering at ESIGELEC in Rouen, and I just finished six months shipping production Angular and C#/.NET at Presage Care in Paris.</p>
+          <p data-i18n="about2">I like building the parts people actually use: portals, APIs, auth, and the quiet platform work that keeps a product honest. XR and Unity are how I learned to ship. They are background, not the headline.</p>
         </div>
-        
-        <div class = "outer-container"> 
-            <div class = "slide-border"> </div> 
-            <div class = "card-header-container">
-                <!-- <img class = "menu-button" src = "assets/img/menu.png"> -->
-                <img class = "card-title" src = "assets/img/headers-no-shadow/about.png" alt="About section">
-            </div>
-            <div id = "about-content-box">
-                <div id = "pic-box">
-                    <img id = "stacks" class = "about-me-pic" src = "assets/img/about-me/good/stacks.png" alt="Jay working with programming books">
-                    <img id = "openspace" class = "about-me-pic" src = "assets/img/about-me/good/openspace2.png" alt="Jay in a collaborative workspace">
-                    <img id = "sugarplum" class = "about-me-pic" src = "assets/img/about-me/good/sugarplum.png" alt="Jay performing in dance production">
-                    <img id = "thrive" class = "about-me-pic" src = "assets/img/about-me/good/thrive.png" alt="Jay in creative performance setting">
-                </div>
-                <div id = "bio-box">
-                    <div id = "bio-text">
-                        <div data-translatable="biotextPr1"></div> 
-                        <br>
-                        <div data-translatable="biotextPr2"></div>
-                        <br>
-                        <div data-translatable="biotextPr3"></div>
-                        <br>
-                        <div data-translatable="biotextPr4"></div>
-                        <br>
-                        <div data-translatable="personalMention">Outside work I ride a motorcycle; see <a href="#personal">Bikes & Lounge</a>.</div>
-                        <br>
-                        <a href = "#contact" class = "line-link" data-translatable="bioContact">Contact</a>!
-                    </div>
-                </div>   
-                <div style="height:30px"></div>
-                <!-- <div id = "about-deep-dives"> 
-                    <div class = "deep-dive">
-                        <img src = "assets/img/about-work.png">
-                        <div class = "dive-title"> <b> Work <br>Experience </b> </div>
-                        <div class = "deep-dive-text">
-                            <p> I've worked at Slack, participated in the KPCB Fellows Program,
-                                and have been a course tutor at UC Berkeley.  </p>
-            </div>
-                        <a href = "#work" class = "about-button" id = "work-button"> See my experiences </a>
-                    </div>
-                    <div class = "deep-dive">
-                        <img src = "assets/img/about-projects.png">
-                        <div class = "dive-title"> <b> My <br> Projects</b> </div>
-                        <div class = "deep-dive-text">
-                            <p> School and personal projects I've built include 
-                                a version control system, a 2048 game, and club websites.  </p>
-                        </div>
-                        <a href = "#projects" class = "about-button" id = "proj-button"> View my projects </a>
-                    </div>
-                    <div class = "deep-dive">
-                            <img src = "assets/img/about-dance.png">
-                            <div class = "dive-title"> <b> Dance <br>Portfolio</b> </div>
-                            <div class = "deep-dive-text">
-                                <p> Outside of school and work, I am passionate about expressing 
-                                    myself creatively through dance and choreography.  </p>
-                            </div>
-                            <a href = "#dance" class = "about-button" id = "dance-button"> Watch my videos </a>
-                        </div>
-                </div>    -->
-            </div>
-            <!-- <div class = "swirl-container"><img class = "swirl" src = "assets/img/swirl.png"></div> -->
-                        </div>
-                </section>
-
-        <!-- TECH-STACK START -->
-        <section id="stack" aria-labelledby="stack-title">
-            <h2 id="stack-title" data-translatable="techStack">Tech Stack</h2>
-            <ul>
-                <li data-translatable="enginesXR"><strong>Engines &amp; XR</strong>: Unity (2020/2022), XR Interaction Toolkit (XRI), MRTK, Meta XR; tested on Quest 2/3; Pico/NOLOVR experience.</li>
-                <li data-translatable="languages"><strong>Languages</strong>: C#, Python, C, SQL, JavaScript, Java</li>
-                <li data-translatable="frontend"><strong>Frontend</strong>: HTML/CSS/JS — lightweight pages for project microsites and docs.</li>
-                <li data-translatable="threeDPipeline"><strong>3D &amp; Pipeline</strong>: Addressables &amp; streaming, LODs, batching/culling, asset import hygiene</li>
-                <li data-translatable="backendBasic"><strong>Backend (basic)</strong>: lightweight REST endpoints & webhooks for demos/tooling (for forms, bot integrations) — implemented in Python/Node as
-                needed</li>
-                <li data-translatable="tools"><strong>Tools</strong>: Unity Profiler, Git &amp; GitHub, GitHub Actions (used for CI)</li>
-                <li data-translatable="devicesPlatforms"><strong>Devices / Platforms</strong>: Pico (source), NOLOVR (target), Quest 2/3 (tested), Windows/Android (publication)</li>
-                <li data-translatable="devOps"><strong>DevOps</strong>: GitHub Pages (static deploy)
-                </li>
-            </ul>
-        </section>
-        <!-- TECH-STACK END -->
-
-        <!-- FOCUS AREAS START -->
-        <!-- <section id="focus" aria-labelledby="focus-title">
-            <h2 id="focus-title" data-translatable="focusTitle">What I enjoy / Focus</h2>
-            <ul>
-                <li data-translatable="focus1">Modular, top-down manager code (flow/input/content)</li>
-                <li data-translatable="focus2">Clean scenes & prefabs; device porting & input/camera rigs (Quest/Pico/NOLOVR)</li>
-                <li data-translatable="focus3">Addressables packaging; HybridCLR hot-update (integration); URP + basic profiling</li>
-            </ul>
-        </section> -->
-        <!-- FOCUS AREAS END -->
-
-        <section id = "work" class = "section-card">
-        <div class = "outer-container"> 
-            <div class = "slide-border"> </div> 
-            <div class = "card-header-container">
-                <!-- <img class = "menu-button" src = "assets/img/menu.png"> -->
-                <img class = "card-title" src = "assets/img/headers-no-shadow/work.png" alt="Work section">
-            </div>
-
-            <div id = "button-container">
-            <div id = "resume-button">
-                <a href = "assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf" target = "_blank" data-translatable="resume">Download CV</a>
-            </div>
-            </div>
-
-                        <div id = "work-content-container" class="resume projects-grid">
-                                <!-- WORK-CARDS ADDITIONS START -->
-                                <article class="project-card" id="proj-echochamber">
-                                    <div class="card-meta">
-                                        <div class="logo-box">
-                                            <img class="logo" src="assets/img/work/logo/Echochamber.png"
-                                                alt="EchoChamber — VR Cultural Physics Experience combining traditional Chinese acoustics with modern spatial computing">
-                                        </div>
-                                        <div class="datePeriod">April 2025 - May 2025</div>
-                                    </div>
-                                    <h3 data-translatable="echoChamberTitle">EchoChamber (回音殿) - VR Cultural Physics Experience</h3>
-                                    <p data-translatable="echoChamberRole"><strong>Role:</strong> Lead VR Developer & Cultural Technology Designer</p>
-                                    <p data-translatable="echoChamberTech"><strong>Tech:</strong> Unity (C#), Meta XR SDK, Spatial Audio, Hand Tracking,
-                                        Physics Simulation, Room Acoustics Engine</p>
-                                    <ul>
-                                        <li data-translatable="echoChamberDesc1"><strong>Cultural-Technical Integration:</strong> Developed immersive VR
-                                            experience combining traditional Chinese acoustic philosophy with modern spatial computing. Implemented
-                                            physics-based sound propagation system inspired by ancient Chinese architectural acoustics principles.</li>
-                                        <li data-translatable="echoChamberDesc2"><strong>Spatial Audio Innovation:</strong> Built advanced 3D audio
-                                            engine with room-scale acoustic simulation, environmental sound reflection, and culturally-authentic
-                                            reverberation patterns. Integrated hand tracking for intuitive sound manipulation and spatial audio
-                                            placement.</li>
-                                        <li data-translatable="echoChamberDesc3"><strong>Cross-Cultural Design:</strong> Created educational framework
-                                            bridging traditional Chinese physics concepts (音律/sound theory) with modern VR technology. Delivered
-                                            comprehensive cultural-technical experience suitable for both entertainment and educational applications.
-                                        </li>
-                                    </ul>
-                                    <p data-translatable="echoChamberOutcome"><strong>Outcome:</strong> Successfully delivered innovative VR cultural
-                                        experience demonstrating advanced spatial audio implementation, physics-based interaction systems, and
-                                        cross-cultural technology integration. Project showcases capability to merge traditional knowledge systems with
-                                        cutting-edge VR development.</p>
-                                    <p><a href="https://youtu.be/QUuI5qNWHpA" target="_blank" rel="noopener" data-translatable="watchDemo">Watch
-                                            demo</a></p>
-                                </article>
-                                <article class="project-card" id="proj-mangotv">
-                                    <div class="card-meta">
-                                        <div class="logo-box">
-                                            <img class="logo" src="assets/img/work/logo/mangovr.png" alt="MangoTV VR — Pico to NOLOVR port with Addressables packaging">
-                                        </div>
-                                        <div class="datePeriod">December 2023 - April 2024</div>
-                                    </div>
-                                    <h3 data-translatable="mangoTVTitle">MangoTV VR</h3>
-                                    <p data-translatable="mangoTVRole"><strong>Role:</strong> Unity XR Developer — Device porting & XR integration (Large-scale team: VR dept. 15+ people, company 5000+)</p>
-                                    <p data-translatable="mangoTVTech"><strong>Tech:</strong> Unity (C#), XRI, Addressables/Streaming, HybridCLR, Unity Profiler, NOLOVR SDK, Meta XR SDK, Scene Understanding</p>
-                                    <ul>
-                                        <li data-translatable="mangoTVDesc1"><strong>Core Migration:</strong> Ported MangoVR from Pico to NOLOVR platform, focusing on XRI input remapping and camera rig adaptation. Implemented Addressables/streaming architecture for optimized scene loading and cross-device performance.</li>
-                                        <li data-translatable="mangoTVDesc2"><strong>Enterprise Learning:</strong> Gained hands-on experience with large-scale VR development practices: manager-class architecture, team collaboration protocols, and professional coding standards. Learned advanced techniques including HybridCLR hot-update system and performance profiling for multi-device deployment.</li>
-                                        <li data-translatable="mangoTVDesc3"><strong>R&D Exploration:</strong> Researched Meta XR scene understanding and MR solutions for virtual presentation concepts. Prototyped physics-based virtual objects with occlusion and zoom functionality for future "virtual show" applications, testing AR camera integration and real-time interaction systems.</li>
-                                    </ul>
-                                    <p data-translatable="mangoTVOutcome"><strong>Outcome:</strong> Faster loading and stable interaction mapping; delivered iterative test builds aligned to production constraints.</p>
-                                    <p><a href="assets/docs/mangoTV_intern.jpg" target="_blank" rel="noopener" data-translatable="technicalNotesDemo">Certificate</a></p>
-                                </article>
-
-                                <article class="project-card" id="proj-mrpuzzle">
-                                    <div class="card-meta">
-                                        <div class="logo-box">
-                                            <img class="logo" src="assets/img/work/logo/MRPuzzle.png" alt="MRPuzzle — Mixed Reality Huarong Dao puzzle game with advanced MR interactions">
-                                        </div>
-                                        <div class="datePeriod">Jan 2024 - May 2024</div>
-                                    </div>
-                                    <h3 data-translatable="mrPuzzleTitle">Mixed Reality Huarong Dao (MRPuzzle)</h3>
-                                    <p data-translatable="mrPuzzleRole"><strong>Role:</strong> Lead Developer & Designer — Mixed Reality puzzle game development</p>
-                                    <p data-translatable="mrPuzzleTech"><strong>Tech:</strong> Unity (C#), MRTK, Oculus Integration SDK, Meta Quest 3, Spatial Anchoring, Passthrough API</p>
-                                    <ul>
-                                        <li data-translatable="mrPuzzleDesc1"><strong>Mixed Reality Integration:</strong> Developed innovative MR puzzle experience combining traditional Chinese Huarong Dao with modern spatial computing. Implemented spatial anchoring to fix virtual puzzle board to real-world desktop surfaces.</li>
-                                        <li data-translatable="mrPuzzleDesc2"><strong>Advanced Interactions:</strong> Built dual-input system supporting both hand tracking and controller input with seamless switching. Utilized MRTK for remote ray and finger poke interactions, optimizing hand tracking accuracy and stability.</li>
-                                        <li data-translatable="mrPuzzleDesc3"><strong>Technical Innovation:</strong> Implemented Passthrough technology with adjustable transparency/brightness parameters, particle systems for immersive scene transitions, and chapter-based gameplay with smooth visual effects (room edge diffusion, light beam effects).</li>
-                                    </ul>
-                                    <p data-translatable="mrPuzzleOutcome"><strong>Outcome:</strong> Completed innovative MR puzzle game with scalable difficulty (2x2 to XxX grids), dual puzzle modes (picture/number), and cross-timezone development coordination. Demonstrated advanced MR development capabilities and cultural integration.</p>
-                                    <p><a href="https://youtu.be/6DCP5fHOxCY" target="_blank" rel="noopener" data-translatable="watchDemo">Watch demo</a></p>
-                                </article>
-
-                                <article class="project-card" id="proj-journey-ctm">
-                                    <div class="card-meta">
-                                        <div class="logo-box">
-                                            <img class="logo" src="assets/img/work/logo/slack.png" alt="Journey of CTM — education VR experience, MTE 2023 award winner">
-                                        </div>
-                                        <div class="datePeriod">April 2023 - Oct 2023</div>
-                                    </div>
-                                    <h3 data-translatable="journeyCTMTitle">Journey of Chinese Traditional Medicine (VR Education Game)</h3>
-                                    <p data-translatable="journeyCTMRole"><strong>Role:</strong> Lead Developer & Project Manager — VR educational game development</p>
-                                    <p data-translatable="journeyCTMTech"><strong>Tech:</strong> Unity (C#), MRTK V2.73, OpenAI text-davinci-003 API, Meta Quest 2/Oculus Rift, Voice Recognition</p>
-                                    <ul>
-                                        <li data-translatable="journeyCTMDesc1"><strong>Core Systems:</strong> Designed and implemented complex herb collection & medicine crafting mechanics (HerbCollector, Boiling, Remedy classes) with temperature-based brewing simulation and patient treatment workflow.</li>
-                                        <li data-translatable="journeyCTMDesc2"><strong>AI Integration:</strong> Integrated OpenAI API to create interactive dialogue system with historical TCM figure Zhang Zhongjing, supporting voice recognition and text input for educational conversations about traditional medicine.</li>
-                                        <li data-translatable="journeyCTMDesc3"><strong>Technical Achievements:</strong> Balanced complex game mechanics across 3 difficulty levels; optimized VR performance for smooth hand tracking interactions; managed cross-platform deployment (PC VR/Quest).</li>
-                                    </ul>
-                                    <p data-translatable="journeyCTMOutcome"><strong>Outcome:</strong> <strong>Gold Medal + Special Award at Malaysia Technology Expo (MTE 2023)</strong>; Provincial First Prize in China Collegiate Computing Contest. Featured 10+ medicinal herbs, patient simulation system, and innovative AI-powered learning experience.</p>
-                                    <p><a href="https://journeyofctm.carrd.co/" target="_blank" rel="noopener" data-translatable="projectPage">Project page</a> · <a href="https://youtu.be/ZnU2p4B-6eE" target="_blank" rel="noopener" data-translatable="demo">Demo</a> · <a href="assets/docs/MTE2023.png" target="_blank" rel="noopener">Award Certificate</a></p>
-                                </article>
-
-                                <article class="project-card" id="proj-chinese-characters">
-                                    <div class="card-meta">
-                                        <div class="logo-box">
-                                            <img class="logo" src="assets/img/work/logo/nib.png" alt="Chinese Characters Quest — VR educational game for Chinese language learning with gesture recognition">
-                                        </div>
-                                        <div class="datePeriod">Spring 2022 - Fall 2022</div>
-                                    </div>
-                                    <h3 data-translatable="chineseCharactersTitle">Chinese Characters Quest (趣味汉字) - VR Language Learning Game</h3>
-                                    <p data-translatable="chineseCharactersRole"><strong>Role:</strong> Lead Developer & Game Designer — VR educational game development (VR/AR category)</p>
-                                    <p data-translatable="chineseCharactersTech"><strong>Tech:</strong> Unity (C#), Oculus Integration, PDollar Cloud Gesture Recognition, Blender, Visual Studio 2019, Robot Kyle character model</p>
-                                    <ul>
-                                        <li data-translatable="chineseCharactersDesc1"><strong>Educational Innovation:</strong> "学汉语用汉字，弘扬汉语言文化" - Developed comprehensive VR Chinese learning experience without additional controllers. Created inclusive classroom environment supporting students with disabilities through rock climbing, poetry completion, aerial pinyin drawing, and interactive writing/chess gameplay.</li>
-                                        <li data-translatable="chineseCharactersDesc2"><strong>Rapid Development & Self-Learning:</strong> Completed project in 1.5 months starting from VR development fundamentals. Self-taught through international VR tutorials (Valem's VR development series), mastering VR perspective, dual-controller input, movement systems, teleportation animations, and grab interactions through independent research and problem-solving.</li>
-                                        <li data-translatable="chineseCharactersDesc3"><strong>Advanced Gesture Recognition:</strong> Integrated PDollar Cloud geometric recognition system for Chinese character hand-writing. Implemented XML-based character repository with gesture-to-character matching, trigger-based position tracking, and real-time trajectory analysis using WorldToScreenPoint coordinate conversion.</li>
-                                    </ul>
-                                    <p data-translatable="chineseCharactersOutcome"><strong>Outcome:</strong> <strong>National Second Prize</strong> in China Collegiate Computing Contest. Created accessible VR language learning platform with hand tracking, physics collision, gesture recognition, and cultural immersion. Successfully demonstrated innovative approach to Chinese language education through VR technology.</p>
-                                    <p><a href="https://www.bilibili.com/video/BV1kd4y1S7T2?t=1" target="_blank" rel="noopener" data-translatable="watchDemo">Watch demo</a> · <a href="assets/docs/ChineseCharacterQuest.pdf" target="_blank" rel="noopener" data-translatable="technicalReport">Technical Report</a> · <a href="assets/docs/quweihanziCertificate.pdf" target="_blank" rel="noopener" data-translatable="certificatePDF">Award Certificate</a></p>
-                                </article>
-
-                                
-                                <!-- WORK-CARDS ADDITIONS END -->
-                                 
-                <!-- <div class="item" id="slack">
-                    <div class="logo-box">
-                        <img class="logo" src="assets/img/work/logo/Echochamber.png">
-                    </div>
-                    <div class="all-but-logo">
-                        <div class="heading">
-                            <div class="resume-entry">
-                                <div class="org"> <a href="https://youtu.be/QUuI5qNWHpA" target="_blank"
-                                        data-translatable="EchoChamber">EchoChamber</a>
-                                    <div data-translatable="EchoChamberpos">Project Manager, Game Designer, Cooperator between different timezones work</div>
-                                </div>
-                                <div class="datePeriod" data-translatable="EchoChamberdate"> April 2025 - May 2025 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" id="slack">
-                    <div class="logo-box">
-                        <img class="logo" src="assets/img/work/logo/MRPuzzle.png">
-                    </div>
-                    <div class="all-but-logo">
-                        <div class="heading">
-                            <div class="resume-entry">
-                                <div class="org"> <a href="https://youtu.be/6DCP5fHOxCY" target="_blank"
-                                        data-translatable="MRPuzzle">MRPuzzle</a>
-                                    <div data-translatable="MRPuzzlepos">Project Manager, Game Designer </div>
-                                </div>
-                                <div class="datePeriod" data-translatable="MRPuzzledate"> Jan 2024 - May 2024 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" id="kp" style="padding-top:5px">
-                    <div class="logo-box">
-                        <img class="logo" src="assets/img/work/logo/mangovr.png">
-                    </div>
-                    <div class="all-but-logo">
-                        <div class="heading">
-                            <div class="resume-entry">
-                                <div class="org"> <a href = "assets/docs/mangoTV_intern.jpg" target = "_blank" data-translatable="intern1"> MangoTV // Game Porting (Intern) </a>
-                                <div class="datePeriod" data-translatable="intern1date"> November 2023 - April 2024 </div></div>
-                            </div>
-                        </div>
-                        <div class = "description">
-                                                <div class = "work-summary">
-                                                    <p> RealtyShares is a real estate crowdfunding platform through which individual investors can purchase shares in vetted residential and commercial real estate properties for as little as $5,000. The company is backed by several investors including Union Square Ventures, 500 Startups, and General Catalyst.</p>
-                                                    </div>
-                                            </div>
-                    </div>
-                </div> -->
-
-                <div class = "item" id = "rh" style="padding-top:5px">
-                    <div class = "logo-box">
-                        <img class = "logo" src = "assets/img/work/logo/rh.png">
-                    </div>
-                    <div class = "all-but-logo">
-                        <div class = "heading">
-                            <div class = "resume-entry">
-                                <div class = "org"> <a href = "https://github.com/JayGarland/chatgpt-on-wechat" target = "_blank" data-translatable="wechatbot">Reply Bot on Wechat</a>
-                                <div data-translatable="wechatposition">Project Collaborator, Manager </div> </div>
-                                <div class = "datePeriod" data-translatable="wechatdate"> August 2023 - September 2024 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "item" id = "rh" style="padding-top:5px">
-                    <div class = "logo-box">
-                        <img class = "logo" src = "assets/img/work/logo/fig.png">
-                    </div>
-                    <div class = "all-but-logo">
-                        <div class = "heading">
-                            <div class = "resume-entry">
-                                <div class = "org"> <a href = "https://github.com/JayGarland/Autoreply_Sydneybot_Reddit" target = "_blank" data-translatable="redditbot">Auto Reply Bot on Reddit</a>
-                                    <div data-translatable="redditpos">Project Collaborator, Manager, Designer </div></div>
-                                <div class = "datePeriod" data-translatable="redditdate"> July 2023 - Sept 2023 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- <div class = "item" id = "slack">
-                    <div class = "logo-box">
-                        <img class = "logo" src = "assets/img/work/logo/slack.png">
-                    </div>
-                    <div class = "all-but-logo">
-                        <div class = "heading">
-                            <div class = "resume-entry">
-                                <div class = "org"> <a href = "https://journeyofctm.carrd.co/" target = "_blank" data-translatable="CTM">Journey of CTM</a>
-                                <div data-translatable="CTMpos">Project Manager, Game Designer </div></div>
-                                <div class = "datePeriod" data-translatable="CTMdate"> April 2023 - Oct 2023 </div>
-                            </div>
-                        </div>
-                        <div class = "description">
-                            <div class = "work-summary">
-                                <p> At Slack, I modernized the <i> customize emoji </i> page to decrease its load time and improve its usability.
-                                This included building API endpoints to return searchable and paginated emoji data and to add and automatically resize </p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <div class = "item" id = "eecs">
-                    <div class = "logo-box">
-                        <img class = "logo" src = "assets/img/work/logo/eecs.png">
-                    </div>
-                    <div class = "all-but-logo">
-                        <div class = "heading">
-                            <div class = "resume-entry">
-                                <div class = "org"> <a href="assets/docs/huapuzhilian_intern.jpg" target="_blank" data-translatable="intern2"> Huapu Zhilian (Beijing) Technology // Software Engineering Intern </a>
-                                <div class = "datePeriod" data-translatable="intern2date"> July 2022 - August 2022 </div></div>
-                            </div>
-                        </div>
-                        <!-- <div class = "description">
-                            <div class = "work-summary">
-                                <p> RealtyShares is a real estate crowdfunding platform through which individual investors can purchase shares in vetted residential and commercial real estate properties for as little as $5,000. The company is backed by several investors including Union Square Ventures, 500 Startups, and General Catalyst.</p>
-                                </div>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class = "item" id = "cs61a">
-                    <div class = "logo-box">
-                        <img class = "logo" src = "assets/img/work/logo/cs61a.png">
-                    </div>
-                    <div class = "all-but-logo">
-                        <div class = "heading">
-                            <div class = "resume-entry">
-                                <div class = "org"> <a href = "https://github.com/JayGarland/CS61A_SUMMER20" target = "_blank" data-translatable="cs61a">UC Berkeley cs61a</a>
-                                <div data-translatable="cs61apos"> Self-taught Learning </div></div>
-                                <div class = "datePeriod" data-translatable="cs61adate"> June 2022 - Dec 2022 </div>
-                            </div>
-                        </div>
-                        <!-- <div class = "description">
-                            <div class = "work-summary">
-                                <p> RealtyShares is a real estate crowdfunding platform through which individual investors can purchase shares in vetted residential and commercial real estate properties for as little as $5,000. The company is backed by several investors including Union Square Ventures, 500 Startups, and General Catalyst.</p>
-                                </div>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class = "item" id = "rs">
-                    <div class = "logo-box">
-                        <img class = "logo" src = "assets/img/work/logo/rs.png">
-                    </div>
-                    <div class = "all-but-logo">
-                        <div class = "heading">
-                            <div class = "resume-entry">
-                                <div class = "org"> <a href = "assets/docs/CyberRenaissance.pdf" target = "_blank" data-translatable="cyberRenai">Cyber Renaissance (VR Game)</a>
-                                <div data-translatable="cyberRenaipos"> Project Manager, Game Designer </div></div>
-                                <div class = "datePeriod" data-translatable="cyberRenaidate"> May 2022 - July 2022 </div>
-                            </div>
-                        </div>
-                        <!-- <div class = "description">
-                            <div class = "work-summary">
-                                <p> RealtyShares is a real estate crowdfunding platform through which individual investors can purchase shares in vetted residential and commercial real estate properties for as little as $5,000. The company is backed by several investors including Union Square Ventures, 500 Startups, and General Catalyst.</p>
-                                </div>
-                        </div> -->
-                    </div>
-                </div>
-
-
-            </div>
-
-            <!-- <div class = "swirl-container"><img class = "swirl" src = "assets/img/swirl.png"></div> -->
-        </div>
+        <img class="portrait" src="assets/img/about-me/good/openspace2.png" alt="Pengyu Jie" width="180" height="180">
+      </div>
     </section>
 
-<!-- =========================
-     ACHIEVEMENTS SECTION (EN-only placeholder)
-     ========================= -->
-<section id="achievements" class="achv" aria-labelledby="achievements-title">
-    <div class="container">
-        <h2 id="achievements-title" data-translatable="achievementsTitle">Achievements / Awards</h2>
+    <section id="stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <p class="section-kicker" data-i18n="stackKicker">Stack</p>
+        <h2 id="stack-title" data-i18n="stackTitle">Tools I reach for</h2>
+        <div class="stack-group">
+          <p class="stack-label" data-i18n="frontend">Frontend</p>
+          <ul class="chips">
+            <li>Angular</li><li>TypeScript</li><li>RxJS</li><li>HTML/CSS/JS</li><li>Transloco</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <p class="stack-label" data-i18n="backend">Backend</p>
+          <ul class="chips">
+            <li>C#</li><li>ASP.NET Core</li><li>EF Core</li><li>SQL / MySQL</li><li>REST</li><li>SignalR</li><li>Python</li><li>Supabase</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <p class="stack-label" data-i18n="tools">Tools</p>
+          <ul class="chips">
+            <li>Git</li><li>GitHub</li><li>Azure DevOps</li><li>Docker</li><li>Azure</li><li>Swagger</li>
+          </ul>
+        </div>
+        <div class="stack-group stack-xr">
+          <p class="stack-label" data-i18n="xr">XR (background)</p>
+          <ul class="chips">
+            <li>Unity</li><li>C#</li><li>MRTK</li><li>Meta XR</li><li>XRI</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <ul class="achv-list">
-            <!-- Item 1: MTE 2023 (confirmed; has certificate image) -->
-            <li class="achv-item">
-                <h3 data-translatable="mteTitle">Malaysia Technology Expo (MTE 2023) — Gold Medal + Special Award</h3>
-                <p class="achv-meta">
-                    <span class="label-organizer" data-translatable="labelOrganizer">Organizer</span>: PROTEMP Exhibitions & Conferences Sdn Bhd·
-                    <span class="label-date" data-translatable="labelDate">Date</span>: Oct 2023 ·
-                    <span class="label-project" data-translatable="labelProject">Project</span>: Journey of Chinese Traditional Medicine (VR Education Game)
-                </p>
-                <p class="achv-impact" data-translatable="mteImpact">
-                    <span class="label-impact" data-translatable="labelImpact">Impact</span>:
-                    International recognition for innovative VR educational game combining Unity development, AI integration (OpenAI API), and traditional medicine learning. Project featured complex herb collection mechanics, intelligent dialogue system, and cross-platform VR deployment.
-                </p>
-                <p class="achv-link">
-                    <a href="assets/docs/MTE2023.png" target="_blank" rel="noopener" data-translatable="certificateImage">Certificate (IMAGE)</a> · 
-                    <a href="https://journeyofctm.carrd.co/" target="_blank" rel="noopener">Project Site</a>
-                </p>
-            </li>
+    <section id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <p class="section-kicker" data-i18n="workKicker">Selected work</p>
+        <h2 id="work-title" data-i18n="workTitle">Case studies</h2>
+        <div class="cases">
+          <article class="case" id="presage">
+            <div>
+              <p class="dates" data-i18n="presageDates">Feb 2026 – Aug 2026 · Paris, PariSanté Campus</p>
+              <h3 data-i18n="presageTitle">Presage Care</h3>
+              <p class="role" data-i18n="presageRole">Fullstack Software Engineering Intern</p>
+              <ul>
+                <li data-i18n="presage1">Shipped 88 merged pull requests across a production healthcare platform: institute Angular portal, patient/family web app, and ASP.NET Core / EF Core backend and identity services.</li>
+                <li data-i18n="presage2">Built portal features end-to-end — monitoring workflows, prevention views, institute admin, questionnaire-driven UI, notifications, calendar — on BFF-proxied REST APIs with RxJS, route guards, and RBAC.</li>
+                <li data-i18n="presage3">Designed and shipped a Weekly Brief dashboard: rendered a backend-generated HTML report in Angular, and embedded Google Maps in a readonly report mode without breaking the live dashboard.</li>
+              </ul>
+            </div>
+            <div class="still" aria-hidden="true">
+              <div class="still-fallback">
+                <strong>Presage Care</strong>
+                <span class="mono">Angular · ASP.NET Core · EF Core</span>
+              </div>
+            </div>
+          </article>
 
-            <!-- Item 2: China Collegiate Computing Contest — Provincial First Prize (First Author) -->
-            <li class="achv-item">
-                <h3 data-translatable="provincialFirstTitle">China Collegiate Computing Contest — Provincial First Prize (First Author)</h3>
-                <p class="achv-meta">
-                    <span class="label-organizer" data-translatable="labelOrganizer">Organizer</span>: China Collegiate Computing Contest Organizing Committee ·
-                    <span class="label-date" data-translatable="labelDate">Date</span>: Jun 2023 ·
-                    <span class="label-project" data-translatable="labelProject">Project</span>: Journey of Chinese Traditional Medicine (NO.2023014770)
-                </p>
-                <p class="achv-impact" data-translatable="provincialFirstImpact">
-                    <span class="label-impact" data-translatable="labelImpact">Impact</span>:
-                    <strong>Provincial First Prize</strong> in VR/AR category for developing innovative educational VR game. Led technical implementation of herb collection systems, AI dialogue integration, and cross-platform VR deployment. Project advanced to national competition.
-                </p>
-                <p class="achv-link">
-                    <a href="assets/docs/journeyofCTM_prize1.jpg" target="_blank" rel="noopener" data-translatable="certificateLink">Certificate</a> · 
-                    <a href="https://journeyofctm.carrd.co/" target="_blank" rel="noopener">Technical Demo</a>
-                </p>
-            </li>
+          <article class="case" id="moto">
+            <div>
+              <p class="dates" data-i18n="motoDates">Oct 2025 – Jan 2026</p>
+              <h3 data-i18n="motoTitle">Moto Micro Tours</h3>
+              <p class="role" data-i18n="motoRole">Fullstack · personal / coursework</p>
+              <ul>
+                <li data-i18n="moto1">Built a motorcycle micro-tour marketplace: discovery, booking approval, mock payment, real-time chat, completion, and reviews.</li>
+                <li data-i18n="moto2">Chat sends over REST and receives in real time on SignalR hubs, with polling kept as fallback.</li>
+                <li data-i18n="moto3">Role-aware booking workflows: participant/motard authorization, transactional seat reservation, refund handling, two-sided completion, and gated reviews.</li>
+              </ul>
+              <p class="case-links"><a href="https://github.com/JayGarland/moto_micro_tours" rel="noopener" target="_blank" data-i18n="motoLink">Source on GitHub</a></p>
+            </div>
+            <div class="still">
+              <img src="assets/img/bikes/YAMAHA_MT03-Cover.jpg" alt="Motorcycle still for Moto Micro Tours" width="640" height="400">
+            </div>
+          </article>
 
-            <!-- Item 3: China Collegiate Computing Contest — National Second Prize (First Author) -->
-            <li class="achv-item">
-                <h3 data-translatable="nationalSecondTitle">China Collegiate Computing Contest — National Second Prize (First Author)</h3>
-                <p class="achv-meta">
-                    <span class="label-organizer" data-translatable="labelOrganizer">Organizer</span>: China Collegiate Computing Contest Organizing Committee ·
-                    <span class="label-date" data-translatable="labelDate">Date</span>: Aug 2022 ·
-                    <span class="label-project" data-translatable="labelProject">Project</span>: Chinesehanzi
-                </p>
-                <p class="achv-impact" data-translatable="nationalSecondImpact">
-                    <span class="label-impact" data-translatable="labelImpact">Impact</span>:
-                    Selected among national finalists.
-                </p>
-                <p class="achv-link">
-                    <a href="assets/docs/quweihanziCertificate.pdf" target="_blank" rel="noopener" data-translatable="certificatePDF">Certificate(PDF)</a>
-                </p>
+          <article class="case" id="dashcam">
+            <div>
+              <p class="dates" data-i18n="dashDates">Jan 2026 – Apr 2026</p>
+              <h3 data-i18n="dashTitle">Dashcam Cloud Service</h3>
+              <p class="role" data-i18n="dashRole">Fullstack · personal</p>
+              <ul>
+                <li data-i18n="dash1">Video tamper-detection: on-device perceptual hashes stream to Supabase, then a validator re-hashes submitted video and matches with Hamming distance.</li>
+                <li data-i18n="dash2">Three services — capture client, Angular validator portal, ASP.NET Core API with ffmpeg frame extraction and JWT/role checks.</li>
+                <li data-i18n="dash3">Failed detections classified by root cause (timestamp drift, visual transform, extraction failure) across a five-case tamper matrix.</li>
+              </ul>
+              <p class="case-links"><a href="https://github.com/JayGarland/dashcam-cloudservice-web" rel="noopener" target="_blank" data-i18n="dashLink">Source on GitHub</a></p>
+            </div>
+            <div class="still" aria-hidden="true">
+              <div class="still-fallback">
+                <strong>Dashcam Cloud</strong>
+                <span class="mono">dHash64 · Supabase · ffmpeg</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="support" id="resonova">
+          <h3 data-i18n="resoTitle">Resonova</h3>
+          <p data-i18n="resoBody">Personal AI radio companion: playlist or track list becomes a hosted cast — Gemini multi-speaker scripts, streamed TTS, and a browser player that crossfades commentary with live Spotify playback (OAuth/PKCE + Web Playback SDK).</p>
+        </aside>
+
+        <p class="xr-strip">
+          <span data-i18n="xrStrip">XR background — MTE 2023 Gold + Special Award; China Collegiate Computing Contest Provincial First Prize and National Second Prize. Journey of Chinese Traditional Medicine, Chinese Characters Quest, EchoChamber, MRPuzzle, MangoTV.</span>
+          <br>
+          <a href="assets/docs/MTE2023.png" target="_blank" rel="noopener" data-i18n="certMte">MTE certificate</a>
+          · <a href="assets/docs/journeyofCTM_prize1.jpg" target="_blank" rel="noopener" data-i18n="certProv">Provincial certificate</a>
+          · <a href="assets/docs/quweihanziCertificate.pdf" target="_blank" rel="noopener" data-i18n="certNat">National certificate</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="section-kicker" data-i18n="contactKicker">Contact</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Let’s work</h2>
+          <p data-i18n="contactLead">Email me, write on LinkedIn, or leave a short note. I reply quickly.</p>
+          <ul class="contact-links">
+            <li><span class="mono" data-i18n="emailLabel">Email</span><br><a href="mailto:mamba579jpy@gmail.com">mamba579jpy@gmail.com</a></li>
+            <li><span class="mono">LinkedIn</span><br><a href="https://www.linkedin.com/in/pengyu-j-bb2b89212/" rel="noopener" target="_blank">pengyu-j</a></li>
+            <li><span class="mono" data-i18n="github">GitHub</span><br>
+              <a href="https://github.com/JayGarland" rel="noopener" target="_blank">JayGarland</a>
+              · <a href="https://github.com/raJayoux" rel="noopener" target="_blank">raJayoux</a>
             </li>
-        </ul>
+          </ul>
+        </div>
+        <div>
+          <form id="contact-form">
+            <label><span data-i18n="name">Name</span><input type="text" name="name" required></label>
+            <label><span data-i18n="email">Email</span><input type="email" name="email" required></label>
+            <label><span data-i18n="message">Message</span><textarea name="message" required></textarea></label>
+            <button class="btn btn-primary" type="submit" data-i18n="submit" data-i18n-value="submit">Send</button>
+          </form>
+          <p id="form-ok" class="form-ok" data-i18n="thanks">Sent. I’ll get back to you.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:min(1120px,calc(100% - 48px));margin:0 auto;">
+      <span data-i18n="footer">© 2026 raJayoux</span>
+      <a href="https://github.com/raJayoux/raJayoux.github.io" rel="noopener" target="_blank">GitHub</a>
     </div>
-</section>
-
-    <section id = "contact" class = "section-card">
-        <div class = "outer-container"> 
-            <div class = "slide-border"> </div> 
-            <div class = "card-header-container">
-                <!-- <img class = "menu-button" src = "assets/img/menu.png"> -->
-                <img class = "card-title" src = "assets/img/headers-no-shadow/contact.png" alt="Contact section">
-            </div>
-            <div id = "contact-container">
-                <div id = "top-look">
-                    <img src = "assets/img/looking.JPG" alt="Jay's portrait photo">
-                </div>
-                <div id = "contact-margin"></div>
-                <div id = "contact-blurb" style = "font-size: 15px;">
-                        <div data-translatable="contactmes">Email me at</div> <a href = "mailto:mamba579jpy@gmail.com" class = "line-link"> mamba579jpy@gmail.com </a> <div data-translatable="contactmesfix"> or leave me a message below, and I will get back to you as soon as I can!</div>
-                </div>
-                <div id = "contact-margin"></div>
-                <div id = "contact-form"> 
-                    <!-- <form id = "emailer" method = "post" action = "assets/js/email.php">  -->
-                    <form id = "emailer" method = "POST">
-                        <div style = "font-size:12px"> 
-                            <div data-translatable="emname">name</div> 
-                            <input type = "text" name = "name" required /> 
-                        </div>
-                        <div style = "margin-top:15px; font-size:12px">
-                            <div data-translatable="em">email</div> 
-                            <input type = "email" name = "email" required />
-                        </div>
-                        <div style = "margin-top:15px; font-size:12px">
-                            <div data-translatable="mes">message</div> 
-                            <textarea id = "message" name = "message" required ></textarea>
-                        </div>
-                        <div style = "margin-top:15px"> 
-                            <input type = "submit" name = "submit" value = "submit!" data-translatable="submit">
-                        </div>
-                    </form>
-                    <div id = "received-message">
-                        <div id = "airplane"> <img src = "assets/img/sent.png" alt="Message sent confirmation"> </div>
-                        <div id = "thanks" data-translatable="thanks"> Sent! Thanks for your message! </div>
-                    </div>
-                </div>
-                <div id = "looking-container">
-                    <img id = "looking" src = "assets/img/looking.JPG" alt="Jay's portrait photo">
-                </div>
-            </div>
-            <div style = "height:30px;"></div>
-            <div id = "links">
-                <a href = "https://www.facebook.com/JayVaptain" target = "_blank"><img class = "link" src = "assets/img/links/blue/facebook.png" alt="Facebook profile"></a>
-                <a href = "https://www.instagram.com/jayworkmanmangecrapaud/" target = "_blank"> <img class = "link" src = "assets/img/links/blue/insta.png" alt="Instagram profile"> </a>
-                <a href = "https://i.imgur.com/D4xzNSv.jpg" target = "_blank"> <img class = "link" src = "assets/img/links/blue/wechat.png" alt="WeChat contact QR code"> </a>
-                <a href = "https://www.linkedin.com/in/pengyu-j-bb2b89212/" target = "_blank"> <img class = "link" src = "assets/img/links/blue/linkedin.png" alt="LinkedIn profile"> </a>
-                <a href = "mailto:mamba579jpy@gmail.com"><img class = "link" src = "assets/img/links/blue/email.png" alt="Email contact"></a>
-                <a href = "assets/docs/rajayoux_Resume.pdf" target = "_blank"><img class = "link" src = "assets/img/links/blue/resume.png" alt="Download CV (PDF)"></a>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- PERSONAL SECTION (Bikes & Lounge) -->
-    <section id="personal" class="personal">
-        <div class="outer-container">
-            <div class="slide-border"></div>
-            <h2 style="text-align: center;">Personal — Bikes & Lounge</h2>
-            
-            <!-- Bikes Gallery -->
-            <div class="personal-subsection">
-                <div id="bikes-gallery-container">
-                    <!-- Bike 1 -->
-                    <div class="bike-card" id="bike-1">
-                        <img class="bike-preview" src="assets/img/bikes/Firstbtwin500/thumbnails/20240915_161245.webp" alt="First B'twin 500 mountain bike" loading="lazy">
-                        <h4 data-translatable="bike1_title"></h4>
-                        <p data-translatable="bike1_description"></p>
-                    </div>
-                    <!-- Bike 2 -->
-                    <div class="bike-card" id="bike-2">
-                        <img class="bike-preview" src="assets/img/bikes/VTTbtwin500/thumbnails/20240928_182403.webp" alt="VTT B'twin 500 mountain bike" loading="lazy">
-                        <h4 data-translatable="bike2_title"></h4>
-                        <p data-translatable="bike2_description"></p>
-                    </div>
-                    <!-- Bike 3 -->
-                    <div class="bike-card" id="bike-3">
-                        <img class="bike-preview" src="assets/img/bikes/VTTScott/thumbnails/20241019_211510.webp" alt="Scott VTT mountain bike" loading="lazy">
-                        <h4 data-translatable="bike3_title"></h4>
-                        <p data-translatable="bike3_description"></p>
-                    </div>
-                    <!-- Bike 4 -->
-                    <div class="bike-card" id="bike-4">
-                        <img class="bike-preview" src="assets/img/bikes/VeloDeRoute/thumbnails/20250130_180735.webp" alt="Road bike for distance cycling" loading="lazy">
-                        <h4 data-translatable="bike4_title"></h4>
-                        <p data-translatable="bike4_description"></p>
-                    </div>
-                    <!-- Bike 5 -->
-                    <div class="bike-card" id="bike-5">
-                        <img class="bike-preview" src="assets/img/bikes/VTTRockRider/thumbnails/20250103_173753.webp" alt="RockRider VTT mountain bike" loading="lazy">
-                        <h4 data-translatable="bike5_title"></h4>
-                        <p data-translatable="bike5_description"></p>
-                    </div>
-                    <!-- Bike 6 -->
-                    <div class="bike-card" id="bike-6">
-                        <img class="bike-preview" src="assets/img/bikes/VTTNakamura/thumbnails/20250115_131021.webp" alt="Nakamura VTT mountain bike" loading="lazy">
-                        <h4 data-translatable="bike6_title"></h4>
-                        <p data-translatable="bike6_description"></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lounge Gallery -->
-            <div class="personal-subsection">
-                <div id="lounge-content-container">
-                    <div class="thumbnail" id="motorRide">
-                        <img class="non-overlay" src="assets/img/dance-thumbnails/motorRIde.png" alt="Motorcycle ride photo" loading="lazy">
-                        <img class="overlay" src="assets/img/dance-thumbnails/overlay/motorRide.png" alt="" loading="lazy">
-                    </div>
-                    <div class="thumbnail" id="bikeRide">
-                        <img class="non-overlay" src="assets/img/dance-thumbnails/bikeRide.png" alt="Bike ride photo" loading="lazy">
-                        <img class="overlay" src="assets/img/dance-thumbnails/overlay/bikeRide.png" alt="" loading="lazy">
-                    </div>
-                    <div class="thumbnail" id="aWinter">
-                        <img class="non-overlay" src="assets/img/dance-thumbnails/aWinter.png" alt="Winter activity photo" loading="lazy">
-                        <img class="overlay" src="assets/img/dance-thumbnails/overlay/aWinter.png" alt="" loading="lazy">
-                    </div>
-                    <div class="thumbnail" id="aGala">
-                        <img class="non-overlay" src="assets/img/dance-thumbnails/aGala.png" alt="Gala event photo" loading="lazy">
-                        <img class="overlay" src="assets/img/dance-thumbnails/overlay/aGala.png" alt="" loading="lazy">
-                    </div>
-                    <div class="thumbnail" id="Swimming">
-                        <img class="non-overlay" src="assets/img/dance-thumbnails/Swimming.png" alt="Swimming activity photo" loading="lazy">
-                        <img class="overlay" src="assets/img/dance-thumbnails/overlay/Swimming.png" alt="" loading="lazy">
-                    </div>
-                    <div class="thumbnail" id="aLife">
-                        <img class="non-overlay" src="assets/img/dance-thumbnails/aLife.png" alt="Life moments photo" loading="lazy">
-                        <img class="overlay" src="assets/img/dance-thumbnails/overlay/aLife.png" alt="" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id = "video-container">
-        <iframe id = 'motorRide-vid' class = "vid" src="https://www.youtube.com/embed/mw9pxMBOAtc" frameborder="0" allowfullscreen></iframe> 
-        <iframe id = 'bikeRide-vid' class = "vid" src="https://www.youtube.com/embed/0Hvy-eE20S0" frameborder="0" allowfullscreen></iframe>
-        <iframe id = 'aWinter-vid' class = "vid" src="https://www.youtube.com/embed/uicwHdbBhKM" frameborder="0" allowfullscreen></iframe>
-        <iframe id = 'aGala-vid' class = "vid" src="https://www.youtube.com/embed/rjuoVm1jAyQ" frameborder="0" allowfullscreen></iframe>
-        <iframe id = 'Swimming-vid' class = "vid" src="https://www.youtube.com/embed/JQwmd3L8rfk"frameborder="0" allowfullscreen></iframe>
-        <iframe id = 'aLife-vid' class = "vid" src="https://www.youtube.com/embed/PMOMZf1K2_c" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div id = "footer" style = "padding-top: 20px; font-size:12px;" data-translatable="certifi"> © 2023 raJayoux. All Rights Reserved. <a href="#personal" rel="nofollow">Personal: Bikes & Lounge</a> </div>
-
-
+  </footer>
+  <script src="assets/js/portfolio.js"></script>
 </body>
+</html>
