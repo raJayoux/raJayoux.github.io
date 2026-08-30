@@ -181,9 +181,17 @@ h2 { margin: 0 0 var(--s24); font-size: 28px; letter-spacing: -0.025em; font-wei
   margin-top: var(--s24);
   border-top: 1px solid var(--line);
   padding-top: var(--s24);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 38%);
+  gap: var(--s24);
+  align-items: center;
 }
 .support h3 { margin: 0 0 8px; font-size: 18px; }
 .support p { margin: 0; color: var(--muted); max-width: 48rem; }
+.support-still { min-height: 160px; }
+@media (max-width: 800px) {
+  .support { grid-template-columns: 1fr; }
+}
 
 .xr-strip {
   margin-top: var(--s24);
