@@ -4,11 +4,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 570px;
-    height:100vh;
+    height:auto;
+    min-height:100vh;
     /* border: 1px solid cyan; */
 }
 
-#language-switcher{ /* internship-2025: move to top-right and improve contrast */
+#language-switcher{
     position: absolute;
     top: 14px;
     right: 18px;
@@ -132,13 +133,15 @@
 
 #links {
     position:relative;
-    left: 60%;
+    left: 50%;
     transform: translateX(-50%);
-    display:inline-block;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
     max-width: 900px;
-    height: 7%;  
-    width: 50%; 
-    /* border: 1px solid cyan; */
+    width: min(90%, 720px);
 }
 
 
@@ -149,10 +152,7 @@
 #links .link {
     object-fit:contain;
     max-height:100%;
-    max-width:10%;
-    padding-left: 0.5%;
-    padding-right:1%;
-    /* border: 1px solid cyan; */
+    width: 32px;
 }
 
 #links .link:hover{
@@ -161,17 +161,12 @@
 
 @media screen and (max-width: 700px) {
     #links {
-        max-width:200px;
+        gap: 0.5rem;
     }
 
     #links .link {
-        max-width:17.2%;
-        padding-left:0.5%;
-        padding-right:0.5%;
+        width: 26px;
     }
-
-    
-
 }
 
 
@@ -241,7 +236,7 @@
     }
 }
 
-/* HOME-HERO A EN (internship-2025) CSS START */
+/* Hero */
 .hero {
     max-width: 1100px;
     margin: 0 auto;
@@ -265,9 +260,19 @@
     text-shadow: 0 1px 2px rgba(0,0,0,0.55);
     font-size: 1.05rem;
     margin: 0 0 1rem;
-    max-width: 58ch;
+    max-width: 72ch;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero .hero-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    max-width: 54ch;
+}
+
+.hero .hero-about {
+    line-height: 1.7;
 }
 
 .hero-ctas {
@@ -321,6 +326,26 @@
     opacity: 0.95;
 }
 
+.contact-doc-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid #5291AE;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #5291AE;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.contact-doc-link:hover {
+    color: white;
+    background: #5291AE;
+    text-decoration: none;
+}
+
 @media screen and (max-width:700px) {
     .links-hero { gap: 0.45rem; }
     .links-hero .link { width: 22px; }
@@ -334,4 +359,3 @@
         padding: 0.6rem 1.1rem;
     }
 }
-/* HOME-HERO A EN (internship-2025) CSS END */

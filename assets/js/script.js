@@ -59,18 +59,7 @@ $(document).ready(function() {
 
     $("#grayed-out-box").click(function() {
         $("#grayed-out-box").css("display", "none")
-        $("#video-container").css("z-index", "-10")
-
-        $("#grayed-out-box").removeClass("video-open")
-        $("iframe").css("display", "none");
         $("body").css("overflow-y", "auto")
-
-        $("iframe").each(function() { 
-            var src= $(this).attr('src');
-            $(this).attr('src',src);  
-        });
-
-        
     })
 
     $('#sidebar-exit').click(function() {
@@ -113,62 +102,6 @@ $(document).ready(function() {
     //         $(this).parent().find(".description").css("display","block");
     //     }
     // });
-
-    //DANCE
-    $(".thumbnail").hover(function() {
-        $(this).find(".overlay").css("display", "inline-block");
-        $(this).find(".non-overlay").css("display", "none");
-        $('body').css('cursor', 'pointer')
-        $(this).find(".dance-label").css("display", "inline-block");
-    }, function() {
-        $(this).find(".non-overlay").css("display", "inline-block");
-        $(this).find(".overlay").css("display", "none");
-        $('body').css('cursor', 'default')
-        $(this).find(".dance-label").css("display", "none");
-    })
-
-    $(".thumbnail").click(function() {
-        $("#video-container").css("z-index", "20");
-        $("body").css("overflow-y", "hidden");
-    }
-    )
-
-    $("#motorRide").click(function() {
-        $("#motorRide-vid").css("display", "block");
-        $("#grayed-out-box").css("display", "block")
-        $("#grayed-out-box").addClass("video-open")
-    })
-
-    $("#aWinter").click(function() {
-        $("#aWinter-vid").css("display", "block");
-        $("#grayed-out-box").css("display", "block")
-        $("#grayed-out-box").addClass("video-open")
-    })
-
-    $("#aGala").click(function() {
-        $("#aGala-vid").css("display", "block");
-        $("#grayed-out-box").css("display", "block")
-        $("#grayed-out-box").addClass("video-open")
-    })
-
-    $("#Swimming").click(function() {
-        $("#Swimming-vid").css("display", "block");
-        $("#grayed-out-box").css("display", "block")
-        $("#grayed-out-box").addClass("video-open")
-    })
-
-    $("#bikeRide").click(function() {
-        $("#bikeRide-vid").css("display", "block");
-        $("#grayed-out-box").css("display", "block")
-        $("#grayed-out-box").addClass("video-open")
-    })
-
-    $("#aLife").click(function() {
-        $("#aLife-vid").css("display", "block");
-        $("#grayed-out-box").css("display", "block")
-        $("#grayed-out-box").addClass("video-open")
-    })
-
     // CONTACT
     $("#emailer").on("submit", function(){
         $.ajax({
@@ -211,9 +144,7 @@ $(document).ready(function() {
 // }
 
 document.addEventListener("DOMContentLoaded", () => {
-    let currentLanguage = "en"; // Set initial language
-    const languageSwitcher = document.getElementById("language-switcher");
-    const navLanguageSwitcher = document.getElementById("nav-language-switcher");
+    let currentLanguage = localStorage.getItem("currentLanguage") || "en";
     const languageOptions = document.querySelectorAll("[data-lang]"); // Get all language options using data-lang attribute
     const translatableElements = document.querySelectorAll("[data-translatable]");
 
@@ -234,30 +165,48 @@ document.addEventListener("DOMContentLoaded", () => {
         
         translatableElements.forEach((element) => {
             const key = element.dataset.translatable;
+            const translatedValue = translations[language] && translations[language][key];
+
+            if (translatedValue === undefined) {
+                return;
+            }
 
             if (element.tagName.toLowerCase() === "input") {
                 // If it's an input, update its value
-                element.value = translations[language][key];
+                element.value = translatedValue;
             } else {
                 // Otherwise, update its text content
-                element.textContent = translations[language][key];
+                element.textContent = translatedValue;
             }
         });
 
-        // update CV download link(s) to language-specific file (fallback to EN)
+        // Update both resume tracks to language-specific files with EN fallback.
         try {
-            const cvMap = {
-                en: "assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf",
-                fr: "assets/docs/JiePengyu_CV_UnityXR_2025-09_FR.pdf",
-                zh: "assets/docs/JiePengyu_CV_UnityXR_2025-09_ZH.pdf"
+            const fullstackResumeMap = {
+                en: "assets/docs/resume-fullstack/resume-fullstack-en.pdf",
+                fr: "assets/docs/resume-fullstack/resume-fullstack-fr.pdf",
+                zh: "assets/docs/resume-fullstack/resume-fullstack-zh.pdf"
             };
-            const cvAnchors = document.querySelectorAll('a[data-translatable="heroDownloadCV"]');
-            cvAnchors.forEach(a => {
-                a.href = cvMap[language] || cvMap.en;
+            const xrResumeMap = {
+                en: "assets/docs/resume-xr/resume-xr-en.pdf",
+                fr: "assets/docs/resume-xr/resume-xr-fr.pdf",
+                zh: "assets/docs/resume-xr/resume-xr-zh.pdf"
+            };
+            ["hero-fullstack-resume", "work-fullstack-resume", "contact-fullstack-resume"].forEach((id) => {
+                const anchor = document.getElementById(id);
+                if (anchor) {
+                    anchor.href = fullstackResumeMap[language] || fullstackResumeMap.en;
+                }
+            });
+            ["hero-xr-resume", "work-xr-resume", "contact-xr-resume"].forEach((id) => {
+                const anchor = document.getElementById(id);
+                if (anchor) {
+                    anchor.href = xrResumeMap[language] || xrResumeMap.en;
+                }
             });
         } catch (e) {
             // non-blocking: if anything goes wrong, leave links as-is
-            console.warn('CV language switcher error', e);
+            console.warn("Resume language switcher error", e);
         }
 
         // Optional: Store the selected language in local storage for persistence
@@ -274,125 +223,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize the language
     changeLanguage(currentLanguage);
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const bikeCards = document.querySelectorAll(".bike-card");
-    const galleryModal = document.createElement("div");
-    galleryModal.id = "gallery-modal";
-    galleryModal.innerHTML = `
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-body">
-                <div class="photo-and-details">
-                    <div id="gallery-photo-full">
-                        <img id="full-image" src="" alt="Full Image">
-                    </div>
-                    <div id="photo-details">
-                        <h3 id="photo-title"></h3>
-                        <p id="photo-description"></p>
-                    </div>
-                </div>
-                <div id="gallery-photos-container"></div> <!-- Gallery below -->
-            </div>
-        </div>
-    `;
-    document.body.appendChild(galleryModal);
-
-    const closeBtn = galleryModal.querySelector(".close-btn");
-    const galleryPhotosContainer = galleryModal.querySelector("#gallery-photos-container");
-
-    // Open gallery modal when a bike preview is clicked
-    bikeCards.forEach((card) => {
-        card.addEventListener("click", () => {
-            const bikeId = card.id;
-            const gallery = bikeGalleries[bikeId];
-
-            if (gallery) {
-                // Populate the gallery with thumbnails
-                galleryPhotosContainer.innerHTML = ""; // Clear previous content
-                gallery.forEach((photo, index) => {
-                    const img = document.createElement("img");
-                    img.src = photo.thumbnailSrc; // Use thumbnail for preview
-                    img.alt = photo.title;
-                    img.classList.add("gallery-photo");
-                    img.dataset.index = index;
-                    img.dataset.bikeId = bikeId; // Store bike ID for later use
-                    img.loading = "lazy"; // Enable lazy loading
-                    galleryPhotosContainer.appendChild(img);
-                });
-
-                // Show the first photo's details (but load the full-size image)
-                showPhotoDetails(gallery[0]);
-
-                // Show the modal
-                galleryModal.style.display = "flex";
-
-                // Disable scrolling on the main page
-                document.body.style.overflow = "hidden";
-            }
-        });
-    });
-
-    // Close the modal when clicking outside the modal content
-    galleryModal.addEventListener("click", (event) => {
-        if (event.target === galleryModal) {
-            galleryModal.style.display = "none";
-
-            // Re-enable scrolling on the main page
-            document.body.style.overflow = "auto";
-        }
-    });
-
-    // Close the modal
-    closeBtn.addEventListener("click", () => {
-        galleryModal.style.display = "none";
-
-        // Re-enable scrolling on the main page
-        document.body.style.overflow = "auto";
-    });
-
-    // Show photo details when a thumbnail is clicked
-    galleryPhotosContainer.addEventListener("click", (event) => {
-        if (event.target.classList.contains("gallery-photo")) {
-            const index = event.target.dataset.index;
-            const bikeId = event.target.dataset.bikeId;
-            const gallery = bikeGalleries[bikeId];
-            showPhotoDetails(gallery[index]); // Load the full-size image
-        }
-    });
-
-    // Function to show photo details with preloading
-    function showPhotoDetails(photo) {
-        const fullImage = document.getElementById("full-image");
-        const photoTitle = document.getElementById("photo-title");
-        const photoDescription = document.getElementById("photo-description");
-
-        // Add a loading animation
-        fullImage.style.opacity = "0"; // Hide the current image
-        fullImage.src = ""; // Clear the current image source
-        const loadingSpinner = document.createElement("div");
-        loadingSpinner.classList.add("loading-spinner");
-        fullImage.parentElement.appendChild(loadingSpinner); // Add spinner to the image container
-
-        // Preload the new image
-        const tempImage = new Image();
-        tempImage.src = `${photo.src}?cache-control=max-age=31536000`; // Add cache-control query parameter
-        tempImage.onload = () => {
-            // Once the image is loaded, update the full image
-            fullImage.src = tempImage.src;
-            fullImage.alt = photo.title;
-
-            // Remove the loading spinner
-            loadingSpinner.remove();
-
-            // Fade in the new image
-            fullImage.style.opacity = "1";
-        };
-
-        // Update the text details immediately
-        photoTitle.textContent = photo.title;
-        photoDescription.textContent = photo.description;
-    }
 });
