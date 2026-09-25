@@ -10,22 +10,19 @@
     #work {
         position: relative;
     }
-    
+
     #work::before {
-        content: '';
+        content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
         z-index: 1;
     }
-    
+
     #work > * {
         position: relative;
         z-index: 2;
-        color: #e9eef5; /* Ensure text is light */
+        color: #e9eef5;
     }
 }
 
@@ -34,166 +31,63 @@
 }
 
 #resume-button {
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin: 15px 0 25px;
     text-align: center;
 }
 
-#resume-button a:hover {
-    margin-top: 15px;
-    margin-bottom: 25px;
+.resume-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+#resume-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 8px 14px;
     text-align: center;
+    border: 1px solid #5291AE;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #5291AE;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+#resume-button a:hover {
     color: white;
     background-color: #5291AE;
 }
 
-#resume-button a {
-    text-align: center;
-    border: 1px solid #5291AE;
-    padding: 5px 10px 5px 10px;
-    text-decoration: none;
-    color: #5291AE;
-}
-
 #work-content-container {
-    width:75%;
-    position:relative;
-    left:12.5%;
-    top: 12px;
-    /* padding-bottom: 60px; */
-}
-
-.item {
-    margin-bottom: 35px;
-    /* display:none; */
-    margin-left: 30px;
-}
-
-.logo-box {
-    /* width:10%; */
-    width:6%;
-    position:absolute;
-    padding-top:0.5%;
-    min-width:50px;
-}
-
-.logo {
-    object-fit:contain;
-    max-width: 100%;
-    max-height:80px;
-    float:right;
-    margin-top: 7px;
-}
-
-.all-but-logo {
-    position:relative;
-    /* left:13%; */
-    left:70px;
-    width: 80%;
-
-}
-
-.resume-entry {
-    position:relative;
-    top: 0.6vw;
-}
-
-.org {
-    font-size: 23px;
-}
-
-.position {
-    color: #EEA04A;
-    font-size: 21px;
+    width: min(90%, 1120px);
+    margin: 12px auto 0;
+    display: grid;
+    gap: 2.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
-    .org {
-        color: #e9eef5; /* Light text for organization names */
-    }
-    
-    .position {
-        color: #ffa726; /* Brighter orange for better contrast on dark */
-    }
-    
-    .description {
-        color: #e9eef5; /* Light text for descriptions */
-    }
-    
     #resume-button a {
-        color: #6aa1ff; /* Blue for button text */
+        color: #6aa1ff;
         border-color: #6aa1ff;
+        background: rgba(19, 22, 26, 0.9);
     }
-    
+
     #resume-button a:hover {
         background-color: #6aa1ff;
         color: white;
     }
 }
 
-.description {
-    display: none;
-    font-size: 15px;
-    text-align:justify;
-}
-
-@media screen and (max-width:980px) {
-    .org {
-        font-size: 20px;
-    }
-    .position {
-        font-size:18px;
+@media screen and (max-width: 700px) {
+    .resume-actions {
+        gap: 0.5rem;
     }
 
-}
-
-@media screen and (max-width: 930px) {
-    .description{
-        font-size: 13px;
+    #work-content-container {
+        width: min(94%, 1120px);
     }
-}
-
-.work-images img {
-    /* height:200px; */
-    object-fit:contain;
-    max-width:100%;
-    max-height:100%;
-}
-
-
-
-.resume:before{
-    content: "";
-    position: absolute;
-    top: -8px;
-    width: 10px;
-    height: 10px;
-    background-color: #96ADFA;
-    /* left: 50%; */
-    margin-left: -5.5px;
-    -webkit-transform: rotate(45deg);
-       -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-         -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-}
-
-.resume:after{
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    width: 10px;
-    height: 10px;
-    background-color: #96ADFA;
-    /* left: 50%; */
-    margin-left: -5.5px;
-    -webkit-transform: rotate(45deg);
-       -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-         -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-}
-
-.resume {
-    border-left: 1px solid #96ADFA;
 }

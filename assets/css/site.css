@@ -4,7 +4,7 @@
     --fg:#111111;
     --muted:#666666;
     --border:#e6e6e6;
-    /* --accent:#2f6feb; subtle blue */
+    --accent:#2f6feb;
     --accent-ink:#ffffff;
     --card-bg:#ffffff;
     --shadow:0 1px 2px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.04);
@@ -24,8 +24,8 @@
         --border:#20242a;
         --card-bg:#13161a;
         --shadow:0 1px 2px rgba(0,0,0,.5), 0 2px 8px rgba(0,0,0,.35);
-        /* --accent:#6aa1ff; */
-        /* --accent-ink:#0b1220; */
+        --accent:#6aa1ff;
+        --accent-ink:#0b1220;
     }
 }
 /* === TOKENS END === */
@@ -120,7 +120,42 @@ a,button,[href],[tabindex]:focus-visible{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(440px,1fr));
     gap:var(--space-6);
-    padding-left: 5px;
+}
+
+.section-heading{
+    margin: .75rem 0 0;
+    text-align: center;
+    font-size: var(--h2-size);
+}
+
+.projects-layout{
+    display:grid;
+    gap: var(--space-8);
+}
+
+.project-track{
+    display:grid;
+    gap: var(--space-5);
+}
+
+.project-track-title{
+    margin: 0;
+    font-size: clamp(1.2rem, 1rem + .8vw, 1.75rem);
+    text-align: left;
+}
+
+.text-logo{
+    width:60px;
+    height:60px;
+    flex:0 0 60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background: color-mix(in srgb, var(--accent) 12%, var(--card-bg));
+    border:1px solid var(--border);
+    font-weight:700;
+    letter-spacing:.08em;
 }
 
 /* Card meta: logo + date/position */
@@ -157,7 +192,7 @@ a,button,[href],[tabindex]:focus-visible{
 }
 @media (max-width:600px){
     .logo-box{width:40px;height:40px;flex:0 0 40px}
-    .position{font-size:.85rem;padding:.2rem .45rem}
+    .text-logo{width:40px;height:40px;flex:0 0 40px}
 }
 
 .project-card{
@@ -209,6 +244,12 @@ a,button,[href],[tabindex]:focus-visible{
     border-color:color-mix(in srgb, var(--accent) 35%, var(--border));
     background:color-mix(in srgb, var(--accent) 10%, transparent);
     text-decoration:none;
+}
+
+@media (max-width: 900px){
+    .projects-grid{
+        grid-template-columns: 1fr;
+    }
 }
 /* === WORK CARDS END === */
 
