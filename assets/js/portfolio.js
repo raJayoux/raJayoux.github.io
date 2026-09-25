@@ -223,6 +223,13 @@ function applyLang(lang) {
   };
   const xrLink = document.querySelector('a[data-i18n="xrResume"]');
   if (xrLink) xrLink.href = xr[lang] || xr.en;
+  const cv = {
+    en: "assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf",
+    fr: "assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf",
+    zh: "assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_ZH_BASELINE.pdf"
+  };
+  const cvLink = document.querySelector('a[data-i18n="downloadCv"]');
+  if (cvLink) cvLink.href = cv[lang] || cv.en;
   try { localStorage.setItem("rajayoux-lang", lang); } catch (e) {}
 }
 
