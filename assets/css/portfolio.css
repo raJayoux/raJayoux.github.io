@@ -118,8 +118,8 @@ h1 {
 
 /* Featured current work */
 .resonova-feature {
-  width: min(1296px, calc(100% - 48px));
-  margin: 24px auto 48px;
+  width: 100%;
+  margin: 0 0 var(--s24);
   padding: 0;
   background: #fff;
   color: #1c1d23;
@@ -145,7 +145,7 @@ h1 {
   font: 500 12px/1.4 var(--font-ui);
   white-space: nowrap;
 }
-.resonova-feature h2 {
+.resonova-feature h3 {
   margin: 0 0 8px;
   font-size: clamp(48px, 5.5vw, 76px);
   font-weight: 700;
@@ -198,7 +198,7 @@ h1 {
 }
 
 @media (max-width: 560px) {
-  .resonova-feature { width: calc(100% - 24px); margin: 16px auto 32px; border-radius: 18px; }
+  .resonova-feature { border-radius: 18px; }
   .resonova-feature-inner { padding: 24px 18px 18px; gap: 28px; }
   .resonova-status { margin-bottom: 22px; font-size: 10px; white-space: normal; }
   .resonova-description { font-size: 19px; }
