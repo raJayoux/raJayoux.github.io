@@ -118,110 +118,52 @@
     <section id="work" aria-labelledby="work-title">
       <div class="wrap">
         <p class="section-kicker" data-i18n="workKicker">Selected work</p>
-        <h2 id="work-title" data-i18n="workTitle">Case studies</h2>
+        <div class="work-heading">
+          <h2 id="work-title" data-i18n="workTitle">Case studies</h2>
+          <a href="#professional-work" data-i18n="viewAllWork">View all work →</a>
+        </div>
         <article class="resonova-feature" id="resonova" aria-labelledby="resonova-feature-title">
           <div class="resonova-feature-inner">
             <div class="resonova-feature-copy">
-              <p class="resonova-status" data-i18n="resoStatus">ACTIVE DEVELOPMENT · 2026—PRESENT</p>
+              <p class="resonova-status" data-i18n="resoStatus">OWN PRODUCT · 2026 — PRESENT</p>
               <h3 id="resonova-feature-title">Resonova</h3>
-              <p class="resonova-description" data-i18n="resoDescription">A cross-platform AI audio product that turns a playlist into a hosted, continuously mixed listening experience.</p>
+              <p class="resonova-description" data-i18n="resoDescription">A hosted listening experience that turns playlists into a shaped program — music, generated commentary, and continuous playback working as one product.</p>
               <ul class="resonova-tech" aria-label="Resonova technology">
                 <li>Kotlin / Android</li>
                 <li>Python / FastAPI</li>
-                <li>Gemini</li>
-                <li>Audio playback</li>
                 <li>Spotify</li>
+                <li>Applied AI</li>
               </ul>
               <div class="resonova-actions">
-                <span class="resonova-cta" role="link" aria-disabled="true" title="Case study coming soon" data-i18n="resoCta">Explore the case study →</span>
-                <span class="resonova-note" data-i18n="resoNote">Private source · public proof</span>
+                <span class="resonova-cta" role="link" aria-disabled="true" title="Case study link pending" data-i18n="resoCta">View case study →</span>
+                <a class="resonova-site" href="https://resonova.app/" target="_blank" rel="noopener">resonova.app ↗</a>
+                <span class="resonova-apk" aria-disabled="true" data-i18n="resoApk">APK download · soon</span>
               </div>
             </div>
-            <img class="resonova-visual" src="assets/img/stills/resonova-feature-placeholder.png" alt="Resonova product concept: playlist input and cast player" width="548" height="600" loading="lazy">
+            <img class="resonova-visual" src="assets/img/stills/resonova-figma-studio.png" alt="Resonova Cast Studio visual showing the current track, playback controls, and program arc" width="622" height="590" loading="lazy">
           </div>
         </article>
-        <div class="cases">
-          <article class="case" id="presage">
-            <div>
-              <p class="dates" data-i18n="presageDates">Feb 2026 – Aug 2026 · Paris, PariSanté Campus</p>
-              <h3 data-i18n="presageTitle">Presage Care</h3>
-              <p class="role" data-i18n="presageRole">Fullstack Software Engineering Intern</p>
-              <ul>
-                <li data-i18n="presage1">Shipped 88 merged pull requests across a production healthcare platform: institute Angular portal, patient/family web app, and ASP.NET Core / EF Core backend and identity services.</li>
-                <li data-i18n="presage2">Built portal features end-to-end — monitoring workflows, prevention views, institute admin, questionnaire-driven UI, notifications, calendar — on BFF-proxied REST APIs with RxJS, route guards, and RBAC.</li>
-                <li data-i18n="presage3">Designed and shipped a Weekly Brief dashboard: rendered a backend-generated HTML report in Angular, and embedded Google Maps in a readonly report mode without breaking the live dashboard.</li>
-              </ul>
+        <div class="professional-work" id="professional-work">
+          <div class="professional-heading">
+            <p data-i18n="professionalWork">PROFESSIONAL WORK</p>
+            <a href="#presage" data-i18n="moreCaseStudies">More case studies →</a>
+          </div>
+          <article class="presage-compact" id="presage" aria-labelledby="presage-title">
+            <div class="presage-meta">
+              <p data-i18n="presageDatesCompact">FEB — AUG 2026 · PARIS</p>
+              <h3 id="presage-title" data-i18n="presageTitle">Presage Care</h3>
             </div>
-            <div class="still">
-              <img src="assets/img/stills/presage-care.png" alt="Presage Care · patient portal" width="960" height="600">
+            <div class="presage-body">
+              <p class="presage-role" data-i18n="presageRole">Fullstack Software Engineering Intern</p>
+              <p data-i18n="presageSummary">Shipped 88 merged pull requests across a production healthcare platform — Angular portals, ASP.NET Core / EF Core backend, identity services, and end-to-end product workflows.</p>
             </div>
+            <ul class="work-tags" aria-label="Presage Care technology">
+              <li>Angular</li><li>C# / .NET</li><li>Azure DevOps</li>
+            </ul>
           </article>
-
-          <article class="case" id="moto">
-            <div>
-              <p class="dates" data-i18n="motoDates">Oct 2025 – Jan 2026</p>
-              <h3 data-i18n="motoTitle">Moto Micro Tours</h3>
-              <p class="role" data-i18n="motoRole">Fullstack · personal / coursework</p>
-              <ul>
-                <li data-i18n="moto1">Built a motorcycle micro-tour marketplace: discovery, booking approval, mock payment, real-time chat, completion, and reviews.</li>
-                <li data-i18n="moto2">Chat sends over REST and receives in real time on SignalR hubs, with polling kept as fallback.</li>
-                <li data-i18n="moto3">Role-aware booking workflows: participant/motard authorization, transactional seat reservation, refund handling, two-sided completion, and gated reviews.</li>
-              </ul>
-              <p class="case-links"><a href="https://github.com/JayGarland/moto_micro_tours" rel="noopener" target="_blank" data-i18n="motoLink">Source on GitHub</a></p>
-            </div>
-            <div class="still">
-              <img src="assets/img/stills/moto-micro-tours.png" alt="Moto Micro Tours" width="960" height="600">
-            </div>
-          </article>
-
-          <article class="case" id="dashcam">
-            <div>
-              <p class="dates" data-i18n="dashDates">Jan 2026 – Apr 2026</p>
-              <h3 data-i18n="dashTitle">Dashcam Cloud Service</h3>
-              <p class="role" data-i18n="dashRole">Fullstack · personal</p>
-              <ul>
-                <li data-i18n="dash1">Video tamper-detection: on-device perceptual hashes stream to Supabase, then a validator re-hashes submitted video and matches with Hamming distance.</li>
-                <li data-i18n="dash2">Three services — capture client, Angular validator portal, ASP.NET Core API with ffmpeg frame extraction and JWT/role checks.</li>
-                <li data-i18n="dash3">Failed detections classified by root cause (timestamp drift, visual transform, extraction failure) across a five-case tamper matrix.</li>
-              </ul>
-              <p class="case-links"><a href="https://github.com/JayGarland/dashcam-cloudservice-web" rel="noopener" target="_blank" data-i18n="dashLink">Source on GitHub</a></p>
-            </div>
-            <div class="still">
-              <img src="assets/img/stills/dashcam-validator-form.png" alt="Dashcam Cloud Service — Validator Portal, Verify Claim" width="960" height="600">
-            </div>
-          </article>
-        </div>
-
-        <aside class="support" id="rd-proj">
-          <div>
-            <h3 data-i18n="rdTitle">Panoptic segmentation</h3>
-            <p data-i18n="rdBody">ESIGELEC research: Detectron2 Panoptic FPN on Cityscapes. Original frames vs model predictions.</p>
-          </div>
-          <div class="still support-still">
-            <img src="assets/img/stills/rd-proj-cityscapes.jpg" alt="Cityscapes panoptic predictions, original vs model" width="1600" height="2099">
-          </div>
-        </aside>
-
-        <aside class="support" id="inheritage">
-          <div>
-            <h3 data-i18n="ihTitle">InHeritage</h3>
-            <p data-i18n="ihBody">ESIGELEC mobile: cultural-heritage learning app. Hi-fi screens for educational content, history, and detail views.</p>
-          </div>
-          <div class="still support-still">
-            <img src="assets/img/stills/inheritage-hifi.jpg" alt="InHeritage hi-fi mobile screens" width="1003" height="774">
-          </div>
-        </aside>
-
-        <div class="xr-strip">
-          <span data-i18n="xrStrip">XR · MTE 2023 Gold + Special Award · CCC 1st provincial / 2nd national</span>
-          <span class="xr-certs">
-            <a href="assets/docs/MTE2023.png" target="_blank" rel="noopener" data-i18n="certMte">MTE</a>
-            <a href="assets/docs/journeyofCTM_prize1.jpg" target="_blank" rel="noopener" data-i18n="certProv">Provincial</a>
-            <a href="assets/docs/quweihanziCertificate.pdf" target="_blank" rel="noopener" data-i18n="certNat">National</a>
-          </span>
-          <div class="xr-stills">
-            <img src="assets/img/stills/xr-ctm-startmenu.jpg" alt="Journey of CTM start menu" width="1400" height="907">
-            <img src="assets/img/stills/xr-ctm-main.jpg" alt="Journey of CTM clinic scene" width="1053" height="647">
+          <div class="more-work">
+            <p data-i18n="moreWork">Moto Micro Tours · Dashcam Cloud Service · XR background</p>
+            <a href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-i18n="downloadCvArrow">Download CV →</a>
           </div>
         </div>
       </div>
