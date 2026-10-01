@@ -222,9 +222,37 @@ button { font: inherit; color: inherit; }
   .tile--about      { --x: 0px;    --y: 1865px; --w: 486px; --h: 295px; --clip: polygon(0 40px, 486px 0, 470px 295px, 0 295px); }
   .tile--contact    { --x: 962px;  --y: 1531px; --w: 478px; --h: 629px; --clip: polygon(0 0, 478px 9px, 478px 629px, 38px 629px); }
 
+  /* tile content */
+  .tile-art { position: absolute; inset: 0; overflow: hidden; }
+  .tile-art img { position: absolute; max-width: none; }
+  /* Figma image crops (245:43, 253:38, 260:5) */
+  .art--resonova img { left: -28.6%;  top: 0;       width: 128.6%;  height: 114.98%; }
+  .art--presage img  { left: -8.75%;  top: -13.04%; width: 136.95%; height: 122.39%; }
+  .art--about img    { left: -10.49%; top: -6.78%;  width: 123.46%; height: 135.59%; }
+  .tile-panel { position: absolute; }
+  .tile--resonova .tile-panel   { left: 32px; top: 128px; }
+  .tile--presage .tile-panel    { left: 48px; top: 32px; width: 300px; }
+  .tile--moto .tile-panel       { left: 24px; top: 121px; width: 250px; }
+  .tile--dashcam .tile-panel    { left: 22px; top: 47px;  width: 250px; }
+  .tile--experience .tile-panel { left: 36px; top: 20px;  width: 440px; }
+  .tile--tools .tile-panel      { left: 48px; top: 89px;  width: 410px; }
+  .tile--xr .tile-panel         { left: 40px; top: 61px;  width: 380px; }
+  .tile--about .tile-panel      { left: 24px; top: 90px;  width: 300px; }
+  .tile--contact .tile-panel    { left: 60px; top: 163px; width: 360px; }
+
+  /* The real app is the Resonova subject (245:962): 277 x 600, tilted, breaking out of the tile top.
+     Built at component size (160 x 346) and scaled 1.731, so bezel/border/radius/shadow scale with it. */
+  .device--resonova {
+    position: absolute; z-index: 3;
+    left: 599.3px; top: 981.9px; width: 160px; height: 346px;
+    padding: 3px; border-width: 3px; border-radius: 22px;
+    box-shadow: 6px 6px 0 var(--c-ink);
+    transform: rotate(4deg) scale(1.73125);
+  }
+
   /* Gutters (111:8): one overlay strokes every cut line — 12 px ink + 6 px theme centre line. */
   .gutters {
-    position: absolute; left: -6px; top: 0; width: 1452px; height: 2240px;
+    position: absolute; left: -6px; top: 0; width: 1452px; height: 2240px; z-index: 2;
     fill: none; pointer-events: none; overflow: visible;
   }
   .gutters-ink { stroke: var(--c-ink); stroke-width: 12; }
@@ -233,10 +261,64 @@ button { font: inherit; color: inherit; }
   /* "SELECTED WORK" plate (122:78) */
   .work-plate { position: absolute; left: 24px; top: 880px; z-index: 5; }
 
-  /* ---------- footer ---------- */
+  /* ---------- footer (y 2184) ---------- */
   .site-footer {
     position: absolute; left: 36px; right: 88px; top: 2184px; height: 36px;
     display: flex; align-items: center; justify-content: space-between;
     color: var(--text-on-gutter);
   }
+  .shortcuts-toggle { position: absolute; left: 524px; top: 0; width: 231px; height: 36px; }
 }
+
+/* ============================================================
+   SHARED (all widths)
+   ============================================================ */
+.tile-bg { background: var(--c-vi-night); }
+.tile--placeholder .tile-bg { background: var(--c-vi-night); }   /* art pending (asset register) */
+
+/* Experience — GTA pause menu (134:250) */
+.pause-menu { display: flex; flex-direction: column; gap: var(--space-4); }
+.pm-header { display: flex; align-items: flex-end; gap: var(--space-8); color: var(--c-white); text-transform: uppercase; }
+.pm-title { flex: 1 0 0; min-width: 1px; font: 700 48px/0.95 var(--font-ui); }
+.pm-meta {
+  display: flex; flex-direction: column; text-align: right; white-space: nowrap;
+  font: 600 13px/1.15 var(--font-ui); letter-spacing: 0.08em;
+}
+.pm-tabs { display: flex; gap: var(--space-2); }
+.pm-tabs .pause-tab { flex: 1 0 0; min-width: 1px; }
+.pm-detail { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-8) var(--space-12); color: var(--c-white); }
+.pm-mission { width: 204px; height: auto; margin-left: -2px; }
+
+/* Tools — GTA menu (107:147) */
+.gta-menu { display: flex; flex-direction: column; }
+.gm-banner {
+  margin: 0; padding: var(--space-16); background: var(--c-player); color: var(--c-white);
+  font: 700 28px/1 var(--font-ui); letter-spacing: 0.01em; text-transform: uppercase;
+}
+.gm-sub {
+  padding: var(--space-8) var(--space-16); background: var(--c-ink); color: var(--c-hud-yellow);
+  font: 700 15px/1.1 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase;
+}
+
+/* XR + Contact copy blocks (107:136, 107:164) */
+.tile-copy { display: flex; flex-direction: column; gap: var(--space-8); align-items: flex-start; color: var(--c-white); }
+.tile-copy > * { margin: 0; }
+
+/* Presage details dialog */
+.details-dialog {
+  width: min(560px, calc(100vw - 32px)); padding: var(--space-24);
+  border: var(--stroke-edge) solid var(--c-white); color: var(--c-white);
+}
+.details-dialog::backdrop { background: rgb(0 0 0 / 0.6); }
+.details-dialog .dd-head { display: flex; flex-direction: column; gap: var(--space-8); margin-bottom: var(--space-16); }
+.details-dialog .dd-head > * { margin: 0; }
+.details-dialog .dd-list .mr-value { text-align: left; }
+.details-dialog .actions { margin-top: var(--space-16); }
+
+.shortcuts-toggle {
+  display: flex; align-items: center; gap: var(--space-8);
+  padding: var(--space-4) var(--space-12); color: var(--c-white); white-space: nowrap;
+}
+
+/* Shortcuts off → hide the letter key caps (D / C / E); ↵ still means Enter. */
+.shortcuts-off .key--shortcut { display: none; }

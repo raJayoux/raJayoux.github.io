@@ -95,8 +95,8 @@
             <span data-i18n="statusLine">Available now  ·  Paris  ·  EN / FR / 中文</span>
           </p>
           <div class="actions">
-            <a class="btn btn--primary" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download><span data-i18n="downloadCv">Download CV</span> <span class="key" aria-hidden="true">D</span></a>
-            <a class="btn btn--secondary" href="#contact"><span data-i18n="navContact">Contact</span> <span class="key" aria-hidden="true">C</span></a>
+            <a class="btn btn--primary" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download><span data-i18n="downloadCv">Download CV</span> <span class="key key--shortcut" aria-hidden="true">D</span></a>
+            <a class="btn btn--secondary" href="#contact"><span data-i18n="navContact">Contact</span> <span class="key key--shortcut" aria-hidden="true">C</span></a>
           </div>
         </div>
         <picture class="story-inset">
@@ -107,7 +107,7 @@
 
       <!-- Nav strip (110:25): image-11 fading story-menu bar; sticks to the top past the hero. -->
       <nav class="hero-nav" aria-label="Primary">
-        <a class="menu-bar-item" href="#work" aria-current="page" data-i18n="navWork">Work</a>
+        <a class="menu-bar-item" href="#work" aria-current="true" data-i18n="navWork">Work</a>
         <a class="menu-bar-item" href="#experience" data-i18n="navExperience">Experience</a>
         <a class="menu-bar-item" href="#about" data-i18n="navAbout">About</a>
         <a class="menu-bar-item" href="#contact" data-i18n="navContact">Contact</a>
@@ -126,18 +126,167 @@
     <main id="main">
       <p class="plate work-plate"><span data-i18n="plateWork">Selected work</span></p>
 
-      <article class="tile tile--resonova" id="work"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--presage" id="presage-tile"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--moto"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--dashcam"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--experience" id="experience"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--tools"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--xr"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--about" id="about"><div class="tile-bg"></div><div class="vignette"></div></article>
-      <article class="tile tile--contact" id="contact"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <!-- Resonova (107:28) + the real app as the tile's subject (245:962), breaking out above it -->
+      <div class="work-feature">
+        <article class="tile tile--resonova" id="work" aria-labelledby="t-resonova">
+          <div class="tile-bg"></div>
+          <picture class="tile-art art--resonova">
+            <source srcset="assets/img/gta/resonova-L0-bg.avif" type="image/avif">
+            <img src="assets/img/gta/resonova-L0-bg.webp" alt="" width="1536" height="1024" loading="lazy">
+          </picture>
+          <div class="vignette"></div>
+          <div class="info-panel info-panel--featured scrim tile-panel">
+            <p class="ip-kicker" data-i18n="resoStatus">Own product · 2026 — present</p>
+            <h3 class="ip-title" id="t-resonova">Resonova</h3>
+            <p class="ip-body" data-i18n="resoDescription">A hosted listening experience that turns playlists into a shaped program — music, generated commentary, and continuous playback working as one product.</p>
+            <p class="ip-detail" data-i18n="resoDetail">Why it matters: native Android playback authority · FastAPI streaming</p>
+            <ul class="chips" aria-label="Technology"><li class="chip">Kotlin / Android</li><li class="chip">Python / FastAPI</li><li class="chip">Spotify</li><li class="chip">Applied AI</li></ul>
+            <div class="actions">
+              <span class="btn btn--primary" role="link" aria-disabled="true" title="Case study coming soon" data-i18n-title="resoCaseSoon"><span data-i18n="resoCaseStudy">View case study</span> <span class="key" aria-hidden="true">↵</span></span>
+              <a class="btn btn--secondary" href="https://resonova.app/" target="_blank" rel="noopener"><span data-i18n="resoVisit">Visit resonova.app</span> <span class="key" aria-hidden="true">↵</span></a>
+              <span class="btn btn--secondary" aria-disabled="true" data-i18n="resoApkSoon">APK · soon</span>
+            </div>
+          </div>
+        </article>
+        <div class="device device--resonova">
+          <picture>
+            <source srcset="assets/img/gta/resonova-screen.avif" type="image/avif">
+            <img src="assets/img/gta/resonova-screen.webp" alt="Resonova Android app — Now Playing screen" data-i18n-alt="deviceAlt" width="324" height="720" loading="lazy">
+          </picture>
+        </div>
+      </div>
+
+      <!-- Presage Care (107:32) -->
+      <article class="tile tile--presage" id="presage" aria-labelledby="t-presage">
+        <div class="tile-bg"></div>
+        <picture class="tile-art art--presage">
+          <source srcset="assets/img/gta/presage-L0-bg.avif" type="image/avif">
+          <img src="assets/img/gta/presage-L0-bg.webp" alt="" width="1536" height="1024" loading="lazy">
+        </picture>
+        <div class="vignette"></div>
+        <div class="info-panel info-panel--standard scrim tile-panel">
+          <div class="ip-stat"><p class="ip-stat-value">88</p><p class="ip-label" data-i18n="presageStatLabel">Merged pull requests · Feb — Aug 2026 · Paris</p></div>
+          <h3 class="ip-title" id="t-presage" data-i18n="presageTitle">Presage Care</h3>
+          <p class="ip-role" data-i18n="presageRole">Fullstack Software Engineering Intern</p>
+          <p class="ip-body" data-i18n="presageBody">Shipped production work across Angular portals, ASP.NET Core / EF Core backend, identity services, and end-to-end product workflows.</p>
+          <ul class="chips" aria-label="Technology"><li class="chip">Angular</li><li class="chip">C# / .NET</li><li class="chip">Azure DevOps</li></ul>
+          <div class="actions">
+            <button class="btn btn--primary" type="button" data-open-dialog="presage-details" aria-haspopup="dialog"><span data-i18n="viewDetails">View details</span> <span class="key" aria-hidden="true">↵</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Moto Micro Tours (107:36) — art placeholder -->
+      <article class="tile tile--moto tile--placeholder" aria-labelledby="t-moto">
+        <div class="tile-bg"></div><div class="vignette"></div>
+        <div class="help-text scrim tile-panel">
+          <p class="ht-kicker" data-i18n="motoKicker">Mobile / product experiment</p>
+          <h3 class="ht-title" id="t-moto" data-i18n="motoTitle">Moto Micro Tours</h3>
+          <p class="ht-body" data-i18n="motoBody">A smaller product story with focus on practical shipping.</p>
+        </div>
+      </article>
+
+      <!-- Dashcam Cloud Service (107:40) — art placeholder -->
+      <article class="tile tile--dashcam tile--placeholder" aria-labelledby="t-dashcam">
+        <div class="tile-bg"></div><div class="vignette"></div>
+        <div class="help-text scrim tile-panel">
+          <p class="ht-kicker" data-i18n="dashKicker">Cloud / backend</p>
+          <h3 class="ht-title" id="t-dashcam" data-i18n="dashTitle">Dashcam Cloud Service</h3>
+          <p class="ht-body" data-i18n="dashBody">Service-oriented work around uploads, storage, and product flows.</p>
+        </div>
+      </article>
+
+      <!-- Experience + Education (107:44) — GTA pause menu; art placeholder -->
+      <article class="tile tile--experience tile--placeholder" id="experience" aria-labelledby="t-experience">
+        <div class="tile-bg"></div><div class="vignette"></div>
+        <div class="pause-menu tile-panel">
+          <div class="pm-header">
+            <h3 class="pm-title" id="t-experience" data-i18n="expTitle">Experience</h3>
+            <p class="pm-meta"><span>Pengyu Jie</span><span data-i18n="expMeta">Paris · Available now</span></p>
+          </div>
+          <nav class="pm-tabs" aria-label="Experience">
+            <a class="pause-tab" href="#experience" aria-current="true" data-i18n="tabBrief">Brief</a>
+            <a class="pause-tab" href="#tools" data-i18n="tabStats">Stats</a>
+            <a class="pause-tab" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download data-i18n="tabCv">CV</a>
+          </nav>
+          <ul class="menu-rows">
+            <li class="menu-row menu-row--selected"><span class="mr-label" data-i18n="rowPresage">Presage Care · Intern</span><span class="mr-value" data-i18n="rowPresageVal">Feb — Aug 2026</span></li>
+            <li class="menu-row"><span class="mr-label" data-i18n="rowEsig">ESIGELEC · MSc Software Eng.</span><span class="mr-value">2024 — 2026</span></li>
+            <li class="menu-row"><span class="mr-label" data-i18n="rowLang">Languages</span><span class="mr-value" data-i18n="rowLangVal">中文 · EN · FR B1</span></li>
+          </ul>
+          <div class="pm-detail scrim">
+            <img class="pm-mission" src="assets/img/gta/mission-passed.svg" alt="Mission passed" data-i18n-alt="missionAlt" width="204" height="39">
+            <p class="ht-body" data-i18n="expDetail">Fullstack intern, Paris — production healthcare software: Angular, C#/.NET, EF Core, identity, APIs. 88 merged PRs.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tools (107:54) — GTA menu list; art placeholder -->
+      <article class="tile tile--tools tile--placeholder" id="tools" aria-labelledby="t-tools">
+        <div class="tile-bg"></div><div class="vignette"></div>
+        <div class="gta-menu tile-panel">
+          <h3 class="gm-banner" id="t-tools" data-i18n="toolsTitle">Tools</h3>
+          <p class="gm-sub" data-i18n="stackTitle">Tools I reach for</p>
+          <ul class="menu-rows">
+            <li class="menu-row menu-row--selected"><span class="mr-label" data-i18n="frontend">Frontend</span><span class="mr-value">Angular · TypeScript · RxJS · HTML/CSS/JS</span></li>
+            <li class="menu-row"><span class="mr-label" data-i18n="backend">Backend</span><span class="mr-value">C# · ASP.NET Core · EF Core · SQL · Python · FastAPI</span></li>
+            <li class="menu-row"><span class="mr-label" data-i18n="platform">Platform</span><span class="mr-value">Git · GitHub · Azure DevOps · Docker · Azure</span></li>
+            <li class="menu-row"><span class="mr-label" data-i18n="native">Native</span><span class="mr-value">Kotlin · Android · Unity · XR</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- XR background (107:47) — art placeholder -->
+      <article class="tile tile--xr tile--placeholder" aria-labelledby="t-xr">
+        <div class="tile-bg"></div><div class="vignette"></div>
+        <div class="tile-copy tile-panel">
+          <p class="ht-kicker" data-i18n="xrKicker">Unity / XR</p>
+          <h3 class="ht-title" id="t-xr" data-i18n="xrTitle">XR background</h3>
+          <p class="ht-body" data-i18n="xrBody">Earlier work that taught me to prototype and ship interactive systems.</p>
+          <div class="actions">
+            <a class="btn btn--secondary" href="assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf" data-xr-cv><span data-i18n="view">View</span> <span class="key" aria-hidden="true">↵</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- About (107:50) -->
+      <article class="tile tile--about" id="about" aria-labelledby="t-about">
+        <div class="tile-bg"></div>
+        <picture class="tile-art art--about">
+          <source srcset="assets/img/gta/about-L0-bg.avif" type="image/avif">
+          <img src="assets/img/gta/about-L0-bg.webp" alt="" width="1536" height="1024" loading="lazy">
+        </picture>
+        <div class="vignette"></div>
+        <div class="help-text scrim tile-panel">
+          <p class="ht-kicker" data-i18n="aboutKicker">About</p>
+          <h3 class="ht-title" id="t-about" data-i18n="aboutHeadline">I like building the parts people actually use.</h3>
+          <p class="ht-body" data-i18n="aboutBody">XR and Unity are part of my background, not the headline.</p>
+        </div>
+      </article>
+
+      <!-- Contact (107:57) — art placeholder -->
+      <article class="tile tile--contact tile--placeholder" id="contact" aria-labelledby="t-contact">
+        <div class="tile-bg"></div><div class="vignette"></div>
+        <div class="tile-copy tile-panel">
+          <p class="ht-kicker" data-i18n="contactKicker">Contact</p>
+          <h3 class="ip-title" id="t-contact" data-i18n="contactHeadline">Let’s work.</h3>
+          <p class="ht-body" data-i18n="contactBody">If the work above is relevant to what you’re building, email me or reach out on LinkedIn.</p>
+          <div class="actions">
+            <a class="btn btn--primary btn--email" href="mailto:pengyujie.dev@gmail.com" data-shortcut-email>pengyujie.dev@gmail.com <span class="key key--shortcut" aria-hidden="true">E</span></a>
+          </div>
+          <a class="notification" href="https://www.linkedin.com/in/pengyu-jie" target="_blank" rel="noopener">
+            <span class="nt-icon"><svg aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#i-linkedin"/></svg></span>
+            <span class="nt-text"><span class="nt-sender">LinkedIn</span><span class="nt-message">pengyu-jie</span></span>
+          </a>
+          <a class="notification" href="https://github.com/JayGarland" target="_blank" rel="noopener">
+            <span class="nt-icon"><svg aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#i-github"/></svg></span>
+            <span class="nt-text"><span class="nt-sender">GitHub</span><span class="nt-message">JayGarland · raJayoux</span></span>
+          </a>
+        </div>
+      </article>
 
       <svg class="gutters" viewBox="-6 0 1452 2240" aria-hidden="true" focusable="false">
-        <g class="gutters-ink" id="gutter-paths">
+        <defs><g id="gutter-paths">
           <path d="M0 910L860 886L797 1527L0 1512Z"/>
           <path d="M860 886L1440 870V1330L823 1266Z"/>
           <path d="M823 1266L1132 1298L1150 1534L797 1527Z"/>
@@ -147,15 +296,39 @@
           <path d="M0 1905L486 1865L470 2160H0Z"/>
           <path d="M505 1522L962 1531L989 1976L483 1924Z"/>
           <path d="M962 1531L1440 1540V2160H1000Z"/>
-        </g>
+        </g></defs>
+        <use class="gutters-ink" href="#gutter-paths"/>
         <use class="gutters-theme" href="#gutter-paths"/>
       </svg>
     </main>
 
     <footer class="site-footer">
       <span class="t-menu" data-i18n="footer">© 2026 raJayoux</span>
+      <div class="shortcuts-toggle scrim">
+        <span class="t-menu" id="shortcuts-label" data-i18n="shortcutsLabel">Keyboard shortcuts</span>
+        <button class="menu-bar-item selector" type="button" data-shortcuts-toggle aria-labelledby="shortcuts-label" aria-pressed="true"><span class="chev" aria-hidden="true">‹</span><span data-shortcuts-value>On</span><span class="chev" aria-hidden="true">›</span></button>
+      </div>
+      <span class="t-menu" data-i18n="footerRight">Software Engineer · Paris · Available now</span>
     </footer>
   </div>
+
+
+  <!-- Presage details ("View details") — no case-study page yet; reuses the existing Presage copy. -->
+  <dialog class="details-dialog scrim" id="presage-details" aria-labelledby="pd-title">
+    <div class="dd-head">
+      <p class="ip-kicker" data-i18n="presageDates">Feb 2026 – Aug 2026 · Paris, PariSanté Campus</p>
+      <h2 class="ip-title" id="pd-title" data-i18n="presageTitle">Presage Care</h2>
+      <p class="ip-role" data-i18n="presageRole">Fullstack Software Engineering Intern</p>
+    </div>
+    <ul class="menu-rows dd-list">
+      <li class="menu-row"><span class="mr-value" data-i18n="presage1">Shipped 88 merged pull requests across a production healthcare platform.</span></li>
+      <li class="menu-row"><span class="mr-value" data-i18n="presage2">Built portal features end-to-end.</span></li>
+      <li class="menu-row"><span class="mr-value" data-i18n="presage3">Designed and shipped a Weekly Brief dashboard.</span></li>
+    </ul>
+    <form method="dialog" class="actions">
+      <button class="btn btn--secondary" type="submit"><span data-i18n="close">Close</span> <span class="key" aria-hidden="true">Esc</span></button>
+    </form>
+  </dialog>
 
   <script src="assets/js/gta/i18n.js"></script>
   <script src="assets/js/gta/site.js"></script>

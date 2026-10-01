@@ -9,7 +9,22 @@
     fr: "assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf",
     zh: "assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_ZH_BASELINE.pdf"
   };
+  var XR_CV = {
+    en: "assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf",
+    fr: "assets/docs/JiePengyu_CV_UnityXR_2025-09_FR.pdf",
+    zh: "assets/docs/JiePengyu_CV_UnityXR_2025-09_ZH.pdf"
+  };
   var root = document.documentElement;
+  var shortcutsOn = true;
+
+  function applyShortcutLabel() {
+    var b = document.querySelector("[data-shortcuts-toggle]");
+    if (!b) return;
+    b.setAttribute("aria-pressed", shortcutsOn ? "true" : "false");
+    var v = b.querySelector("[data-shortcuts-value]");
+    if (v) v.textContent = I18N[lang][shortcutsOn ? "on" : "off"];
+    document.documentElement.classList.toggle("shortcuts-off", !shortcutsOn);
+  }
 
   function store(key, value) {
     try { localStorage.setItem(key, value); } catch (e) {}
@@ -40,7 +55,13 @@
       var v = pack[el.getAttribute("data-i18n-label")];
       if (v != null) el.setAttribute("aria-label", v);
     });
+    document.querySelectorAll("[data-i18n-title]").forEach(function (el) {
+      var v = pack[el.getAttribute("data-i18n-title")];
+      if (v != null) el.setAttribute("title", v);
+    });
     document.querySelectorAll("[data-cv]").forEach(function (a) { a.href = CV[lang]; });
+    document.querySelectorAll("[data-xr-cv]").forEach(function (a) { a.href = XR_CV[lang]; });
+    applyShortcutLabel();
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) {
       b.setAttribute("aria-label", pack.langLabel);
     });
@@ -75,6 +96,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    shortcutsOn = read("rajayoux-shortcuts") !== "off";
     var saved = read("rajayoux-lang");
     applyLang(saved && LANGS.indexOf(saved) >= 0 ? saved : "en");
 
@@ -103,6 +125,62 @@
           toggle.setAttribute("aria-label", I18N[lang][key]);
         });
       }
+    }
+
+    /* details dialogs (Presage "View details") — native <dialog>: focus, Esc and top layer for free */
+    document.querySelectorAll("[data-open-dialog]").forEach(function (b) {
+      var d = document.getElementById(b.getAttribute("data-open-dialog"));
+      if (!d || !d.showModal) return;
+      b.addEventListener("click", function () { d.showModal(); });
+      d.addEventListener("click", function (e) { if (e.target === d) d.close(); });   /* backdrop click */
+    });
+
+    /* keyboard shortcuts — the key caps on screen: D = download CV, C = contact, E = email */
+    var sc = document.querySelector("[data-shortcuts-toggle]");
+    if (sc) sc.addEventListener("click", function () {
+      shortcutsOn = !shortcutsOn;
+      store("rajayoux-shortcuts", shortcutsOn ? "on" : "off");
+      applyShortcutLabel();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (!shortcutsOn || e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (document.querySelector("dialog[open]")) return;
+      var k = e.key.toLowerCase();
+      if (k === "d") {
+        var cv = document.querySelector(".story [data-cv]");
+        if (cv) { e.preventDefault(); cv.click(); }
+      } else if (k === "c") {
+        var contact = document.getElementById("contact");
+        if (contact) {
+          e.preventDefault();
+          contact.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+          var first = contact.querySelector("a, button");
+          if (first) first.focus({ preventScroll: true });
+        }
+      } else if (k === "e") {
+        var mail = document.querySelector("[data-shortcut-email]");
+        if (mail) { e.preventDefault(); mail.click(); }
+      }
+    });
+
+    /* nav: mark the section currently in view */
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.hero-nav a[href^="#"]'));
+    if ("IntersectionObserver" in window && navLinks.length) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          navLinks.forEach(function (a) {
+            if (a.getAttribute("href") === "#" + en.target.id) a.setAttribute("aria-current", "true");
+            else a.removeAttribute("aria-current");
+          });
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      navLinks.forEach(function (a) {
+        var s = document.querySelector(a.getAttribute("href"));
+        if (s) spy.observe(s);
+      });
     }
 
     /* nav strip sticks to the top once the hero card has scrolled away (desktop) */
