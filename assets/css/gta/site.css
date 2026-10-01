@@ -117,8 +117,8 @@ button { font: inherit; color: inherit; }
 @keyframes cycle2-subject-b {
   0%, 46.43% { transform: none; opacity: 0; }
   50% { transform: none; opacity: 1; }
-  92.857% { transform: translate(-6px, -24px) scale(1.0504, 1.05); opacity: 1; }
-  96.429% { transform: translate(-6px, -24px) scale(1.0504, 1.05); opacity: 0; }
+  92.857% { transform: translate(0, -28px) scale(1.05); opacity: 1; }
+  96.429% { transform: translate(0, -28px) scale(1.05); opacity: 0; }
   96.43%, 100% { transform: none; opacity: 0; }
 }
 @keyframes enter-card    { from { opacity: 0; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
@@ -222,7 +222,7 @@ button { font: inherit; color: inherit; }
     position: absolute; left: 0; top: 0; width: 760px; height: 980px; pointer-events: none;
     clip-path: polygon(50px 55px, 740px 45px, 740px 980px, 30px 980px, 40px 808px);
   }
-  .hero-subject-b { left: -120px; top: 200px; width: 675px; height: 680px; opacity: 0; transform-origin: 0 0; }
+  .hero-subject-b { left: 56px; top: 320px; width: 556px; height: 560px; opacity: 0; transform-origin: 0 0; }   /* whole bike inside the mask — no left crop */
   @media (prefers-reduced-motion: no-preference) {
     .hero.cycle-ab :is(.hero-sky, .hero-bike, .hero-breakout, .hero-subject, .hero-dip, .hero-scene-b, .hero-sky-b, .hero-subject-b) {
       animation-duration: calc(2 * (var(--motion-scene) + 2 * var(--motion-dip)));
