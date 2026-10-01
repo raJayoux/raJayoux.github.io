@@ -1,0 +1,105 @@
+/*
+ * GTA-mimic design tokens — exported from Figma `cv-website-re-design`
+ * (variable collections gta-mimic / color · theme · dimension, text styles type/*, effect focus/ring).
+ * Single source for the redesign: change the Figma variable, then this file. Exported 2026-10-01.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+SC:wght@400;600&family=Work+Sans:wght@300;400;600&family=Zalando+Sans+Expanded:wght@900&display=swap");
+
+:root {
+  /* colour · palette (refs: key-art k-means + GTA V hudcolor.dat) */
+  --c-ink: #000000;
+  --c-ink-soft: #3a343f;
+  --c-bone: #f1eee6;
+  --c-white: #f0f0f0;
+  --c-v-sky: #95b3ba;
+  --c-vi-blush: #f4d3cb;
+  --c-vi-plum: #7e496d;
+  --c-vi-night: #2b1232;
+  --c-hud-yellow: #f0c850;
+  --c-hud-red: #e03232;
+  --c-hud-green: #72cc72;
+  --c-hud-grey: #8c8c8c;            /* MENU_GREY — disabled */
+  --c-player: #173dd8;              /* Yamaha Icon Blue = player colour */
+  --c-scrim: rgb(0 0 0 / 0.729);    /* PAUSE_BG, rgba(0,0,0,186) */
+
+  /* theme · Night (default) */
+  --surface-gutter: var(--c-ink);
+  --text-on-gutter: var(--c-white);
+  --text-on-gutter-accent: var(--c-hud-yellow);
+
+  /* space */
+  --space-0: 0;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  /* radius */
+  --radius-0: 0;
+  --radius-key: 4px;
+  --radius-plate: 6px;
+  --radius-device: 18px;
+
+  /* stroke */
+  --stroke-edge: 3px;
+  --stroke-logo: 8px;
+  --stroke-gutter: 12px;
+  --stroke-gutter-inner: 6px;
+
+  /* opacity */
+  --opacity-inactive: 0.55;
+  --opacity-secondary: 0.8;
+  --opacity-divider: 0.35;
+
+  /* effects */
+  --blur-scrim: 12px;
+  --focus-ring: 0 0 0 2px var(--c-ink), 0 0 0 5px var(--c-hud-yellow);
+
+  /* motion (ms) — loading-screen cycle: 6 s linear move + 0.5 s dip out + 0.5 s dip in */
+  --motion-snap: 90ms;
+  --motion-quick: 160ms;
+  --motion-slide: 280ms;
+  --motion-settle: 600ms;
+  --motion-shard: 2600ms;
+  --motion-scene: 6000ms;
+  --motion-dip: 500ms;
+
+  /* type · families (body = Work Sans stand-in; Chalet decision open) */
+  --font-body: "Work Sans", "Noto Sans SC", system-ui, sans-serif;
+  --font-ui: "Barlow Condensed", "Noto Sans SC", system-ui, sans-serif;
+  --font-plate: "Zalando Sans Expanded", "Barlow Condensed", sans-serif;
+  --font-cjk: "Noto Sans SC", sans-serif;
+  /* Pricedown is never a webfont (Typodermic EULA §4.3) — wordmarks ship as outlined SVG. */
+}
+
+:root[data-theme="day"] {
+  --surface-gutter: var(--c-bone);
+  --text-on-gutter: var(--c-ink);
+  --text-on-gutter-accent: var(--c-vi-plum);
+}
+
+/* type · text styles (Figma type/*) */
+.t-story-title { font: 300 32px/1.2 var(--font-body); }
+.t-body-m      { font: 400 15px/1.5 var(--font-body); }
+.t-body-s      { font: 400 13px/1.5 var(--font-body); }
+.t-body-strong { font: 600 15px/1.45 var(--font-body); }
+.t-menu-bar    { font: 400 17px/1.2 var(--font-body); letter-spacing: 0.02em; text-transform: uppercase; }
+.t-menu        { font: 700 15px/1.1 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase; }
+.t-label       { font: 600 13px/1.15 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; }
+.t-cta         { font: 700 16px/1 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase; }
+.t-title-stat  { font: 700 80px/0.9 var(--font-ui); }
+.t-title-xl    { font: 700 48px/0.95 var(--font-ui); text-transform: uppercase; }
+.t-title-l     { font: 700 28px/1 var(--font-ui); letter-spacing: 0.01em; text-transform: uppercase; }
+.t-plate       { font: 900 25px/1 var(--font-plate); letter-spacing: -0.01em; text-transform: uppercase; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-snap: 0ms; --motion-quick: 0ms; --motion-slide: 0ms; --motion-settle: 0ms;
+  }
+}
