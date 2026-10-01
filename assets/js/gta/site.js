@@ -90,6 +90,21 @@
     fit();
     window.addEventListener("resize", fit);
 
+    /* hero: entrance plays once; loading cycle pause/play (WCAG 2.2.2) */
+    var hero = document.querySelector(".hero");
+    if (hero) {
+      setTimeout(function () { hero.classList.add("is-entered"); }, 700);
+      var toggle = document.querySelector("[data-cycle-toggle]");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var paused = hero.classList.toggle("is-paused");
+          var key = paused ? "cyclePlay" : "cyclePause";
+          toggle.setAttribute("data-i18n-label", key);
+          toggle.setAttribute("aria-label", I18N[lang][key]);
+        });
+      }
+    }
+
     /* nav strip sticks to the top once the hero card has scrolled away (desktop) */
     var nav = document.querySelector(".hero-nav");
     var card = document.querySelector(".hero-card");

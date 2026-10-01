@@ -41,6 +41,38 @@ button { font: inherit; color: inherit; }
   background: radial-gradient(ellipse 60% 60% at 50% 50%, transparent 62%, rgb(0 0 0 / 0.55) 100%);
 }
 
+/* ---------- hero motion keyframes (6 s of 7 s = 85.714 %, 6.5 s = 92.857 %) ---------- */
+@keyframes cycle-sky {
+  0% { transform: none; }
+  85.714%, 92.857% { transform: translateX(-60px); }
+  92.858%, 100% { transform: none; }
+}
+@keyframes cycle-bike {
+  0% { transform: none; }
+  85.714%, 92.857% { transform: translateX(-72px); }
+  92.858%, 100% { transform: none; }
+}
+@keyframes cycle-breakout {
+  0% { transform: none; }
+  85.714%, 92.857% { transform: translate(-84px, -16px); }
+  92.858%, 100% { transform: none; }
+}
+@keyframes cycle-subject {
+  0% { transform: none; opacity: 1; }
+  85.714% { transform: translate(-28px, -16px) scale(1.0442, 1.0449); opacity: 1; }
+  92.857% { transform: translate(-28px, -16px) scale(1.0442, 1.0449); opacity: 0; }
+  92.858% { transform: none; opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes cycle-dip {
+  0%, 85.714% { opacity: 0; }
+  92.857% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes enter-card    { from { opacity: 0; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
+@keyframes enter-subject { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+@keyframes enter-logo    { from { opacity: 0; translate: 14px -7px; scale: 1.045; } to { opacity: 1; translate: 0 0; scale: 1; } }
+
 /* ============================================================
    DESKTOP COMPOSITION (>= 1024 px)
    ============================================================ */
@@ -71,7 +103,7 @@ button { font: inherit; color: inherit; }
   .hero-layer { position: absolute; }
   .hero-layer picture, .hero-layer img { width: 100%; height: 100%; }
   .hero-layer img { object-fit: cover; }
-  .hero-sky { inset: 0; }
+  .hero-sky { left: -10px; top: -23px; width: 1424px; height: 814px; }   /* cycle Start (165:847): oversized for the pan */
   .hero-bike { left: 122px; top: 454px; width: 600px; height: 400px; }
   .hero-bike img { transform: scaleX(-1); }          /* approved art faces left; parked facing the panel */
   .hero-dip { position: absolute; inset: 0; background: var(--c-ink); opacity: 0; pointer-events: none; }
@@ -87,7 +119,50 @@ button { font: inherit; color: inherit; }
     clip-path: polygon(50px 55px, 740px 45px, 740px 980px, 30px 980px, 40px 808px);
     pointer-events: none;
   }
-  .hero-subject { left: 90px; top: 110px; width: 520px; height: 780px; }
+  .hero-subject { left: 90px; top: 110px; width: 520px; height: 780px; transform-origin: 0 0; }
+
+  /* Pause control for the cycle (WCAG 2.2.2) — top-left of the card, clear of the subject's head. */
+  .cycle-toggle {
+    position: absolute; left: 88px; top: 84px; z-index: 6;
+    display: flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; padding: 0; border: 0; cursor: pointer;
+    color: var(--c-white); opacity: 0.8;
+    transition: opacity var(--motion-quick) linear, background-color var(--motion-quick) linear;
+  }
+  .cycle-toggle svg { width: 14px; height: 14px; fill: currentColor; }
+  .cycle-toggle:hover, .cycle-toggle:focus-visible { opacity: 1; background: var(--c-white); color: var(--c-ink); }
+  .cycle-toggle:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+  .cycle-toggle .i-play, .hero.is-paused .cycle-toggle .i-pause { display: none; }
+  .hero.is-paused .cycle-toggle .i-play { display: block; }
+
+  /* ---------- loading-screen cycle, Scene A (165:847 → 165:883 → 165:919) ----------
+     7 s loop: 0–6 s linear move Start→End · 6–6.5 s dip to black (subject fades with it)
+     · layers snap back to Start under black · 6.5–7 s dip back in. UI never moves or fades. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-sky, .hero-bike, .hero-breakout, .hero-subject, .hero-dip {
+      animation-duration: calc(var(--motion-scene) + 2 * var(--motion-dip));
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    .hero-sky       { animation-name: cycle-sky; }
+    .hero-bike      { animation-name: cycle-bike; }
+    .hero-breakout  { animation-name: cycle-breakout; }
+    .hero-subject   { animation-name: cycle-subject; }
+    .hero-dip       { animation-name: cycle-dip; }
+    .hero.is-paused :is(.hero-sky, .hero-bike, .hero-breakout, .hero-subject, .hero-dip) { animation-play-state: paused; }
+
+    /* entrance (157:1273): Start → Settled, 0.6 s ease-out, once (site.js adds .is-entered);
+       uses translate/scale/opacity so it composes with the cycle's transform. Story panel: no entrance. */
+    .hero:not(.is-entered) :is(.hero-card, .hero-edge, .hero-nav) { animation: enter-card var(--motion-settle) ease-out both; }
+    .hero:not(.is-entered) .hero-breakout {
+      animation: cycle-breakout calc(var(--motion-scene) + 2 * var(--motion-dip)) linear infinite,
+                 enter-subject var(--motion-settle) ease-out both;
+    }
+    .hero:not(.is-entered) .hero-logo { animation: enter-logo var(--motion-settle) ease-out both; }
+  }
+  .hero-logo { transform-origin: 0 0; }
+  .hero.no-cycle .cycle-toggle { display: none; }
+  @media (prefers-reduced-motion: reduce) { .cycle-toggle { display: none; } }
 
   /* ---------- story panel (110:9) ---------- */
   .story {
