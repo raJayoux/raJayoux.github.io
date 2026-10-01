@@ -160,6 +160,18 @@
       });
     }
 
+    /* Desktop and mobile cycles share some keyframes and not others, so crossing 1024 px restarts only
+       part of the layers and the scenes drift apart. Restart every layer together from Scene A's start. */
+    var bp = matchMedia("(min-width: 1024px)");
+    var restartCycle = function () {
+      if (!hero) return;
+      hero.classList.add("cycle-restart");
+      void hero.offsetWidth;            /* flush styles so `animation: none` takes effect */
+      hero.classList.remove("cycle-restart");
+    };
+    if (bp.addEventListener) bp.addEventListener("change", restartCycle);
+    else if (bp.addListener) bp.addListener(restartCycle);
+
     /* details dialogs (Presage "View details") — native <dialog>: focus, Esc and top layer for free */
     document.querySelectorAll("[data-open-dialog]").forEach(function (b) {
       var d = document.getElementById(b.getAttribute("data-open-dialog"));

@@ -45,6 +45,9 @@ html, body { overflow-x: clip; }
   background: radial-gradient(ellipse 60% 60% at 50% 50%, transparent 62%, rgb(0 0 0 / 0.55) 100%);
 }
 
+/* site.js toggles this for one frame to restart the hero cycle with every layer in step */
+.hero.cycle-restart, .hero.cycle-restart * { animation: none !important; }
+
 /* ---------- hero motion keyframes (6 s of 7 s = 85.714 %, 6.5 s = 92.857 %) ---------- */
 @keyframes cycle-sky {
   0% { transform: none; }
