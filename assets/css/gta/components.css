@@ -1,0 +1,178 @@
+/*
+ * GTA UI components — Figma "Components · GTA UI · LOCKED" (file iYBfbPOONQVb23p9OWBO0K).
+ * Every value is a token from tokens.css. Figma backdrop blur 12 renders as CSS blur(6px).
+ */
+
+:root { --blur-backdrop: calc(var(--blur-scrim) / 2); }
+
+/* Components own their spacing (gap/padding), never UA margins. */
+:where(.info-panel, .help-text, .menu-rows, .notification, .plate) :where(p, h2, h3, ul, li) { margin: 0; }
+:where(p.plate) { margin: 0; }
+
+.scrim {
+  background: var(--c-scrim);
+  -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  backdrop-filter: blur(var(--blur-backdrop));
+}
+
+/* ---------- Button · Instructional (121:20): LABEL then KEY ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-8);
+  padding: var(--space-8) var(--space-12);
+  border: 0; border-radius: 0;
+  font: 700 16px/1 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: background-color var(--motion-quick) linear, color var(--motion-quick) linear;
+}
+.btn .key {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-key);
+  font: 600 15px/1.45 var(--font-body); letter-spacing: 0; text-transform: none;
+  transition: background-color var(--motion-quick) linear, color var(--motion-quick) linear;
+}
+.btn--primary { background: var(--c-hud-yellow); color: var(--c-ink); }
+.btn--primary .key { background: var(--c-ink); color: var(--c-white); }
+.btn--secondary {
+  background: var(--c-scrim); color: var(--c-white);
+  -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop));
+}
+.btn--secondary .key { background: var(--c-white); color: var(--c-ink); }
+
+/* Hover = selected (white); Focus = selected + ring; Pressed = key cap turns yellow. */
+.btn:not([aria-disabled="true"]):hover,
+.btn:not([aria-disabled="true"]):focus-visible,
+.btn:not([aria-disabled="true"]):active { background: var(--c-white); color: var(--c-ink); }
+.btn:not([aria-disabled="true"]):hover .key,
+.btn:not([aria-disabled="true"]):focus-visible .key { background: var(--c-ink); color: var(--c-white); }
+.btn:not([aria-disabled="true"]):active .key { background: var(--c-hud-yellow); color: var(--c-ink); }
+.btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.btn[aria-disabled="true"] {
+  background: var(--c-scrim); color: var(--c-hud-grey); cursor: default;
+  -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop));
+}
+.btn[aria-disabled="true"] .key { background: var(--c-hud-grey); color: var(--c-ink); }
+@media (hover: none) { .btn .key { display: none; } }   /* key caps hidden on touch */
+
+/* ---------- Menu Bar Item (121:32) + Selector (126:188) ---------- */
+.menu-bar-item {
+  display: inline-flex; align-items: center; gap: var(--space-8);
+  padding: var(--space-4) var(--space-6);
+  border: 0; background: none;
+  font: 400 17px/1.2 var(--font-body); letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--c-white); text-decoration: none; white-space: nowrap; cursor: pointer;
+  opacity: var(--opacity-inactive);
+  transition: opacity var(--motion-quick) linear;
+}
+.menu-bar-item[aria-current="page"],
+.menu-bar-item:hover,
+.menu-bar-item:focus-visible { opacity: 1; }
+.menu-bar-item:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.selector { letter-spacing: 0.02em; }
+.selector .chev { opacity: var(--opacity-inactive); transition: opacity var(--motion-quick) linear; }
+.selector:hover .chev, .selector:focus-visible .chev { opacity: 1; }
+
+/* ---------- Plate · Online (121:42) ---------- */
+.plate {
+  display: inline-flex; align-items: center;
+  padding: var(--space-4) var(--space-8);
+  background: var(--c-ink); border: 1.5px solid var(--c-white); border-radius: var(--radius-plate);
+  color: var(--c-hud-red);
+  font: 900 25px/1 var(--font-plate); letter-spacing: -0.01em; text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---------- Info Panel (133:210) ---------- */
+.info-panel {
+  display: flex; flex-direction: column; align-items: flex-start;
+  color: var(--c-white);
+}
+.info-panel--featured { width: 440px; padding: var(--space-24); gap: var(--space-12); }
+.info-panel--standard { width: 340px; padding: var(--space-12); gap: var(--space-6); }
+.info-panel > * { width: 100%; }
+.ip-stat { display: flex; flex-direction: column; gap: 2px; }
+.ip-stat-value { font: 700 80px/0.9 var(--font-ui); }
+.info-panel--standard .ip-stat-value { font: 700 48px/0.95 var(--font-ui); text-transform: uppercase; }
+.ip-label, .ip-kicker {
+  font: 600 13px/1.15 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--c-hud-yellow);
+}
+.ip-title { font: 700 48px/0.95 var(--font-ui); text-transform: uppercase; }
+.info-panel--standard .ip-title { font: 700 28px/1 var(--font-ui); letter-spacing: 0.01em; }
+.ip-role { font: 600 15px/1.45 var(--font-body); }
+.ip-body { font: 400 15px/1.5 var(--font-body); }
+.info-panel--standard .ip-body { font: 400 13px/1.5 var(--font-body); }
+.ip-detail { font: 400 13px/1.5 var(--font-body); opacity: var(--opacity-secondary); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-6); margin: 0; padding: 0; list-style: none; }
+.chip {
+  padding: var(--space-4) var(--space-8);
+  background: var(--c-white); color: var(--c-ink);
+  font: 600 13px/1.15 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-12); }
+
+/* ---------- Help Text (121:44) ---------- */
+.help-text {
+  display: flex; flex-direction: column; gap: var(--space-6);
+  padding: var(--space-16); color: var(--c-white);
+}
+.ht-kicker { font: 600 13px/1.15 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-hud-yellow); }
+.ht-title { font: 700 28px/1 var(--font-ui); letter-spacing: 0.01em; text-transform: uppercase; }
+.ht-body { font: 400 13px/1.5 var(--font-body); }
+
+/* ---------- Menu Row (121:27) — rows stack with a 2 px gap ---------- */
+.menu-rows { display: flex; flex-direction: column; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.menu-row {
+  display: flex; align-items: flex-start; gap: var(--space-16);
+  padding: var(--space-8) var(--space-16);
+  background: var(--c-scrim); color: var(--c-white);
+  -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop));
+  text-decoration: none;
+}
+.menu-row .mr-label { flex: none; font: 700 15px/1.1 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+.menu-row .mr-value { flex: 1 0 0; min-width: 1px; font: 400 13px/1.5 var(--font-body); text-align: right; }
+.menu-row--selected, a.menu-row:hover, .menu-row:focus-visible { background: var(--c-white); color: var(--c-ink); }
+.menu-row:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.menu-row--disabled { color: var(--c-hud-grey); }
+
+/* ---------- Pause Tab (134:246) — edge to edge, 2 px gaps ---------- */
+.pause-tab {
+  display: flex; align-items: center; justify-content: center;
+  height: 34px; border: 0; border-top: 4px solid transparent;
+  background: var(--c-scrim); color: var(--c-white);
+  -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop));
+  font: 700 15px/1.1 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+}
+.pause-tab[aria-current="true"] { background: var(--c-white); color: var(--c-ink); border-top-color: var(--c-player); }
+.pause-tab:hover { background: var(--c-white); color: var(--c-ink); }
+.pause-tab:focus-visible { outline: none; box-shadow: var(--focus-ring); background: var(--c-white); color: var(--c-ink); }
+
+/* ---------- Notification (126:201) — whole card is the link ---------- */
+.notification {
+  display: flex; align-items: center; gap: var(--space-12);
+  width: 340px; padding: var(--space-8);
+  background: var(--c-scrim); color: var(--c-white); text-decoration: none;
+  -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop));
+  transition: background-color var(--motion-quick) linear, color var(--motion-quick) linear;
+}
+.notification .nt-icon {
+  flex: none; display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 20px;
+  background: var(--c-player); border: var(--stroke-edge) solid var(--c-white); color: var(--c-white);
+}
+.notification .nt-icon svg { width: 20px; height: 20px; }
+.notification .nt-text { display: flex; flex-direction: column; gap: var(--space-2); min-width: 1px; }
+.notification .nt-sender { font: 600 15px/1.45 var(--font-body); }
+.notification .nt-message { font: 400 13px/1.5 var(--font-body); opacity: var(--opacity-secondary); }
+.notification:hover { background: var(--c-white); color: var(--c-ink); }
+.notification:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* ---------- Device · Resonova (144:573) ---------- */
+.device {
+  padding: 8px; background: #06060a;
+  border: var(--stroke-edge) solid var(--c-white); border-radius: 22px;
+  box-shadow: 0 24px 48px rgb(0 0 0 / 0.5);
+}
+.device img { width: 100%; height: auto; border-radius: 16px; }
