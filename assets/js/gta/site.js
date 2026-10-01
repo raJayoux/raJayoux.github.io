@@ -138,7 +138,9 @@
     }
 
     /* Scene B joins the loading cycle once its art has loaded (after the page, off the critical path).
-       The switch happens on the dip's loop boundary, when every layer is at Scene A's start — seamless. */
+       The A-only loop and the A→B cycle are identical for their first 6.5 s, so if B is ready before
+       Scene A's dip-out we switch at the same moment in time (no visible change, B follows this A);
+       otherwise we wait for the loop boundary, when every layer is at Scene A's start. */
     var desktopMotion = matchMedia("(prefers-reduced-motion: no-preference)");   /* desktop + mobile poster */
     if (hero && desktopMotion.matches) {
       window.addEventListener("load", function () {
@@ -152,10 +154,20 @@
           return img.decode ? img.decode() : Promise.resolve();
         })).then(function () {
           var dip = hero.querySelector(".hero-dip");
-          dip.addEventListener("animationiteration", function swap() {
+          var dipAnim = dip.getAnimations ? dip.getAnimations()[0] : null;
+          var sceneMs = 7000, safeUntil = 6400;     /* stay clear of the 6.5 s scene swap */
+          var t = dipAnim && dipAnim.currentTime != null ? dipAnim.currentTime % sceneMs : null;
+          if (t != null && t < safeUntil) {
             hero.classList.add("cycle-ab");
-            dip.removeEventListener("animationiteration", swap);
-          });
+            hero.getAnimations({ subtree: true }).forEach(function (a) {
+              if (/^(cycle2|m2)-/.test(a.animationName || "")) a.currentTime = t;
+            });
+          } else {
+            dip.addEventListener("animationiteration", function swap() {
+              hero.classList.add("cycle-ab");
+              dip.removeEventListener("animationiteration", swap);
+            });
+          }
         }).catch(function () { /* Scene B failed to load: keep the Scene A loop */ });
       });
     }
