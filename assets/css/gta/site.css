@@ -72,6 +72,55 @@ button { font: inherit; color: inherit; }
   92.857% { opacity: 1; }
   100% { opacity: 0; }
 }
+/* ---------- two-scene cycle A → B (14 s): A 0–7 s, B 7–14 s; scenes swap under full black ----------
+   6 s = 42.857 %, 6.5 s = 46.429 %, 7 s = 50 %, 13 s = 92.857 %, 13.5 s = 96.429 % */
+@keyframes cycle2-sky {
+  0% { transform: none; }
+  42.857%, 46.429% { transform: translateX(-60px); }
+  46.43%, 100% { transform: none; }
+}
+@keyframes cycle2-bike {
+  0% { transform: none; }
+  42.857%, 46.429% { transform: translateX(-72px); }
+  46.43%, 100% { transform: none; }
+}
+@keyframes cycle2-breakout {
+  0% { transform: none; }
+  42.857%, 46.429% { transform: translate(-84px, -16px); }
+  46.43%, 100% { transform: none; }
+}
+@keyframes cycle2-subject {
+  0% { transform: none; opacity: 1; }
+  42.857% { transform: translate(-28px, -16px) scale(1.0442, 1.0449); opacity: 1; }
+  46.429% { transform: translate(-28px, -16px) scale(1.0442, 1.0449); opacity: 0; }
+  46.43%, 96.429% { transform: none; opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes cycle2-dip {
+  0%, 42.857% { opacity: 0; }
+  46.429% { opacity: 1; }
+  50%, 92.857% { opacity: 0; }
+  96.429% { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* Scene B (165:955 Start → 165:991 End): ~5 % push-in on the background, subject grows from its bottom-left */
+@keyframes cycle2-scene-b {
+  0%, 46.428% { opacity: 0; }
+  46.43%, 96.428% { opacity: 1; }
+  96.43%, 100% { opacity: 0; }
+}
+@keyframes cycle2-sky-b {
+  0%, 50% { transform: none; }
+  92.857%, 96.429% { transform: translate(-38px, -21px) scale(1.05263); }
+  96.43%, 100% { transform: none; }
+}
+@keyframes cycle2-subject-b {
+  0%, 46.43% { transform: none; opacity: 0; }
+  50% { transform: none; opacity: 1; }
+  92.857% { transform: translate(-6px, -24px) scale(1.0504, 1.05); opacity: 1; }
+  96.429% { transform: translate(-6px, -24px) scale(1.0504, 1.05); opacity: 0; }
+  96.43%, 100% { transform: none; opacity: 0; }
+}
 @keyframes enter-card    { from { opacity: 0; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
 @keyframes enter-subject { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
 @keyframes enter-logo    { from { opacity: 0; translate: 14px -7px; scale: 1.045; } to { opacity: 1; translate: 0 0; scale: 1; } }
@@ -166,6 +215,30 @@ button { font: inherit; color: inherit; }
     .hero:not(.is-entered) .hero-logo { animation: enter-logo var(--motion-settle) ease-out both; }
   }
   .hero-logo { transform-origin: 0 0; }
+  /* ---------- Scene B layers (static = hidden; shown only by the A → B cycle) ---------- */
+  .hero-scene-b { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+  .hero-sky-b { left: -40px; top: -23px; width: 1425px; height: 814px; transform-origin: 0 0; }
+  .hero-breakout-b {
+    position: absolute; left: 0; top: 0; width: 760px; height: 980px; pointer-events: none;
+    clip-path: polygon(50px 55px, 740px 45px, 740px 980px, 30px 980px, 40px 808px);
+  }
+  .hero-subject-b { left: -120px; top: 200px; width: 675px; height: 680px; opacity: 0; transform-origin: 0 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero.cycle-ab :is(.hero-sky, .hero-bike, .hero-breakout, .hero-subject, .hero-dip, .hero-scene-b, .hero-sky-b, .hero-subject-b) {
+      animation-duration: calc(2 * (var(--motion-scene) + 2 * var(--motion-dip)));
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    .hero.cycle-ab .hero-sky       { animation-name: cycle2-sky; }
+    .hero.cycle-ab .hero-bike      { animation-name: cycle2-bike; }
+    .hero.cycle-ab .hero-breakout  { animation-name: cycle2-breakout; }
+    .hero.cycle-ab .hero-subject   { animation-name: cycle2-subject; }
+    .hero.cycle-ab .hero-dip       { animation-name: cycle2-dip; }
+    .hero.cycle-ab .hero-scene-b   { animation-name: cycle2-scene-b; }
+    .hero.cycle-ab .hero-sky-b     { animation-name: cycle2-sky-b; }
+    .hero.cycle-ab .hero-subject-b { animation-name: cycle2-subject-b; }
+    .hero.is-paused :is(.hero-scene-b, .hero-sky-b, .hero-subject-b) { animation-play-state: paused; }
+  }
   .hero.no-cycle .cycle-toggle { display: none; }
   @media (prefers-reduced-motion: reduce) { .cycle-toggle { display: none; } }
 
@@ -356,7 +429,7 @@ button { font: inherit; color: inherit; }
   .m-logo:focus-visible, .m-phone:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 
   /* desktop-only pieces */
-  .hero-edge, .hero-bike, .hero-dip, .cycle-toggle, .hero-nav, .gutters,
+  .hero-edge, .hero-bike, .hero-dip, .cycle-toggle, .hero-nav, .gutters, .hero-scene-b, .hero-breakout-b,
   .story-inset, .shortcuts-toggle, .pm-meta, .tile--resonova .ip-detail { display: none; }
 
   /* shared tile geometry */

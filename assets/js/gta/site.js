@@ -137,6 +137,29 @@
       }
     }
 
+    /* Scene B joins the loading cycle once its art has loaded (after the page, off the critical path).
+       The switch happens on the dip's loop boundary, when every layer is at Scene A's start — seamless. */
+    var desktopMotion = matchMedia("(min-width: 1024px) and (prefers-reduced-motion: no-preference)");
+    if (hero && desktopMotion.matches) {
+      window.addEventListener("load", function () {
+        var imgs = Array.prototype.slice.call(document.querySelectorAll(".hero-scene-b img, .hero-breakout-b img"));
+        document.querySelectorAll(".hero-scene-b source, .hero-breakout-b source").forEach(function (s) {
+          s.srcset = s.getAttribute("data-srcset");
+        });
+        Promise.all(imgs.map(function (img) {
+          if (img.getAttribute("data-srcset")) img.srcset = img.getAttribute("data-srcset");
+          img.src = img.getAttribute("data-src");
+          return img.decode ? img.decode() : Promise.resolve();
+        })).then(function () {
+          var dip = hero.querySelector(".hero-dip");
+          dip.addEventListener("animationiteration", function swap() {
+            hero.classList.add("cycle-ab");
+            dip.removeEventListener("animationiteration", swap);
+          });
+        }).catch(function () { /* Scene B failed to load: keep the Scene A loop */ });
+      });
+    }
+
     /* details dialogs (Presage "View details") — native <dialog>: focus, Esc and top layer for free */
     document.querySelectorAll("[data-open-dialog]").forEach(function (b) {
       var d = document.getElementById(b.getAttribute("data-open-dialog"));
