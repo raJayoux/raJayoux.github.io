@@ -76,7 +76,7 @@
       b.setAttribute("aria-label", pack.appLanguage + " — " + pack.langLabel);
     });
     applyThemeLabels();
-    store("rajayoux-lang", lang);
+    store("pengyujie-lang", lang);
   }
 
   /* ---- theme ---- */
@@ -93,7 +93,7 @@
 
   function setTheme(t) {
     root.setAttribute("data-theme", t);
-    store("rajayoux-theme", t);
+    store("pengyujie-theme", t);
     applyThemeLabels();
   }
 
@@ -106,8 +106,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    shortcutsOn = read("rajayoux-shortcuts") !== "off";
-    var saved = read("rajayoux-lang");
+    shortcutsOn = read("pengyujie-shortcuts") !== "off";
+    var saved = read("pengyujie-lang");
     applyLang(saved && LANGS.indexOf(saved) >= 0 ? saved : "en");
 
     document.querySelectorAll("[data-lang-toggle]").forEach(function (b) {
@@ -211,7 +211,7 @@
     var sc = document.querySelector("[data-shortcuts-toggle]");
     if (sc) sc.addEventListener("click", function () {
       shortcutsOn = !shortcutsOn;
-      store("rajayoux-shortcuts", shortcutsOn ? "on" : "off");
+      store("pengyujie-shortcuts", shortcutsOn ? "on" : "off");
       applyShortcutLabel();
     });
     document.addEventListener("keydown", function (e) {

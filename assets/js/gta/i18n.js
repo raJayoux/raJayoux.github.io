@@ -73,7 +73,7 @@ const I18N = {
     message: "Message",
     submit: "Send",
     thanks: "Sent. I’ll get back to you.",
-    footer: "© 2026 raJayoux",
+    footer: "© 2026 Pengyu Jie",
     github: "GitHub"
   },
   fr: {
@@ -148,7 +148,7 @@ const I18N = {
     message: "Message",
     submit: "Envoyer",
     thanks: "Envoyé. Je vous répondrai.",
-    footer: "© 2026 raJayoux",
+    footer: "© 2026 Pengyu Jie",
     github: "GitHub"
   },
   zh: {
@@ -165,7 +165,7 @@ const I18N = {
     xrResume: "XR 简历",
     aboutKicker: "关于",
     aboutTitle: "关于",
-    about1: "我是鹏宇，协作时也用 raJayoux。常驻巴黎，毕业于法国 ESIGELEC 软件工程硕士（2026年9月毕业），刚在巴黎 Presage Care 完成六个月的生产环境 Angular 与 C#/.NET 全栈开发。",
+    about1: "我是鹏宇。常驻巴黎，毕业于法国 ESIGELEC 软件工程硕士（2026年9月毕业），刚在巴黎 Presage Care 完成六个月的生产环境 Angular 与 C#/.NET 全栈开发。",
     about2: "我喜欢做真正会被用到的部分：门户、接口、鉴权，以及让产品站得住的平台工作。XR 和 Unity 是我学会交付的背景，不是现在的身份。",
     stackKicker: "技术",
     stackTitle: "常用工具",
@@ -223,7 +223,7 @@ const I18N = {
     message: "留言",
     submit: "发送",
     thanks: "已发送，我会回复。",
-    footer: "© 2026 raJayoux",
+    footer: "© 2026 揭鹏宇",
     github: "GitHub"
   }
 };
