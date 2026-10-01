@@ -139,7 +139,7 @@
 
     /* Scene B joins the loading cycle once its art has loaded (after the page, off the critical path).
        The switch happens on the dip's loop boundary, when every layer is at Scene A's start — seamless. */
-    var desktopMotion = matchMedia("(min-width: 1024px) and (prefers-reduced-motion: no-preference)");
+    var desktopMotion = matchMedia("(prefers-reduced-motion: no-preference)");   /* desktop + mobile poster */
     if (hero && desktopMotion.matches) {
       window.addEventListener("load", function () {
         var imgs = Array.prototype.slice.call(document.querySelectorAll(".hero-scene-b img, .hero-breakout-b img"));
