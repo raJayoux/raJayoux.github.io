@@ -68,9 +68,65 @@ button { font: inherit; color: inherit; }
   .hero-card .vignette {
     background: radial-gradient(ellipse 58% 58% at 50% 50%, transparent 62%, rgb(0 0 0 / 0.55) 100%);
   }
+  .hero-layer { position: absolute; }
+  .hero-layer picture, .hero-layer img { width: 100%; height: 100%; }
+  .hero-layer img { object-fit: cover; }
+  .hero-sky { inset: 0; }
+  .hero-bike { left: 122px; top: 454px; width: 600px; height: 400px; }
+  .hero-bike img { transform: scaleX(-1); }          /* approved art faces left; parked facing the panel */
+  .hero-dip { position: absolute; inset: 0; background: var(--c-ink); opacity: 0; pointer-events: none; }
+  .hero-edge {
+    position: absolute; left: 52px; top: 40px; width: 1344px; height: 768px;
+    overflow: visible; fill: none; stroke: var(--c-white); stroke-width: var(--stroke-edge);
+    pointer-events: none;
+  }
 
-  /* ---------- logotype (110:21) ---------- */
+  /* Break-out (110:6): above the card, below every tile and all UI. */
+  .hero-breakout {
+    position: absolute; left: 0; top: 0; width: 760px; height: 980px;
+    clip-path: polygon(50px 55px, 740px 45px, 740px 980px, 30px 980px, 40px 808px);
+    pointer-events: none;
+  }
+  .hero-subject { left: 90px; top: 110px; width: 520px; height: 780px; }
+
+  /* ---------- story panel (110:9) ---------- */
+  .story {
+    position: absolute; left: 560px; top: 228px; width: 800px; height: 386px; z-index: 4;
+    display: flex; color: var(--c-white);
+  }
+  .story-text {
+    width: 520px; flex: none; padding: var(--space-32);
+    display: flex; flex-direction: column; gap: var(--space-16);
+  }
+  .story-status {
+    display: flex; align-items: center; gap: var(--space-6);
+    font: 400 15px/1.1 var(--font-body); letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--c-hud-green); white-space: pre;
+  }
+  .status-dot { width: 10px; height: 10px; flex: none; fill: var(--c-hud-green); }
+  .story-inset { display: block; width: 280px; flex: none; align-self: stretch; }
+  .story-inset img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---------- nav strip (110:25) ---------- */
+  .hero-nav {
+    position: absolute; left: 560px; top: 751px; width: 800px; height: 46px; z-index: 5;
+    display: flex; align-items: center; justify-content: flex-end; gap: var(--space-16);
+    padding: var(--space-8) var(--space-12);
+    background: linear-gradient(to right, transparent 0%, var(--c-scrim) 45%, var(--c-scrim) 100%);
+  }
+
+  /* Past the hero the same strip pins to the top, full scrim. */
+  .hero-nav.is-stuck {
+    position: fixed; left: 0; right: 0; top: 0; width: auto; z-index: 50;
+    padding-right: calc(max(0px, (100vw - 1440px) / 2) + 80px + var(--space-12));
+    background: var(--c-scrim);
+    -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop));
+  }
+
+  /* ---------- logotype (110:21) — above the nav ---------- */
   .hero-logo { position: absolute; left: 30px; top: 507px; width: 373px; height: 268px; z-index: 6; }
+  .hero-wordmark { position: absolute; left: -5.68px; top: 0; width: 384.42px; height: 235.47px; }
+  .hero-plate { position: absolute; left: 0; top: 233px; width: 369px; height: 33px; }
 
   /* ---------- collage tiles: bounding box + cut-line polygon (local coords) ---------- */
   .tile {

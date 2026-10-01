@@ -49,10 +49,68 @@
 
     <!-- ============ HERO ============ -->
     <header class="hero" id="top">
+      <!-- Card (110:2): sky, parked bike, vignette, dip-to-black; skewed 3 px white edge on top. -->
       <div class="hero-card">
-        <div class="hero-layer hero-sky"></div>
+        <div class="hero-layer hero-sky">
+          <picture>
+            <source srcset="assets/img/gta/hero-L0-sky.avif" type="image/avif">
+            <img src="assets/img/gta/hero-L0-sky.webp" alt="" width="1536" height="1024" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="hero-layer hero-bike">
+          <picture>
+            <source srcset="assets/img/gta/hero-L3-bike.avif" type="image/avif">
+            <img src="assets/img/gta/hero-L3-bike.webp" alt="" width="1536" height="1024">
+          </picture>
+        </div>
         <div class="vignette"></div>
+        <div class="hero-dip"></div>
       </div>
+      <svg class="hero-edge" viewBox="0 0 1344 768" aria-hidden="true" focusable="false">
+        <path d="M1342.45 766.474L1.53809 744.524L19.4639 33.4648L1318.55 1.53613L1342.45 766.474Z"/>
+      </svg>
+
+      <!-- Break-out subject (110:6): head inside the card, body breaks the card's bottom edge. -->
+      <div class="hero-breakout">
+        <div class="hero-layer hero-subject">
+          <picture>
+            <source srcset="assets/img/gta/hero-L2-subject.avif" type="image/avif">
+            <img src="assets/img/gta/hero-L2-subject.webp" alt="" width="1024" height="1536" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+
+      <!-- Story panel (110:9): the reading area — never covered, never animated. -->
+      <section class="story scrim" aria-labelledby="story-title">
+        <div class="story-text">
+          <h2 class="t-story-title" id="story-title" data-i18n="storyTitle">Pengyu Jie: Software Engineer</h2>
+          <p class="t-body-m" data-i18n="storyP1">I build product systems across frontend, backend, and native surfaces — from production healthcare software to my own AI listening product.</p>
+          <p class="t-body-m" data-i18n="storyP2">6 months shipping Angular + C#/.NET at Presage Care in Paris. Resonova spans Android, web, FastAPI, Spotify, and applied AI. Looking for roles where product thinking and software engineering meet.</p>
+          <p class="story-status">
+            <svg class="status-dot" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><circle cx="5" cy="5" r="2.92"/></svg>
+            <span data-i18n="statusLine">Available now  ·  Paris  ·  EN / FR / 中文</span>
+          </p>
+          <div class="actions">
+            <a class="btn btn--primary" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download><span data-i18n="downloadCv">Download CV</span> <span class="key" aria-hidden="true">D</span></a>
+            <a class="btn btn--secondary" href="#contact"><span data-i18n="navContact">Contact</span> <span class="key" aria-hidden="true">C</span></a>
+          </div>
+        </div>
+        <picture class="story-inset">
+          <source srcset="assets/img/gta/story-inset.avif" type="image/avif">
+          <img src="assets/img/gta/story-inset.webp" alt="Pengyu Jie with his motorcycle at the Eiffel Tower at night" data-i18n-alt="insetAlt" width="560" height="772">
+        </picture>
+      </section>
+
+      <!-- Nav strip (110:25): image-11 fading story-menu bar; sticks to the top past the hero. -->
+      <nav class="hero-nav" aria-label="Primary">
+        <a class="menu-bar-item" href="#work" aria-current="page" data-i18n="navWork">Work</a>
+        <a class="menu-bar-item" href="#experience" data-i18n="navExperience">Experience</a>
+        <a class="menu-bar-item" href="#about" data-i18n="navAbout">About</a>
+        <a class="menu-bar-item" href="#contact" data-i18n="navContact">Contact</a>
+        <a class="menu-bar-item" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download data-i18n="navCv">Download CV</a>
+        <button class="menu-bar-item selector" type="button" data-lang-toggle aria-label="Language: English"><span data-i18n="langValue">EN</span></button>
+        <button class="menu-bar-item selector" type="button" data-theme-toggle aria-label="Theme: night"><span data-theme-value>Night</span></button>
+      </nav>
 
       <div class="hero-logo">
         <h1 class="visually-hidden">Pengyu Jie</h1>

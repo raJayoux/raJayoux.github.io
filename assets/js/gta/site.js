@@ -89,5 +89,15 @@
 
     fit();
     window.addEventListener("resize", fit);
+
+    /* nav strip sticks to the top once the hero card has scrolled away (desktop) */
+    var nav = document.querySelector(".hero-nav");
+    var card = document.querySelector(".hero-card");
+    if (nav && card && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        var e = entries[0];
+        nav.classList.toggle("is-stuck", !e.isIntersecting && e.boundingClientRect.top < 0);
+      }).observe(card);
+    }
   });
 })();
