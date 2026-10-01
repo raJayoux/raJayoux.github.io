@@ -34,8 +34,9 @@ button { font: inherit; color: inherit; }
 }
 .skip-link:focus { top: 16px; box-shadow: var(--focus-ring); outline: none; }
 
-/* Decorative overhangs (gutter overlay, tilted phone) never widen the page. */
-.stage { overflow-x: clip; }
+/* Overhangs (Scene B's bike, tilted phone) may run into the page margin on wide screens but never
+   widen the page: clip at the window edge, not at the 1440 layout edge. */
+html, body { overflow-x: clip; }
 
 /* ---------- shared surfaces ---------- */
 /* GTA vignette: transparent to 62 % of the radius, ink 55 % at the edge (Figma: a box 1.2x the tile). */
@@ -117,8 +118,8 @@ button { font: inherit; color: inherit; }
 @keyframes cycle2-subject-b {
   0%, 46.43% { transform: none; opacity: 0; }
   50% { transform: none; opacity: 1; }
-  92.857% { transform: translate(0, -28px) scale(1.05); opacity: 1; }
-  96.429% { transform: translate(0, -28px) scale(1.05); opacity: 0; }
+  92.857% { transform: translate(-6px, -24px) scale(1.0504, 1.05); opacity: 1; }
+  96.429% { transform: translate(-6px, -24px) scale(1.0504, 1.05); opacity: 0; }
   96.43%, 100% { transform: none; opacity: 0; }
 }
 @keyframes enter-card    { from { opacity: 0; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
@@ -220,9 +221,9 @@ button { font: inherit; color: inherit; }
   .hero-sky-b { left: -40px; top: -23px; width: 1425px; height: 814px; transform-origin: 0 0; }
   .hero-breakout-b {
     position: absolute; left: 0; top: 0; width: 760px; height: 980px; pointer-events: none;
-    clip-path: polygon(50px 55px, 740px 45px, 740px 980px, 30px 980px, 40px 808px);
+    clip-path: polygon(-600px 60px, 740px 45px, 740px 980px, -600px 980px);   /* open to the left: the bike may run into the page margin */
   }
-  .hero-subject-b { left: 56px; top: 320px; width: 556px; height: 560px; opacity: 0; transform-origin: 0 0; }   /* whole bike inside the mask — no left crop */
+  .hero-subject-b { left: -120px; top: 200px; width: 675px; height: 680px; opacity: 0; transform-origin: 0 0; }
   @media (prefers-reduced-motion: no-preference) {
     .hero.cycle-ab :is(.hero-sky, .hero-bike, .hero-breakout, .hero-subject, .hero-dip, .hero-scene-b, .hero-sky-b, .hero-subject-b) {
       animation-duration: calc(2 * (var(--motion-scene) + 2 * var(--motion-dip)));
@@ -331,6 +332,7 @@ button { font: inherit; color: inherit; }
   /* Gutters (111:8): one overlay strokes every cut line — 12 px ink + 6 px theme centre line. */
   .gutters {
     position: absolute; left: -6px; top: 0; width: 1452px; height: 2240px; z-index: 2;
+    clip-path: inset(0 6px);                     /* gutters stop at the layout edge */
     fill: none; pointer-events: none; overflow: visible;
   }
   .gutters-ink { stroke: var(--c-ink); stroke-width: 12; }
