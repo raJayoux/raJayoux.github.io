@@ -33,12 +33,22 @@
     try { return localStorage.getItem(key); } catch (e) { return null; }
   }
 
+  /* Noto Sans SC is only fetched for 中文 (≈120 KB); elsewhere the few CJK glyphs use the system font. */
+  function loadCjkFont() {
+    if (document.getElementById("font-cjk")) return;
+    var l = document.createElement("link");
+    l.id = "font-cjk"; l.rel = "stylesheet";
+    l.href = "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600&display=swap";
+    document.head.appendChild(l);
+  }
+
   /* ---- language ---- */
   var lang = "en";
 
   function applyLang(next) {
     lang = I18N[next] ? next : "en";
     var pack = I18N[lang];
+    if (lang === "zh") loadCjkFont();
     root.lang = lang === "zh" ? "zh-Hans" : lang;
     document.title = pack.docTitle;
     var meta = document.querySelector('meta[name="description"]');
@@ -62,8 +72,8 @@
     document.querySelectorAll("[data-cv]").forEach(function (a) { a.href = CV[lang]; });
     document.querySelectorAll("[data-xr-cv]").forEach(function (a) { a.href = XR_CV[lang]; });
     applyShortcutLabel();
-    document.querySelectorAll("[data-lang-toggle]").forEach(function (b) {
-      b.setAttribute("aria-label", pack.langLabel);
+    document.querySelectorAll(".if-app[data-lang-toggle]").forEach(function (b) {
+      b.setAttribute("aria-label", pack.appLanguage + " — " + pack.langLabel);
     });
     applyThemeLabels();
     store("rajayoux-lang", lang);
@@ -77,7 +87,7 @@
     document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
       var v = b.querySelector("[data-theme-value]");
       if (v) v.textContent = t === "day" ? pack.themeDay : pack.themeNight;
-      b.setAttribute("aria-label", t === "day" ? pack.themeLabelDay : pack.themeLabelNight);
+      if (b.classList.contains("if-app")) b.setAttribute("aria-label", pack.appTheme + " — " + (t === "day" ? pack.themeLabelDay : pack.themeLabelNight));
     });
   }
 

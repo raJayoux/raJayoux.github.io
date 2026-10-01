@@ -4,7 +4,7 @@
  * Single source for the redesign: change the Figma variable, then this file. Exported 2026-10-01.
  */
 
-/* Fonts (Barlow Condensed 600/700, Noto Sans SC 400/600, Work Sans 300/400/600, Zalando Sans Expanded 900)
+/* Fonts (Barlow Condensed 600/700, Work Sans 300/400/600, Zalando Sans Expanded 900; Noto Sans SC 400/600 on demand for 中文)
  * are loaded by a <link> in index.html, not @import, so they don't block CSS parsing. */
 
 :root {

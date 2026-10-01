@@ -7,7 +7,7 @@
 
 /* Components own their spacing (gap/padding), never UA margins. */
 :where(.info-panel, .help-text, .menu-rows, .notification, .plate) :where(p, h2, h3, ul, li) { margin: 0; }
-:where(p.plate) { margin: 0; }
+:where(p.plate, h2.plate) { margin: 0; }
 
 .scrim {
   background: var(--c-scrim);

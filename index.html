@@ -30,16 +30,22 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+SC:wght@400;600&family=Work+Sans:wght@300;400;600&family=Zalando+Sans+Expanded:wght@900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Work+Sans:wght@300;400;600&family=Zalando+Sans+Expanded:wght@900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Work+Sans:wght@300;400;600&family=Zalando+Sans+Expanded:wght@900&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/gta/tokens.css">
   <link rel="stylesheet" href="assets/css/gta/components.css">
   <link rel="stylesheet" href="assets/css/gta/site.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCTK49658F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-TCTK49658F');
+    /* Analytics loads after the page so it doesn't compete with the hero art; queued calls still send. */
+    addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TCTK49658F';
+      document.head.appendChild(s);
+    });
   </script>
 </head>
 <body>
@@ -55,6 +61,7 @@
   </div>
 
   <div class="stage">
+    <script>(function(s,w){if(w>=1024)s.style.zoom=Math.min(1,w/1440);})(document.currentScript.parentElement,document.documentElement.clientWidth);</script>
 
     <!-- ============ HERO ============ -->
     <header class="hero" id="top">
@@ -62,14 +69,16 @@
       <div class="hero-card">
         <div class="hero-layer hero-sky">
           <picture>
-            <source srcset="assets/img/gta/hero-L0-sky.avif" type="image/avif">
-            <img src="assets/img/gta/hero-L0-sky.webp" alt="" width="1536" height="1024" fetchpriority="high">
+            <source media="(max-width: 480px)" srcset="assets/img/gta/hero-L0-sky-m.avif" type="image/avif">
+            <source media="(max-width: 480px)" srcset="assets/img/gta/hero-L0-sky-m.webp" type="image/webp">
+            <source srcset="assets/img/gta/hero-L0-sky-800.avif 800w, assets/img/gta/hero-L0-sky.avif 1536w" sizes="(min-width: 1024px) 100vw, 816px" type="image/avif">
+            <img src="assets/img/gta/hero-L0-sky.webp" srcset="assets/img/gta/hero-L0-sky-800.webp 800w, assets/img/gta/hero-L0-sky.webp 1536w" sizes="(min-width: 1024px) 100vw, 816px" alt="" width="1536" height="1024" fetchpriority="high">
           </picture>
         </div>
         <div class="hero-layer hero-bike">
           <picture>
-            <source srcset="assets/img/gta/hero-L3-bike.avif" type="image/avif">
-            <img src="assets/img/gta/hero-L3-bike.webp" alt="" width="1536" height="1024">
+            <source srcset="assets/img/gta/hero-L3-bike-800.avif 800w, assets/img/gta/hero-L3-bike.avif 1536w" sizes="42vw" type="image/avif">
+            <img src="assets/img/gta/hero-L3-bike.webp" srcset="assets/img/gta/hero-L3-bike-800.webp 800w, assets/img/gta/hero-L3-bike.webp 1536w" sizes="42vw" alt="" width="1536" height="1024" loading="lazy">
           </picture>
         </div>
         <div class="hero-dip"></div>
@@ -87,8 +96,8 @@
       <div class="hero-breakout">
         <div class="hero-layer hero-subject">
           <picture>
-            <source srcset="assets/img/gta/hero-L2-subject.avif" type="image/avif">
-            <img src="assets/img/gta/hero-L2-subject.webp" alt="" width="1024" height="1536" fetchpriority="high">
+            <source srcset="assets/img/gta/hero-L2-subject-520.avif 520w, assets/img/gta/hero-L2-subject.avif 1024w" sizes="(min-width: 1024px) 36vw, 400px" type="image/avif">
+            <img src="assets/img/gta/hero-L2-subject.webp" srcset="assets/img/gta/hero-L2-subject-520.webp 520w, assets/img/gta/hero-L2-subject.webp 1024w" sizes="(min-width: 1024px) 36vw, 400px" alt="" width="1024" height="1536" fetchpriority="high">
           </picture>
         </div>
       </div>
@@ -109,8 +118,8 @@
           </div>
         </div>
         <picture class="story-inset">
-          <source srcset="assets/img/gta/story-inset.avif" type="image/avif">
-          <img src="assets/img/gta/story-inset.webp" alt="Pengyu Jie with his motorcycle at the Eiffel Tower at night" data-i18n-alt="insetAlt" width="560" height="772">
+          <source srcset="assets/img/gta/story-inset-280.avif 280w, assets/img/gta/story-inset.avif 560w" sizes="280px" type="image/avif">
+          <img src="assets/img/gta/story-inset.webp" srcset="assets/img/gta/story-inset-280.webp 280w, assets/img/gta/story-inset.webp 560w" sizes="280px" alt="Pengyu Jie with his motorcycle at the Eiffel Tower at night" data-i18n-alt="insetAlt" width="560" height="772" loading="lazy">
         </picture>
       </section>
 
@@ -121,8 +130,8 @@
         <a class="menu-bar-item" href="#about" data-i18n="navAbout">About</a>
         <a class="menu-bar-item" href="#contact" data-i18n="navContact">Contact</a>
         <a class="menu-bar-item" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download data-i18n="navCv">Download CV</a>
-        <button class="menu-bar-item selector" type="button" data-lang-toggle aria-label="Language: English"><span data-i18n="langValue">EN</span></button>
-        <button class="menu-bar-item selector" type="button" data-theme-toggle aria-label="Theme: night"><span data-theme-value>Night</span></button>
+        <button class="menu-bar-item selector" type="button" data-lang-toggle><span class="visually-hidden" data-i18n="langPrefix">Language: </span><span data-i18n="langValue">EN</span></button>
+        <button class="menu-bar-item selector" type="button" data-theme-toggle><span class="visually-hidden" data-i18n="themePrefix">Theme: </span><span data-theme-value>Night</span></button>
       </nav>
 
       <!-- Mobile poster corners (137:363 / 154:367) -->
@@ -137,15 +146,15 @@
     </header>
 
     <main id="main">
-      <p class="plate work-plate"><span data-i18n="plateWork">Selected work</span></p>
+      <h2 class="plate work-plate"><span data-i18n="plateWork">Selected work</span></h2>
 
       <!-- Resonova (107:28) + the real app as the tile's subject (245:962), breaking out above it -->
       <div class="work-feature">
         <article class="tile tile--resonova cut-a" id="work" aria-labelledby="t-resonova">
           <div class="tile-bg"></div>
           <picture class="tile-art art--resonova">
-            <source srcset="assets/img/gta/resonova-L0-bg.avif" type="image/avif">
-            <img src="assets/img/gta/resonova-L0-bg.webp" alt="" width="1536" height="1024" loading="lazy">
+            <source srcset="assets/img/gta/resonova-L0-bg-800.avif 800w, assets/img/gta/resonova-L0-bg.avif 1536w" sizes="(min-width: 1024px) 77vw, 1050px" type="image/avif">
+            <img src="assets/img/gta/resonova-L0-bg.webp" srcset="assets/img/gta/resonova-L0-bg-800.webp 800w, assets/img/gta/resonova-L0-bg.webp 1536w" sizes="(min-width: 1024px) 77vw, 1050px" alt="" width="1536" height="1024" loading="lazy">
           </picture>
           <div class="vignette"></div>
           <div class="info-panel info-panel--featured scrim tile-panel">
@@ -173,8 +182,8 @@
       <article class="tile tile--presage cut-b" id="presage" aria-labelledby="t-presage">
         <div class="tile-bg"></div>
         <picture class="tile-art art--presage">
-          <source srcset="assets/img/gta/presage-L0-bg.avif" type="image/avif">
-          <img src="assets/img/gta/presage-L0-bg.webp" alt="" width="1536" height="1024" loading="lazy">
+          <source srcset="assets/img/gta/presage-L0-bg-800.avif 800w, assets/img/gta/presage-L0-bg.avif 1536w" sizes="(min-width: 1024px) 59vw, 888px" type="image/avif">
+          <img src="assets/img/gta/presage-L0-bg.webp" srcset="assets/img/gta/presage-L0-bg-800.webp 800w, assets/img/gta/presage-L0-bg.webp 1536w" sizes="(min-width: 1024px) 59vw, 888px" alt="" width="1536" height="1024" loading="lazy">
         </picture>
         <div class="vignette"></div>
         <div class="info-panel info-panel--standard scrim tile-panel">
@@ -266,8 +275,8 @@
       <article class="tile tile--about cut-b" id="about" aria-labelledby="t-about">
         <div class="tile-bg"></div>
         <picture class="tile-art art--about">
-          <source srcset="assets/img/gta/about-L0-bg.avif" type="image/avif">
-          <img src="assets/img/gta/about-L0-bg.webp" alt="" width="1536" height="1024" loading="lazy">
+          <source srcset="assets/img/gta/about-L0-bg-800.avif 800w, assets/img/gta/about-L0-bg.avif 1536w" sizes="(min-width: 1024px) 42vw, 528px" type="image/avif">
+          <img src="assets/img/gta/about-L0-bg.webp" srcset="assets/img/gta/about-L0-bg-800.webp 800w, assets/img/gta/about-L0-bg.webp 1536w" sizes="(min-width: 1024px) 42vw, 528px" alt="" width="1536" height="1024" loading="lazy">
         </picture>
         <div class="vignette"></div>
         <div class="help-text scrim tile-panel">
@@ -319,7 +328,7 @@
       <span class="t-menu" data-i18n="footer">© 2026 raJayoux</span>
       <div class="shortcuts-toggle scrim">
         <span class="t-menu" id="shortcuts-label" data-i18n="shortcutsLabel">Keyboard shortcuts</span>
-        <button class="menu-bar-item selector" type="button" data-shortcuts-toggle aria-labelledby="shortcuts-label" aria-pressed="true"><span class="chev" aria-hidden="true">‹</span><span data-shortcuts-value>On</span><span class="chev" aria-hidden="true">›</span></button>
+        <button class="menu-bar-item selector" type="button" data-shortcuts-toggle aria-labelledby="shortcuts-label shortcuts-value" aria-pressed="true"><span class="chev" aria-hidden="true">‹</span><span id="shortcuts-value" data-shortcuts-value>On</span><span class="chev" aria-hidden="true">›</span></button>
       </div>
       <span class="t-menu" data-i18n="footerRight">Software Engineer · Paris · Available now</span>
     </footer>

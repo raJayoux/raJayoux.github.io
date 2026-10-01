@@ -428,3 +428,7 @@ Object.assign(I18N.zh, {
 Object.assign(I18N.en, { appLanguage: "Language", appTheme: "Theme", phone: "Phone", posterCity: "Paris · 2026", ifruitLabel: "iFruit menu", open: "Open" });
 Object.assign(I18N.fr, { appLanguage: "Langue", appTheme: "Thème", phone: "Téléphone", posterCity: "Paris · 2026", ifruitLabel: "Menu iFruit", open: "Ouvrir" });
 Object.assign(I18N.zh, { appLanguage: "语言", appTheme: "主题", phone: "手机", posterCity: "巴黎 · 2026", ifruitLabel: "iFruit 菜单", open: "打开" });
+
+Object.assign(I18N.en, { langPrefix: "Language: ", themePrefix: "Theme: " });
+Object.assign(I18N.fr, { langPrefix: "Langue : ", themePrefix: "Thème : " });
+Object.assign(I18N.zh, { langPrefix: "语言：", themePrefix: "主题：" });
