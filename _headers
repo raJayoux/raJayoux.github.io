@@ -1,0 +1,14 @@
+# Cloudflare Pages response headers (ignored by GitHub Pages / Jekyll).
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/assets/icons/*
+  Cache-Control: public, max-age=604800
+/assets/css/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/assets/js/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/assets/docs/*
+  Cache-Control: public, max-age=86400
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
