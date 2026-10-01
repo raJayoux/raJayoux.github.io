@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="110.183" height="120.175" viewBox="0 0 110.183 120.175" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Wallpaper mark &#194;&#183; pj glow (image-24)" opacity="0.9" filter="url(#filter0_d_0_52)">
+<path id="Vector" d="M29.3333 109.908V91.6666H43.5417C50.1417 91.6666 53.075 89.2832 53.075 84.4249V40.5166C53.075 35.5666 49.8667 33.0916 43.5417 33.0916H10.2667V109.908H29.3333ZM34.0083 76.9082C34.0083 76.9999 33.9167 77.0916 33.825 77.0916H29.3333V47.7582H33.825C33.9167 47.7582 34.0083 47.8499 34.0083 47.9416V76.9082ZM90.3833 91.6666C96.7083 91.6666 99.9167 89.2832 99.9167 84.4249V33.0916H80.85V76.9082C80.85 76.9999 80.7583 77.0916 80.6667 77.0916H76.3583C76.2667 77.0916 76.175 76.9999 76.175 76.9082V62.3332H57.1083V84.4249C57.1083 89.2832 60.3167 91.6666 66.6417 91.6666H90.3833Z" fill="#F0F0F0"/>
+</g>
+<defs>
+<filter id="filter0_d_0_52" x="-2.20061" y="-10.2667" width="114.675" height="130.533" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="5.13333"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_52"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_52" result="shape"/>
+</filter>
+</defs>
+</svg>

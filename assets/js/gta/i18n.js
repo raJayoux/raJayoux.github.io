@@ -423,3 +423,8 @@ Object.assign(I18N.zh, {
   footerRight: "软件工程师 · 巴黎 · 现在可入职",
   close: "关闭"
 });
+
+/* ---- mobile ---- */
+Object.assign(I18N.en, { appLanguage: "Language", appTheme: "Theme", phone: "Phone", posterCity: "Paris · 2026", ifruitLabel: "iFruit menu", open: "Open" });
+Object.assign(I18N.fr, { appLanguage: "Langue", appTheme: "Thème", phone: "Téléphone", posterCity: "Paris · 2026", ifruitLabel: "Menu iFruit", open: "Ouvrir" });
+Object.assign(I18N.zh, { appLanguage: "语言", appTheme: "主题", phone: "手机", posterCity: "巴黎 · 2026", ifruitLabel: "iFruit 菜单", open: "打开" });

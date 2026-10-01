@@ -45,6 +45,15 @@
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
+  <!-- Mobile top bar (137:580): logo + iFruit phone button; sticky. Hidden >= 1024 px. -->
+  <div class="m-topbar scrim">
+    <a class="m-logo" href="#top">raJayoux</a>
+    <button class="m-phone" type="button" data-open-ifruit aria-haspopup="dialog" aria-controls="ifruit">
+      <svg aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#i-phone"/></svg>
+      <span data-i18n="phone">Phone</span>
+    </button>
+  </div>
+
   <div class="stage">
 
     <!-- ============ HERO ============ -->
@@ -116,6 +125,10 @@
         <button class="menu-bar-item selector" type="button" data-theme-toggle aria-label="Theme: night"><span data-theme-value>Night</span></button>
       </nav>
 
+      <!-- Mobile poster corners (137:363 / 154:367) -->
+      <p class="poster-corner poster-corner--left" data-i18n="posterCity">Paris · 2026</p>
+      <p class="poster-corner poster-corner--right"><svg class="status-dot" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><circle cx="5" cy="5" r="2.92"/></svg><span data-i18n="available">Available now</span></p>
+
       <div class="hero-logo">
         <h1 class="visually-hidden">Pengyu Jie</h1>
         <img class="hero-wordmark" src="assets/img/gta/wm-name-hero.svg" alt="" width="384" height="235">
@@ -128,7 +141,7 @@
 
       <!-- Resonova (107:28) + the real app as the tile's subject (245:962), breaking out above it -->
       <div class="work-feature">
-        <article class="tile tile--resonova" id="work" aria-labelledby="t-resonova">
+        <article class="tile tile--resonova cut-a" id="work" aria-labelledby="t-resonova">
           <div class="tile-bg"></div>
           <picture class="tile-art art--resonova">
             <source srcset="assets/img/gta/resonova-L0-bg.avif" type="image/avif">
@@ -157,7 +170,7 @@
       </div>
 
       <!-- Presage Care (107:32) -->
-      <article class="tile tile--presage" id="presage" aria-labelledby="t-presage">
+      <article class="tile tile--presage cut-b" id="presage" aria-labelledby="t-presage">
         <div class="tile-bg"></div>
         <picture class="tile-art art--presage">
           <source srcset="assets/img/gta/presage-L0-bg.avif" type="image/avif">
@@ -177,7 +190,7 @@
       </article>
 
       <!-- Moto Micro Tours (107:36) — art placeholder -->
-      <article class="tile tile--moto tile--placeholder" aria-labelledby="t-moto">
+      <article class="tile tile--moto tile--placeholder cut-a" aria-labelledby="t-moto">
         <div class="tile-bg"></div><div class="vignette"></div>
         <div class="help-text scrim tile-panel">
           <p class="ht-kicker" data-i18n="motoKicker">Mobile / product experiment</p>
@@ -187,7 +200,7 @@
       </article>
 
       <!-- Dashcam Cloud Service (107:40) — art placeholder -->
-      <article class="tile tile--dashcam tile--placeholder" aria-labelledby="t-dashcam">
+      <article class="tile tile--dashcam tile--placeholder cut-b" aria-labelledby="t-dashcam">
         <div class="tile-bg"></div><div class="vignette"></div>
         <div class="help-text scrim tile-panel">
           <p class="ht-kicker" data-i18n="dashKicker">Cloud / backend</p>
@@ -197,7 +210,7 @@
       </article>
 
       <!-- Experience + Education (107:44) — GTA pause menu; art placeholder -->
-      <article class="tile tile--experience tile--placeholder" id="experience" aria-labelledby="t-experience">
+      <article class="tile tile--experience tile--placeholder cut-a" id="experience" aria-labelledby="t-experience">
         <div class="tile-bg"></div><div class="vignette"></div>
         <div class="pause-menu tile-panel">
           <div class="pm-header">
@@ -222,7 +235,7 @@
       </article>
 
       <!-- Tools (107:54) — GTA menu list; art placeholder -->
-      <article class="tile tile--tools tile--placeholder" id="tools" aria-labelledby="t-tools">
+      <article class="tile tile--tools tile--placeholder cut-b" id="tools" aria-labelledby="t-tools">
         <div class="tile-bg"></div><div class="vignette"></div>
         <div class="gta-menu tile-panel">
           <h3 class="gm-banner" id="t-tools" data-i18n="toolsTitle">Tools</h3>
@@ -237,7 +250,7 @@
       </article>
 
       <!-- XR background (107:47) — art placeholder -->
-      <article class="tile tile--xr tile--placeholder" aria-labelledby="t-xr">
+      <article class="tile tile--xr tile--placeholder cut-a" aria-labelledby="t-xr">
         <div class="tile-bg"></div><div class="vignette"></div>
         <div class="tile-copy tile-panel">
           <p class="ht-kicker" data-i18n="xrKicker">Unity / XR</p>
@@ -250,7 +263,7 @@
       </article>
 
       <!-- About (107:50) -->
-      <article class="tile tile--about" id="about" aria-labelledby="t-about">
+      <article class="tile tile--about cut-b" id="about" aria-labelledby="t-about">
         <div class="tile-bg"></div>
         <picture class="tile-art art--about">
           <source srcset="assets/img/gta/about-L0-bg.avif" type="image/avif">
@@ -265,7 +278,7 @@
       </article>
 
       <!-- Contact (107:57) — art placeholder -->
-      <article class="tile tile--contact tile--placeholder" id="contact" aria-labelledby="t-contact">
+      <article class="tile tile--contact tile--placeholder cut-a" id="contact" aria-labelledby="t-contact">
         <div class="tile-bg"></div><div class="vignette"></div>
         <div class="tile-copy tile-panel">
           <p class="ht-kicker" data-i18n="contactKicker">Contact</p>
@@ -328,6 +341,29 @@
     <form method="dialog" class="actions">
       <button class="btn btn--secondary" type="submit"><span data-i18n="close">Close</span> <span class="key" aria-hidden="true">Esc</span></button>
     </form>
+  </dialog>
+
+  <!-- iFruit phone (137:1772) — the mobile menu. Native <dialog>: focus trap, Esc, top layer. -->
+  <dialog class="ifruit" id="ifruit" aria-label="iFruit menu" data-i18n-label="ifruitLabel">
+    <div class="if-screen">
+      <div class="if-status"><span class="if-time" data-ifruit-time>14:32</span><span class="if-brand">iFruit</span></div>
+      <nav class="if-grid" aria-label="Menu">
+        <a class="if-app" href="#work" data-close-ifruit><span class="if-icon if-icon--blue"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-work"/></svg></span><span data-i18n="navWork">Work</span></a>
+        <a class="if-app" href="#experience" data-close-ifruit><span class="if-icon if-icon--blue"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-experience"/></svg></span><span data-i18n="navExperience">Experience</span></a>
+        <a class="if-app" href="#about" data-close-ifruit><span class="if-icon if-icon--blue"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-about"/></svg></span><span data-i18n="navAbout">About</span></a>
+        <a class="if-app" href="#contact" data-close-ifruit><span class="if-icon if-icon--blue"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-contact"/></svg></span><span data-i18n="navContact">Contact</span></a>
+        <a class="if-app" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-cv download><span class="if-icon if-icon--yellow"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-cv"/></svg></span><span data-i18n="tabCv">CV</span></a>
+        <a class="if-app" href="https://resonova.app/" target="_blank" rel="noopener"><span class="if-icon if-icon--plum"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-resonova"/></svg></span><span>Resonova</span></a>
+        <button class="if-app" type="button" data-lang-toggle><span class="if-icon if-icon--soft"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-language"/></svg></span><span data-i18n="appLanguage">Language</span></button>
+        <button class="if-app" type="button" data-theme-toggle><span class="if-icon if-icon--soft"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-theme"/></svg></span><span data-i18n="appTheme">Theme</span></button>
+        <a class="if-app" href="https://github.com/raJayoux" target="_blank" rel="noopener"><span class="if-icon if-icon--soft"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-github"/></svg></span><span>GitHub</span></a>
+      </nav>
+      <img class="if-mark" src="assets/img/gta/ifruit-pj.svg" alt="" width="110" height="120">
+      <div class="if-prompts">
+        <button class="if-close" type="button" data-close-ifruit><span data-i18n="close">Close</span> <span aria-hidden="true">✕</span></button>
+        <span class="if-open" aria-hidden="true" data-i18n="open">Open</span>
+      </div>
+    </div>
   </dialog>
 
   <script src="assets/js/gta/i18n.js"></script>

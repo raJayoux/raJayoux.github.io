@@ -135,6 +135,21 @@
       d.addEventListener("click", function (e) { if (e.target === d) d.close(); });   /* backdrop click */
     });
 
+    /* iFruit phone = mobile menu */
+    var ifruit = document.getElementById("ifruit");
+    if (ifruit && ifruit.showModal) {
+      var clock = ifruit.querySelector("[data-ifruit-time]");
+      var tick = function () {
+        if (clock) clock.textContent = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Paris" }).format(new Date());
+      };
+      document.querySelectorAll("[data-open-ifruit]").forEach(function (b) {
+        b.addEventListener("click", function () { tick(); ifruit.showModal(); });
+      });
+      ifruit.addEventListener("click", function (e) {
+        if (e.target === ifruit || e.target.closest("[data-close-ifruit]")) ifruit.close();
+      });
+    }
+
     /* keyboard shortcuts — the key caps on screen: D = download CV, C = contact, E = email */
     var sc = document.querySelector("[data-shortcuts-toggle]");
     if (sc) sc.addEventListener("click", function () {
