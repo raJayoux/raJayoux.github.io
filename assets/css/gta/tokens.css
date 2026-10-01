@@ -4,7 +4,8 @@
  * Single source for the redesign: change the Figma variable, then this file. Exported 2026-10-01.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+SC:wght@400;600&family=Work+Sans:wght@300;400;600&family=Zalando+Sans+Expanded:wght@900&display=swap");
+/* Fonts (Barlow Condensed 600/700, Noto Sans SC 400/600, Work Sans 300/400/600, Zalando Sans Expanded 900)
+ * are loaded by a <link> in index.html, not @import, so they don't block CSS parsing. */
 
 :root {
   /* colour · palette (refs: key-art k-means + GTA V hudcolor.dat) */

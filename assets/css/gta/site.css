@@ -1,0 +1,111 @@
+/*
+ * GTA-mimic homepage — layout. Spec: raJayoux-design/docs/implementation-masterbook.md, Figma page 98:2.
+ * Desktop (>= 1024 px) is the 1440 x 2240 Figma frame 107:13, built at its own px coordinates and
+ * scaled as a whole (site.js sets `zoom`; the stepped media queries below are the no-JS fallback).
+ * Mobile (< 1024 px) is the 390 frame 137:356 as a single fluid column.
+ */
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--surface-gutter); color: var(--text-on-gutter); }
+body {
+  margin: 0;
+  background: var(--surface-gutter);
+  color: var(--text-on-gutter);
+  font: 400 15px/1.5 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; }
+a { color: inherit; }
+p, h1, h2, h3 { margin: 0; }
+button { font: inherit; color: inherit; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 100;
+  padding: var(--space-8) var(--space-12);
+  background: var(--c-hud-yellow); color: var(--c-ink);
+  font: 700 16px/1 var(--font-ui); text-transform: uppercase; text-decoration: none;
+}
+.skip-link:focus { top: 16px; box-shadow: var(--focus-ring); outline: none; }
+
+/* ---------- shared surfaces ---------- */
+/* GTA vignette: transparent to 62 % of the radius, ink 55 % at the edge (Figma: a box 1.2x the tile). */
+.vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, transparent 62%, rgb(0 0 0 / 0.55) 100%);
+}
+
+/* ============================================================
+   DESKTOP COMPOSITION (>= 1024 px)
+   ============================================================ */
+@media (min-width: 1024px) {
+  .stage {
+    position: relative;
+    width: 1440px;
+    height: 2240px;
+    margin: 0 auto;
+    zoom: 0.711;                     /* no-JS fallback steps; site.js sets the exact value */
+  }
+}
+@media (min-width: 1152px) { .stage { zoom: 0.8; } }
+@media (min-width: 1280px) { .stage { zoom: 0.888; } }
+@media (min-width: 1366px) { .stage { zoom: 0.948; } }
+@media (min-width: 1440px) { .stage { zoom: 1; } }
+
+@media (min-width: 1024px) {
+  /* ---------- hero card (110:2) ---------- */
+  .hero-card {
+    position: absolute; left: 52px; top: 40px; width: 1344px; height: 768px;
+    clip-path: polygon(18px 32px, 1320px 0, 1344px 768px, 0 746px);
+    background: var(--c-vi-night);
+  }
+  .hero-card .vignette {
+    background: radial-gradient(ellipse 58% 58% at 50% 50%, transparent 62%, rgb(0 0 0 / 0.55) 100%);
+  }
+
+  /* ---------- logotype (110:21) ---------- */
+  .hero-logo { position: absolute; left: 30px; top: 507px; width: 373px; height: 268px; z-index: 6; }
+
+  /* ---------- collage tiles: bounding box + cut-line polygon (local coords) ---------- */
+  .tile {
+    position: absolute;
+    left: var(--x); top: var(--y); width: var(--w); height: var(--h);
+    clip-path: var(--clip);
+    overflow: hidden;
+  }
+  .tile-bg { position: absolute; inset: 0; background: var(--c-vi-night); }
+
+  .tile--resonova   { --x: 0px;    --y: 886px;  --w: 860px; --h: 641px; --clip: polygon(0 24px, 860px 0, 797px 641px, 0 626px); }
+  .tile--presage    { --x: 823px;  --y: 870px;  --w: 617px; --h: 460px; --clip: polygon(37px 16px, 617px 0, 617px 460px, 0 396px); }
+  .tile--moto       { --x: 797px;  --y: 1266px; --w: 353px; --h: 268px; --clip: polygon(26px 0, 335px 32px, 353px 268px, 0 261px); }
+  .tile--dashcam    { --x: 1132px; --y: 1298px; --w: 308px; --h: 242px; --clip: polygon(0 0, 308px 32px, 308px 242px, 18px 236px); }
+  .tile--experience { --x: 0px;    --y: 1512px; --w: 505px; --h: 393px; --clip: polygon(0 0, 505px 10px, 486px 353px, 0 393px); }
+  .tile--tools      { --x: 483px;  --y: 1522px; --w: 506px; --h: 454px; --clip: polygon(22px 0, 479px 9px, 506px 454px, 0 402px); }
+  .tile--xr         { --x: 470px;  --y: 1924px; --w: 530px; --h: 236px; --clip: polygon(13px 0, 519px 52px, 530px 236px, 0 236px); }
+  .tile--about      { --x: 0px;    --y: 1865px; --w: 486px; --h: 295px; --clip: polygon(0 40px, 486px 0, 470px 295px, 0 295px); }
+  .tile--contact    { --x: 962px;  --y: 1531px; --w: 478px; --h: 629px; --clip: polygon(0 0, 478px 9px, 478px 629px, 38px 629px); }
+
+  /* Gutters (111:8): one overlay strokes every cut line — 12 px ink + 6 px theme centre line. */
+  .gutters {
+    position: absolute; left: -6px; top: 0; width: 1452px; height: 2240px;
+    fill: none; pointer-events: none; overflow: visible;
+  }
+  .gutters-ink { stroke: var(--c-ink); stroke-width: 12; }
+  .gutters-theme { stroke: var(--surface-gutter); stroke-width: 6; }
+
+  /* "SELECTED WORK" plate (122:78) */
+  .work-plate { position: absolute; left: 24px; top: 880px; z-index: 5; }
+
+  /* ---------- footer ---------- */
+  .site-footer {
+    position: absolute; left: 36px; right: 88px; top: 2184px; height: 36px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--text-on-gutter);
+  }
+}

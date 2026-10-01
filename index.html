@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,9 @@
   <link rel="alternate" href="https://rajayoux.github.io/" hreflang="fr">
   <link rel="alternate" href="https://rajayoux.github.io/" hreflang="zh-Hans">
   <link rel="alternate" href="https://rajayoux.github.io/" hreflang="x-default">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rajayoux.github.io/">
   <meta property="og:title" content="Pengyu Jie — Software Engineer">
@@ -25,10 +25,15 @@
   <meta name="twitter:title" content="Pengyu Jie — Software Engineer">
   <meta name="twitter:description" content="Fullstack, product and platforms. Available now.">
   <meta name="twitter:image" content="https://rajayoux.github.io/assets/img/og-pengyu-jie.png">
+  <script>
+    try { if (localStorage.getItem("rajayoux-theme") === "day") document.documentElement.setAttribute("data-theme", "day"); } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+SC:wght@400;600&family=Work+Sans:wght@300;400;600&family=Zalando+Sans+Expanded:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/gta/tokens.css">
+  <link rel="stylesheet" href="assets/css/gta/components.css">
+  <link rel="stylesheet" href="assets/css/gta/site.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCTK49658F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -38,171 +43,59 @@
   </script>
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="wordmark" href="#top">ra<b>Jay</b>oux</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
-        <span></span><span></span>
-      </button>
-      <nav class="nav-links" id="site-nav" aria-label="Primary">
-        <a href="#work" data-i18n="navWork">Work</a>
-        <a href="#contact" data-i18n="navContact">Contact</a>
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
-          <button type="button" data-lang="zh" aria-pressed="false">中</button>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
-        <p class="kicker mono" data-i18n="kicker">Pengyu Jie · Paris</p>
-        <h1 id="hero-title" data-i18n="h1">Software Engineer</h1>
-        <p class="lede" data-i18n="lede">Fullstack, product and platforms, EN/FR.</p>
-        <p class="pill" data-i18n="available">Available now</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-i18n="downloadCv">Download CV</a>
-          <div class="link-row">
-            <a href="#work" data-i18n="seeWork">See work</a>
-            <a href="assets/docs/JiePengyu_CV_UnityXR_2025-09_EN.pdf" data-i18n="xrResume">XR resume</a>
-          </div>
-        </div>
+  <div class="stage">
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="top">
+      <div class="hero-card">
+        <div class="hero-layer hero-sky"></div>
+        <div class="vignette"></div>
       </div>
-    </section>
 
-    <section id="about" aria-labelledby="about-title">
-      <div class="wrap about-grid">
-        <div class="about-copy">
-          <h2 id="about-title" data-i18n="aboutTitle">About</h2>
-          <p data-i18n="about1">I’m Pengyu — software engineer based in Paris, holding an MSc in Software Engineering from ESIGELEC (graduating September 2026), and I just finished six months shipping production Angular and C#/.NET at Presage Care in Paris.</p>
-          <p data-i18n="about2">I like building the parts people actually use: portals, APIs, auth, and the quiet platform work that keeps a product honest. XR and Unity are how I learned to ship. They are background, not the headline.</p>
-        </div>
-        <img class="portrait" src="assets/img/about-me/good/pengyu-jie.jpg" alt="Pengyu Jie" width="180" height="180">
+      <div class="hero-logo">
+        <h1 class="visually-hidden">Pengyu Jie</h1>
+        <img class="hero-wordmark" src="assets/img/gta/wm-name-hero.svg" alt="" width="384" height="235">
+        <p class="plate hero-plate"><span data-i18n="plateRole">Software engineer</span></p>
       </div>
-    </section>
+    </header>
 
-    <section id="stack" aria-labelledby="stack-title">
-      <div class="wrap">
-        <p class="section-kicker" data-i18n="stackKicker">Stack</p>
-        <h2 id="stack-title" data-i18n="stackTitle">Tools I reach for</h2>
-        <div class="stack-group">
-          <p class="stack-label" data-i18n="frontend">Frontend</p>
-          <ul class="chips">
-            <li>Angular</li><li>TypeScript</li><li>RxJS</li><li>HTML/CSS/JS</li><li>Transloco</li>
-          </ul>
-        </div>
-        <div class="stack-group">
-          <p class="stack-label" data-i18n="backend">Backend</p>
-          <ul class="chips">
-            <li>C#</li><li>ASP.NET Core</li><li>EF Core</li><li>SQL / MySQL</li><li>REST</li><li>SignalR</li><li>Python</li><li>Supabase</li>
-          </ul>
-        </div>
-        <div class="stack-group">
-          <p class="stack-label" data-i18n="tools">Tools</p>
-          <ul class="chips">
-            <li>Git</li><li>GitHub</li><li>Azure DevOps</li><li>Docker</li><li>Azure</li><li>Swagger</li>
-          </ul>
-        </div>
-        <div class="stack-group stack-xr">
-          <p class="stack-label" data-i18n="xr">XR (background)</p>
-          <ul class="chips">
-            <li>Unity</li><li>C#</li><li>MRTK</li><li>Meta XR</li><li>XRI</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <main id="main">
+      <p class="plate work-plate"><span data-i18n="plateWork">Selected work</span></p>
 
-    <section id="work" aria-labelledby="work-title">
-      <div class="wrap">
-        <p class="section-kicker" data-i18n="workKicker">Selected work</p>
-        <div class="work-heading">
-          <h2 id="work-title" data-i18n="workTitle">Case studies</h2>
-          <a href="#professional-work" data-i18n="viewAllWork">View all work →</a>
-        </div>
-        <article class="resonova-feature" id="resonova" aria-labelledby="resonova-feature-title">
-          <div class="resonova-feature-inner">
-            <div class="resonova-feature-copy">
-              <p class="resonova-status" data-i18n="resoStatus">OWN PRODUCT · 2026 — PRESENT</p>
-              <h3 id="resonova-feature-title">Resonova</h3>
-              <p class="resonova-description" data-i18n="resoDescription">A hosted listening experience that turns playlists into a shaped program — music, generated commentary, and continuous playback working as one product.</p>
-              <ul class="resonova-tech" aria-label="Resonova technology">
-                <li>Kotlin / Android</li>
-                <li>Python / FastAPI</li>
-                <li>Spotify</li>
-                <li>Applied AI</li>
-              </ul>
-              <div class="resonova-actions">
-                <span class="resonova-cta" role="link" aria-disabled="true" title="Case study link pending" data-i18n="resoCta">View case study →</span>
-                <a class="resonova-site" href="https://resonova.app/" target="_blank" rel="noopener">resonova.app ↗</a>
-                <span class="resonova-apk" aria-disabled="true" data-i18n="resoApk">APK download · soon</span>
-              </div>
-            </div>
-            <img class="resonova-visual" src="assets/img/stills/resonova-figma-studio.png" alt="Resonova Cast Studio visual showing the current track, playback controls, and program arc" width="622" height="590" loading="lazy">
-          </div>
-        </article>
-        <div class="professional-work" id="professional-work">
-          <div class="professional-heading">
-            <p data-i18n="professionalWork">PROFESSIONAL WORK</p>
-            <a href="#presage" data-i18n="moreCaseStudies">More case studies →</a>
-          </div>
-          <article class="presage-compact" id="presage" aria-labelledby="presage-title">
-            <div class="presage-meta">
-              <p data-i18n="presageDatesCompact">FEB — AUG 2026 · PARIS</p>
-              <h3 id="presage-title" data-i18n="presageTitle">Presage Care</h3>
-            </div>
-            <div class="presage-body">
-              <p class="presage-role" data-i18n="presageRole">Fullstack Software Engineering Intern</p>
-              <p data-i18n="presageSummary">Shipped 88 merged pull requests across a production healthcare platform — Angular portals, ASP.NET Core / EF Core backend, identity services, and end-to-end product workflows.</p>
-            </div>
-            <ul class="work-tags" aria-label="Presage Care technology">
-              <li>Angular</li><li>C# / .NET</li><li>Azure DevOps</li>
-            </ul>
-          </article>
-          <div class="more-work">
-            <p data-i18n="moreWork">Moto Micro Tours · Dashcam Cloud Service · XR background</p>
-            <a href="assets/docs/resume-fullstack/Fullstack_JiePengyu_CV_EN_BASELINE.pdf" data-i18n="downloadCvArrow">Download CV →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      <article class="tile tile--resonova" id="work"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--presage" id="presage-tile"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--moto"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--dashcam"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--experience" id="experience"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--tools"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--xr"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--about" id="about"><div class="tile-bg"></div><div class="vignette"></div></article>
+      <article class="tile tile--contact" id="contact"><div class="tile-bg"></div><div class="vignette"></div></article>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="wrap contact-grid">
-        <div>
-          <p class="section-kicker" data-i18n="contactKicker">Contact</p>
-          <h2 id="contact-title" data-i18n="contactTitle">Let’s work</h2>
-          <p data-i18n="contactLead">Email me, write on LinkedIn, or leave a short note. I reply quickly.</p>
-          <ul class="contact-links">
-            <li><span class="mono" data-i18n="emailLabel">Email</span><br><a href="mailto:pengyujie.dev@gmail.com">pengyujie.dev@gmail.com</a></li>
-            <li><span class="mono">LinkedIn</span><br><a href="https://www.linkedin.com/in/pengyu-jie" rel="noopener" target="_blank">pengyu-jie</a></li>
-            <li><span class="mono" data-i18n="github">GitHub</span><br>
-              <a href="https://github.com/JayGarland" rel="noopener" target="_blank">JayGarland</a>
-              · <a href="https://github.com/raJayoux" rel="noopener" target="_blank">raJayoux</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <form id="contact-form">
-            <label><span data-i18n="name">Name</span><input type="text" name="name" required></label>
-            <label><span data-i18n="email">Email</span><input type="email" name="email" required></label>
-            <label><span data-i18n="message">Message</span><textarea name="message" required></textarea></label>
-            <button class="btn btn-primary" type="submit" data-i18n="submit" data-i18n-value="submit">Send</button>
-          </form>
-          <p id="form-ok" class="form-ok" data-i18n="thanks">Sent. I’ll get back to you.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+      <svg class="gutters" viewBox="-6 0 1452 2240" aria-hidden="true" focusable="false">
+        <g class="gutters-ink" id="gutter-paths">
+          <path d="M0 910L860 886L797 1527L0 1512Z"/>
+          <path d="M860 886L1440 870V1330L823 1266Z"/>
+          <path d="M823 1266L1132 1298L1150 1534L797 1527Z"/>
+          <path d="M1132 1298L1440 1330V1540L1150 1534Z"/>
+          <path d="M0 1512L505 1522L486 1865L0 1905Z"/>
+          <path d="M483 1924L989 1976L1000 2160H470Z"/>
+          <path d="M0 1905L486 1865L470 2160H0Z"/>
+          <path d="M505 1522L962 1531L989 1976L483 1924Z"/>
+          <path d="M962 1531L1440 1540V2160H1000Z"/>
+        </g>
+        <use class="gutters-theme" href="#gutter-paths"/>
+      </svg>
+    </main>
 
-  <footer>
-    <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:min(1120px,calc(100% - 48px));margin:0 auto;">
-      <span data-i18n="footer">© 2026 raJayoux</span>
-      <a href="https://github.com/raJayoux/raJayoux.github.io" rel="noopener" target="_blank">GitHub</a>
-    </div>
-  </footer>
-  <script src="assets/js/portfolio.js"></script>
+    <footer class="site-footer">
+      <span class="t-menu" data-i18n="footer">© 2026 raJayoux</span>
+    </footer>
+  </div>
+
+  <script src="assets/js/gta/i18n.js"></script>
+  <script src="assets/js/gta/site.js"></script>
 </body>
 </html>
